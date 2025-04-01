@@ -1,7 +1,7 @@
-package com.trovaApp.controller;
+package com.trovaApp.controller.album;
 
 import com.trovaApp.model.Album;
-import com.trovaApp.service.AlbumService;
+import com.trovaApp.service.album.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

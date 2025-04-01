@@ -1,4 +1,4 @@
-package com.trovaApp.service;
+package com.trovaApp.service.album;
 
 import com.trovaApp.model.Album;
 
