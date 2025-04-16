@@ -1,7 +1,8 @@
 package com.trovaApp.service.user;
 
-import com.trovaApp.dto.SignupUserDto;
+import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.enums.Role;
+import com.trovaApp.exception.*;
 import com.trovaApp.model.Credential;
 import com.trovaApp.model.User;
 import com.trovaApp.repository.UserRepository;
@@ -9,32 +10,50 @@ import com.trovaApp.service.credential.CredentialService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final CredentialService credentialService;
 
     @Autowired
-    private CredentialService credentialService;
-
+    public UserServiceImpl(UserRepository userRepository, CredentialService credentialService) {
+        this.userRepository = userRepository;
+        this.credentialService = credentialService;
+    }
 
     @Override
-    public User save(SignupUserDto signupUserDto) {
+    public User save(UserSignupDTO signupUserDto) {
         // Check if the username is already in use
         Optional<User> existingUserByUsername = userRepository.findByUsername(signupUserDto.getUsername());
         if (existingUserByUsername.isPresent()) {
-            // If username is already in use, throw an exception
-            throw new IllegalArgumentException("Username is already in use");
+            throw new UsernameAlreadyExistsException("Username is already in use");
         }
 
         // Check if the email is already in use
         Optional<User> existingUserByEmail = userRepository.findByEmail(signupUserDto.getEmail());
         if (existingUserByEmail.isPresent()) {
-            // If email is already in use, throw an exception
-            throw new IllegalArgumentException("Email is already in use");
+            throw new EmailAlreadyExistsException("Email is already in use");
+        }
+
+        // Validate password format
+        String password = signupUserDto.getPassword();
+        if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+]).{6,}$")) {
+            throw new InvalidPasswordFormatException("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character");
+        }
+
+        // Validate the username length
+        if (signupUserDto.getUsername().length() < 7) {
+            throw new IllegalArgumentException("Username must be at least 7 characters long");
+        }
+
+        // Check if the passwords match
+        if (!signupUserDto.isPasswordMatching()) {
+            throw new PasswordsDoNotMatchException("Passwords do not match");
         }
 
         // Create a new User instance
@@ -43,26 +62,29 @@ public class UserServiceImpl implements UserService {
         user.setEmail(signupUserDto.getEmail());
         user.setName(signupUserDto.getName());
 
-        // Convert the role from String to Role enum with error handling
-        Role role = getRoleFromString(signupUserDto.getRole());
+        // Convert the role from String to Role enum
+        Role role = getRoleFromString(signupUserDto.getRoleOrDefault());
         user.setRole(role);
 
         // Create and save credentials for the user
         Credential savedCredential = credentialService.createAndSaveCredential(signupUserDto.getPassword());
         user.setCredential(savedCredential);
 
-        // Save the user with the assigned credentials
+        // Save the user
         return userRepository.save(user);
     }
 
-    // Convert String role to Role enum, handling invalid values
     private Role getRoleFromString(String role) {
         try {
             return Role.valueOf(role);
         } catch (IllegalArgumentException e) {
-            // If the value is invalid, handle the error appropriately
-            throw new IllegalArgumentException("Invalid role: " + role);
+            throw new InvalidRoleException("Invalid role: " + role);
         }
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     @Override

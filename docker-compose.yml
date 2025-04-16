@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    container_name: trova_db
+    environment:
+      POSTGRES_DB: trova_app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Kant.1987
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - trova-network
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-app
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trova_app
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Kant.1987
+    networks:
+      - trova-network
+
+volumes:
+  postgres_data:
+
+networks:
+  trova-network:

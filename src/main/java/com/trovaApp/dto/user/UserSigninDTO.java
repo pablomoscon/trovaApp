@@ -1,16 +1,16 @@
-package com.trovaApp.dto;
+package com.trovaApp.dto.user;
 
-public class SigninUserDto {
+public class UserSigninDTO {
 
     private String username;
     private String password;
 
 
     // Constructor vacío
-    public SigninUserDto() {}
+    public UserSigninDTO() {}
 
     // Constructor con parámetros
-    public SigninUserDto(String username, String password) {
+    public UserSigninDTO(String username, String password) {
         this.username = username;
         this.password = password;
     }

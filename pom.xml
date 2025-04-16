@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.trovaDisc</groupId>
-    <artifactId>trova</artifactId>
+    <artifactId>trovaApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>trovaDisc</name>
     <description>New project for Spring Boot</description>
@@ -141,12 +141,17 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <skipTests>false</skipTests>
+                    <argLine>-XX:+EnableDynamicAgentLoading</argLine>
                 </configuration>
             </plugin>
 
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Aquí ya no se coloca el jvmArguments -->
+                </configuration>
             </plugin>
         </plugins>
     </build>

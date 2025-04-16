@@ -4,17 +4,21 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+@Component
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JwtProvider jwtProvider;
+    private final JwtProvider jwtProvider;
+
+    public JwtAuthorizationFilter(JwtProvider jwtProvider) {
+        this.jwtProvider = jwtProvider;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -22,22 +26,19 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        // Imprimir la URI y el encabezado de autorización para debug
         System.out.println("Request URI: " + request.getRequestURI());
         System.out.println("Authorization Header: " + request.getHeader("Authorization"));
 
-        // Evitar que se ejecute el filtro para las rutas de /auth/sign-up y /auth/sign-in
         if (request.getRequestURI().startsWith("/auth/")) {
-            filterChain.doFilter(request, response); // Continúa con la siguiente parte del filtro
-            return; // Salir del filtro sin procesar la autorización
+            filterChain.doFilter(request, response);
+            return;
         }
 
-        // Aquí se procesan las solicitudes que sí requieren un JWT
         Authentication authentication = jwtProvider.getAuthentication(request);
         if (authentication != null && jwtProvider.isTokenValid(request)) {
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
 
-        filterChain.doFilter(request, response); // Continua con el siguiente filtro o controlador
+        filterChain.doFilter(request, response);
     }
 }

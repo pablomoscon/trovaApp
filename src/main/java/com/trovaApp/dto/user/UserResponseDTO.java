@@ -1,14 +1,14 @@
-package com.trovaApp.dto;
+package com.trovaApp.dto.user;
 
 import com.trovaApp.model.User;
 
-public class ResponseUserDto {
+public class UserResponseDTO {
 
     private String username;
     private String email;
     private String token;
 
-    public ResponseUserDto(User user) {
+    public UserResponseDTO(User user) {
         this.username = user.getUsername();
         this.email = user.getEmail();
         this.token = user.getCredential() != null ? user.getCredential().getToken() : null;

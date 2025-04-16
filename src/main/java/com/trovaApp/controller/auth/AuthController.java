@@ -1,11 +1,11 @@
 package com.trovaApp.controller.auth;
-
-import com.trovaApp.dto.ResponseUserDto;
-import com.trovaApp.dto.SigninUserDto;
-import com.trovaApp.dto.SignupUserDto;
+import com.trovaApp.dto.user.UserResponseDTO;
+import com.trovaApp.dto.user.UserSigninDTO;
+import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.model.User;
 import com.trovaApp.service.auth.AuthService;
 import com.trovaApp.service.user.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,14 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("auth")
 public class AuthController {
 
-    @Autowired
-    private AuthService authService;
+    private final AuthService authService;
+    private final UserService userService;
 
     @Autowired
-    private UserService userService;
+    public AuthController(AuthService authService, UserService userService) {
+        this.authService = authService;
+        this.userService = userService;
+    }
 
     @PostMapping("sign-up")
-    public ResponseEntity<?> signUp(@RequestBody @Valid SignupUserDto signupUserDto) {
+    public ResponseEntity<?> signUp(@RequestBody @Valid UserSignupDTO signupUserDto) {
         try {
             // Attempt to create the user and save credentials
             User savedUser = userService.save(signupUserDto);
@@ -38,8 +41,9 @@ public class AuthController {
     }
 
     @PostMapping("sign-in")
-    public ResponseEntity<?> signIn(@RequestBody SigninUserDto signinUserDto) {
-        User user = authService.signInAndReturnJwt(signinUserDto);
-        return ResponseEntity.ok(new ResponseUserDto(user));
+    public ResponseEntity<?> signIn(@RequestBody UserSigninDTO signinUserDto, HttpServletRequest request) {
+        User user = authService.signInAndReturnJwt(signinUserDto, request);
+        return ResponseEntity.ok(new UserResponseDTO(user));
     }
+
 }

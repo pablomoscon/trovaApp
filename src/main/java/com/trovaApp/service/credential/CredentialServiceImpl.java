@@ -12,11 +12,15 @@ import java.util.UUID;
 @Service
 public class CredentialServiceImpl implements CredentialService {
 
-    @Autowired
-    private CredentialRepository credentialRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final CredentialRepository credentialRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    public CredentialServiceImpl(PasswordEncoder passwordEncoder, CredentialRepository credentialRepository) {
+        this.passwordEncoder = passwordEncoder;
+        this.credentialRepository = credentialRepository;
+    }
+
 
     @Override
     public Credential createAndSaveCredential(String password) {
