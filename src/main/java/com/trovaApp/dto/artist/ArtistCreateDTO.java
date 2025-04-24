@@ -13,9 +13,11 @@ public class ArtistCreateDTO {
     @Size(max = 500, message = "Details can have at most 500 characters")
     private String details;
 
+    @NotBlank(message = "Nationality is required")
     @Size(max = 100, message = "Nationality can have at most 100 characters")
     private String nationality;
 
+    @NotBlank(message = "Photo is required")
     @Pattern(
             regexp = "^(https?://.*|/.*)?$",
             message = "Photo must be a valid URL or a relative path"

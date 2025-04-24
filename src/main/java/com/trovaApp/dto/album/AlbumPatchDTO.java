@@ -1,14 +1,11 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongDTO;
 import com.trovaApp.enums.Genre;
 
-import java.util.List;
 import java.util.Set;
 
 public class AlbumPatchDTO {
     private String title;
-    private List<SongDTO> listOfSongs;
     private String details;
     private String cdNumber;
     private String photo;
@@ -21,9 +18,6 @@ public class AlbumPatchDTO {
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
-
-    public List<SongDTO> getListOfSongs() { return listOfSongs; }
-    public void setListOfSongs(List<SongDTO> listOfSongs) { this.listOfSongs = listOfSongs; }
 
     public String getDetails() { return details; }
     public void setDetails(String details) { this.details = details; }

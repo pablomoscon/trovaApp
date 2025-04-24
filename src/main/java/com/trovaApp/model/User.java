@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.trovaApp.enums.Role;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import com.trovaApp.enums.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -31,6 +33,10 @@ public class User {
     @Column(nullable = false)
     private Role role = Role.USER;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status = Status.ACTIVE;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -42,11 +48,12 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, String name, Role role) {
+    public User(String username, String email, String name, Role role, Status status) {
         this.username = username;
         this.email = email;
         this.name = name;
         this.role = role;
+        this.status = status;
     }
 
     @PrePersist
@@ -57,6 +64,14 @@ public class User {
     // Getters y Setters
     public UUID getId() {
         return id;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getUsername() {
@@ -94,6 +109,7 @@ public class User {
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
+
 
     public Credential getCredential() {
         return credential;

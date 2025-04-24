@@ -2,7 +2,7 @@ package com.trovaApp.service.album;
 
 import com.trovaApp.dto.album.AlbumCreateDTO;
 import com.trovaApp.dto.album.AlbumPatchDTO;
-import com.trovaApp.dto.song.SongDTO;
+import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.exception.AlbumNotFoundException;
 import com.trovaApp.exception.ArtistNotFoundException;
 import com.trovaApp.model.Album;
@@ -47,7 +47,7 @@ public class AlbumServiceImpl implements AlbumService {
         album.setArtist(artist);
         album.setDisplayArtistName(albumCreateDTO.getDisplayArtistName());
 
-        List<SongDTO> songDTOs = albumCreateDTO.getListOfSongs();
+        List<SongCreateDTO> songDTOs = albumCreateDTO.getListOfSongs();
         List<Song> songs = songService.create(songDTOs, album, artist);
 
         album.setListOfSongs(songs);
@@ -67,9 +67,9 @@ public class AlbumServiceImpl implements AlbumService {
         Album album = albumRepository.findWithDetailsById(albumId)
                 .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
 
-        Set<SongDTO> songDTOs = new HashSet<>();
+        Set<SongCreateDTO> songDTOs = new HashSet<>();
         for (Song song : album.getListOfSongs()) {
-            songDTOs.add(SongDTO.fromSong(song));
+            songDTOs.add(SongCreateDTO.fromSong(song));
         }
         return album;
     }
@@ -88,19 +88,16 @@ public class AlbumServiceImpl implements AlbumService {
         Optional.ofNullable(dto.getGenres()).ifPresent(album::setGenres);
         Optional.ofNullable(dto.getDisplayArtistName()).ifPresent(album::setDisplayArtistName);
 
+
         if (dto.getArtistId() != null) {
             Artist artist = artistService.findById(dto.getArtistId())
-                    .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
+                    .orElseThrow(() -> new ArtistNotFoundException("Artist not found"));
             album.setArtist(artist);
-        }
-
-        if (dto.getListOfSongs() != null) {
-            List<Song> songs = songService.create(dto.getListOfSongs(), album, album.getArtist());
-            album.setListOfSongs(songs);
         }
 
         return albumRepository.save(album);
     }
+
 
     @Override
     public void deleteById(Long id) {

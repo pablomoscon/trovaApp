@@ -1,6 +1,6 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongDTO;
+import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.enums.Genre;
 import com.trovaApp.model.Album;
 import com.trovaApp.model.Song;
@@ -17,7 +17,7 @@ public class AlbumResponseDTO {
     private String cdNumber;
     private String photo;
     private Integer year;
-    private List<SongDTO> listOfSongs;  // Cambio de Set<String> a Set<SongDTO>
+    private List<SongCreateDTO> listOfSongs;
     private Set<Genre> genres;
     private String artistName;
     private String displayArtistName;
@@ -71,11 +71,11 @@ public class AlbumResponseDTO {
         this.year = year;
     }
 
-    public List<SongDTO> getListOfSongs() {
+    public List<SongCreateDTO> getListOfSongs() {
         return listOfSongs;
     }
 
-    public void setListOfSongs(List<SongDTO> listOfSongs) {
+    public void setListOfSongs(List<SongCreateDTO> listOfSongs) {
         this.listOfSongs = listOfSongs;
     }
 
@@ -112,8 +112,8 @@ public class AlbumResponseDTO {
         dto.setPhoto(album.getPhoto());
         dto.setYear(album.getYear());
 
-        List<SongDTO> songDTOs = new ArrayList<>();
-        Set<Long> songIds = new HashSet<>(); // Usamos Set para evitar duplicados
+        List<SongCreateDTO> songDTOs = new ArrayList<>();
+        Set<Long> songIds = new HashSet<>();
 
         Long albumArtistId = album.getArtist() != null ? album.getArtist().getId() : null;
 
@@ -121,8 +121,8 @@ public class AlbumResponseDTO {
             if (song.getArtist() != null &&
                     song.getArtist().getId().equals(albumArtistId) &&
                     song.getId() != null &&
-                    songIds.add(song.getId())) { // add devuelve false si ya estaba
-                songDTOs.add(SongDTO.fromSong(song));
+                    songIds.add(song.getId())) {
+                songDTOs.add(SongCreateDTO.fromSong(song));
             }
         }
 

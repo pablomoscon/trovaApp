@@ -1,5 +1,6 @@
 package com.trovaApp.service.user;
 
+import com.trovaApp.dto.user.UserPatchDTO;
 import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.enums.Role;
 import com.trovaApp.exception.*;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -88,6 +90,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional <User> findById(UUID userId) {
+        return userRepository.findById(userId);
+    }
+
+    @Override
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -97,4 +104,39 @@ public class UserServiceImpl implements UserService {
     public void changeRole(Role newRole, String username) {
         userRepository.updateUserRole(username, newRole);
     }
+
+    @Transactional
+    @Override
+    public User patchUser(UUID userId, UserPatchDTO userPatchDTO) {
+        User user = this.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+
+        String newUsername = userPatchDTO.getNewUsername();
+        String newEmail = userPatchDTO.getNewEmail();
+        String newName = userPatchDTO.getNewName();
+
+        if (newUsername != null && !newUsername.equals(user.getUsername())) {
+            if (newUsername.length() < 7) {
+                throw new IllegalArgumentException("Username must be at least 7 characters long");
+            }
+            if (userRepository.findByUsername(newUsername).isPresent()) {
+                throw new UsernameAlreadyExistsException("Username is already in use");
+            }
+            user.setUsername(newUsername);
+        }
+
+        if (newEmail != null && !newEmail.equals(user.getEmail())) {
+            if (userRepository.findByEmail(newEmail).isPresent()) {
+                throw new EmailAlreadyExistsException("Email is already in use");
+            }
+            user.setEmail(newEmail);
+        }
+
+        if (newName != null && !newName.equals(user.getName())) {
+            user.setName(newName);
+        }
+
+        return userRepository.save(user);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.trovaApp.security.jwt;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,11 +35,21 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             return;
         }
 
-        Authentication authentication = jwtProvider.getAuthentication(request);
-        if (authentication != null && jwtProvider.isTokenValid(request)) {
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-        }
+        try {
+            Authentication authentication = jwtProvider.getAuthentication(request);
+            if (authentication != null && jwtProvider.isTokenValid(request)) {
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
 
-        filterChain.doFilter(request, response);
+            filterChain.doFilter(request, response);
+        } catch (ExpiredJwtException ex) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json");
+            response.getWriter().write("{\"message\": \"Token expired. Please log in again.\"}");
+        } catch (Exception ex) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json");
+            response.getWriter().write("{\"message\": \"Unauthorized access.\"}");
+        }
     }
 }

@@ -1,6 +1,6 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongDTO;
+import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.enums.Genre;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -16,7 +16,7 @@ public class AlbumCreateDTO {
 
     @NotEmpty(message = "Album must contain at least one song")
     @Valid
-    private List<@Valid SongDTO> listOfSongs;
+    private List<@Valid SongCreateDTO> listOfSongs;
 
     @Size(max = 500, message = "Details can have at most 500 characters")
     private String details;
@@ -50,8 +50,8 @@ public class AlbumCreateDTO {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
-    public List<SongDTO> getListOfSongs() { return listOfSongs; }
-    public void setListOfSongs(List<SongDTO> listOfSongs) { this.listOfSongs = listOfSongs; }
+    public List<SongCreateDTO> getListOfSongs() { return listOfSongs; }
+    public void setListOfSongs(List<SongCreateDTO> listOfSongs) { this.listOfSongs = listOfSongs; }
 
     public String getDetails() { return details; }
     public void setDetails(String details) { this.details = details; }

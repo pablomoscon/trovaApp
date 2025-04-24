@@ -45,7 +45,6 @@ public class LoginAttemptService {
             if (elapsed < BLOCK_TIME_MS) {
                 return true;
             } else {
-                // Tiempo de bloqueo expirado
                 attemptsCache.remove(key);
                 return false;
             }

@@ -19,7 +19,7 @@ public class AuthServiceImpl implements AuthService {
 
     private final AuthenticationManager authenticationManager;
     private final JwtProvider jwtProvider;
-    private LoginAttemptService loginAttemptService;
+    private final LoginAttemptService loginAttemptService;
 
     @Autowired
     public AuthServiceImpl(AuthenticationManager authenticationManager, JwtProvider jwtProvider, LoginAttemptService loginAttemptService) {
