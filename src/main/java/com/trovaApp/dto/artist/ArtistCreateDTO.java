@@ -1,8 +1,10 @@
 package com.trovaApp.dto.artist;
 
+import com.trovaApp.enums.Status;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+
+import java.util.UUID;
 
 public class ArtistCreateDTO {
 
@@ -17,21 +19,20 @@ public class ArtistCreateDTO {
     @Size(max = 100, message = "Nationality can have at most 100 characters")
     private String nationality;
 
-    @NotBlank(message = "Photo is required")
-    @Pattern(
-            regexp = "^(https?://.*|/.*)?$",
-            message = "Photo must be a valid URL or a relative path"
-    )
-    private String photo; // <- Nuevo campo con validación opcional
+    @NotBlank(message = "User ID is required")
+    private UUID userId;
+
+    @NotBlank(message = "Status is required")
+    private Status status;
 
     public ArtistCreateDTO() {
     }
 
-    public ArtistCreateDTO(String name, String details, String nationality, String photo) {
+    public ArtistCreateDTO(String name, String details, String nationality, Status status) {
         this.name = name;
         this.details = details;
         this.nationality = nationality;
-        this.photo = photo;
+        this.status = status;
     }
 
     // Getters y setters
@@ -59,11 +60,15 @@ public class ArtistCreateDTO {
         this.nationality = nationality;
     }
 
-    public String getPhoto() {
-        return photo;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

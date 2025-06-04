@@ -1,4 +1,4 @@
-package com.trovaApp.utils;
+package com.trovaApp.util;
 
 import jakarta.servlet.http.HttpServletRequest;
 

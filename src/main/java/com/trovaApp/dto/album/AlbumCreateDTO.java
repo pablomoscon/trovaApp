@@ -4,6 +4,7 @@ import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.enums.Genre;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Set;
@@ -23,12 +24,6 @@ public class AlbumCreateDTO {
 
     @Size(max = 20, message = "CD number must have at most 20 characters")
     private String cdNumber;
-
-    @Pattern(
-            regexp = "^(https?://.*|/.*)?$",
-            message = "Photo must be a valid URL or a relative path"
-    )
-    private String photo;
 
     @NotNull(message = "Year is required")
     @Min(value = 1900, message = "Year must be greater than or equal to 1900")
@@ -58,9 +53,6 @@ public class AlbumCreateDTO {
 
     public String getCdNumber() { return cdNumber; }
     public void setCdNumber(String cdNumber) { this.cdNumber = cdNumber; }
-
-    public String getPhoto() { return photo; }
-    public void setPhoto(String photo) { this.photo = photo; }
 
     public Integer getYear() { return year; }
     public void setYear(Integer year) { this.year = year; }

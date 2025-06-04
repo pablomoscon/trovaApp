@@ -3,6 +3,8 @@ package com.trovaApp.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.trovaApp.enums.Role;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import com.trovaApp.enums.Status;
@@ -39,6 +41,15 @@ public class User {
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "last_login")
+    private LocalDateTime lastLogin;
+
+    @Column(name = "failed_login_attempts", nullable = false)
+    private int failedLoginAttempts = 0;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Activity> activities = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true)
     @JoinColumn(name = "credential_id", referencedColumnName = "id", nullable = false)
@@ -110,12 +121,41 @@ public class User {
         return createdAt;
     }
 
-
     public Credential getCredential() {
         return credential;
     }
 
     public void setCredential(Credential credential) {
         this.credential = credential;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void addActivity(Activity activity) {
+        activities.add(activity);
+        activity.setUser(this);
+    }
+
+    public void removeActivity(Activity activity) {
+        activities.remove(activity);
+        activity.setUser(null);
+    }
+
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+    public int getFailedLoginAttempts() {
+        return failedLoginAttempts;
+    }
+
+    public void setFailedLoginAttempts(int failedLoginAttempts) {
+        this.failedLoginAttempts = failedLoginAttempts;
     }
 }

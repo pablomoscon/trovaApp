@@ -1,5 +1,6 @@
 package com.trovaApp.exception;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.trovaApp.enums.Genre;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -75,4 +76,17 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponse("Internal server error", ex.getMessage(), 500));
     }
 
+    @ExceptionHandler(InvalidImageException.class)
+    public ResponseEntity<ErrorResponse> handleInvalidImageException(InvalidImageException e) {
+        return ResponseEntity.badRequest().body(
+                new ErrorResponse("Invalid image", e.getMessage(), HttpStatus.BAD_REQUEST.value())
+        );
+    }
+
+    @ExceptionHandler(JsonProcessingException.class)
+    public ResponseEntity<ErrorResponse> handleJsonProcessingException(JsonProcessingException e) {
+        return ResponseEntity.badRequest().body(
+                new ErrorResponse("Invalid Album JSON", e.getOriginalMessage(), HttpStatus.BAD_REQUEST.value())
+        );
+    }
 }

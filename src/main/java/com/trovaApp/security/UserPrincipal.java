@@ -6,17 +6,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.UUID;
 
 public class UserPrincipal implements UserDetails {
 
-    private String id;
+    private UUID id;
     private String username;
     transient private String password;
     transient private User user;
     private Set<GrantedAuthority> authorities;
 
     // Private constructor to enforce instantiation through the Builder
-    private UserPrincipal(String id, String username, User user, String password, Set<GrantedAuthority> authorities) {
+    private UserPrincipal(UUID id, String username, User user, String password, Set<GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.user = user;
@@ -25,7 +26,7 @@ public class UserPrincipal implements UserDetails {
     }
 
     // Getter for ID
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -71,13 +72,13 @@ public class UserPrincipal implements UserDetails {
 
     // --- BUILDER ---
     public static class Builder {
-        private String id;
+        private UUID id;
         private String username;
         private User user;
         private String password;
         private Set<GrantedAuthority> authorities;
 
-        public Builder id(String id) {
+        public Builder id(UUID id) {
             this.id = id;
             return this;
         }

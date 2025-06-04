@@ -2,7 +2,7 @@ package com.trovaApp.security;
 
 import com.trovaApp.model.User;
 import com.trovaApp.service.user.UserService;
-import com.trovaApp.utils.SecurityUtils;
+import com.trovaApp.util.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +33,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
         return UserPrincipal.builder()
                 .user(user)
-                .id(user.getId().toString())
+                .id(user.getId())
                 .username(user.getUsername())
                 .password(user.getCredential().getPassword())
                 .authorities(authorities)

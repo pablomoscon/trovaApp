@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -22,4 +23,12 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     @Query("SELECT u FROM User u LEFT JOIN FETCH u.credential WHERE u.username = :username")
     Optional<User> findByUsernameWithCredentials(@Param("username") String username);
+
+    @Query("SELECT u FROM User u LEFT JOIN FETCH u.activities")
+    List<User> findAllWithActivities();
+
+    @Query("select u from User u left join fetch u.activities where u.id = :id")
+    Optional<User> findByIdWithActivities(@Param("id") UUID id);
 }
+
+

@@ -2,13 +2,11 @@ package com.trovaApp.dto.album;
 
 import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.enums.Genre;
+import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
 import com.trovaApp.model.Song;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class AlbumResponseDTO {
     private Long id;
@@ -21,6 +19,8 @@ public class AlbumResponseDTO {
     private Set<Genre> genres;
     private String artistName;
     private String displayArtistName;
+    private Status status;
+    private Date createdAt;
 
     // Getters y setters
     public Long getId() {
@@ -99,6 +99,14 @@ public class AlbumResponseDTO {
         return displayArtistName;
     }
 
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
+
+    public Date getCreatedAt() { return createdAt; }
+
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
+
     public void setDisplayArtistName(String displayArtistName) {
         this.displayArtistName = displayArtistName;
     }
@@ -111,6 +119,8 @@ public class AlbumResponseDTO {
         dto.setCdNumber(album.getCdNumber());
         dto.setPhoto(album.getPhoto());
         dto.setYear(album.getYear());
+        dto.setStatus(album.getStatus());
+        dto.setCreatedAt(album.getCreatedAt());
 
         List<SongCreateDTO> songDTOs = new ArrayList<>();
         Set<Long> songIds = new HashSet<>();

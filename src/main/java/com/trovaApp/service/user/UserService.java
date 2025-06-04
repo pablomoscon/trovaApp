@@ -4,7 +4,7 @@ import com.trovaApp.dto.user.UserPatchDTO;
 import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.enums.Role;
 import com.trovaApp.model.User;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +15,10 @@ public interface UserService {
 
     List<User> findAll();
 
-    Optional <User> findById(UUID id);
+    @Transactional(readOnly = true)
+    User findByIdWithActivities(UUID userId);
+
+    User findById(UUID id);
 
     Optional<User> findByUsername(String username);
 
@@ -23,4 +26,14 @@ public interface UserService {
 
     @Transactional
     User patchUser(UUID userId, UserPatchDTO userPatchDTO);
+
+    void delete(UUID id);
+
+    void suspendUser(UUID id);
+
+    void updateLastLogin(UUID userId);
+
+    @Transactional
+    void incrementFailedLoginAttempts(String username);
+
 }

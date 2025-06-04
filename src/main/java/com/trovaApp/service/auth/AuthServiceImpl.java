@@ -6,7 +6,8 @@ import com.trovaApp.model.User;
 import com.trovaApp.security.UserPrincipal;
 import com.trovaApp.security.bruteforce.LoginAttemptService;
 import com.trovaApp.security.jwt.JwtProvider;
-import com.trovaApp.utils.IpUtils;
+import com.trovaApp.service.user.UserService;
+import com.trovaApp.util.IpUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,12 +21,17 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtProvider jwtProvider;
     private final LoginAttemptService loginAttemptService;
+    private final UserService userService;
 
     @Autowired
-    public AuthServiceImpl(AuthenticationManager authenticationManager, JwtProvider jwtProvider, LoginAttemptService loginAttemptService) {
+    public AuthServiceImpl(AuthenticationManager authenticationManager,
+                           JwtProvider jwtProvider,
+                           LoginAttemptService loginAttemptService,
+                           UserService userService) {
         this.authenticationManager = authenticationManager;
         this.jwtProvider = jwtProvider;
         this.loginAttemptService = loginAttemptService;
+        this.userService = userService;
     }
 
     @Override
@@ -55,11 +61,15 @@ public class AuthServiceImpl implements AuthService {
                 throw new RuntimeException("User's credential not found.");
             }
 
+            userService.updateLastLogin(signInUser.getId());
+
             return signInUser;
 
-        } catch (Exception e) {
+        } catch (Exception exception) {
             loginAttemptService.loginFailed(username, ip);
-            throw e;
+            userService.incrementFailedLoginAttempts(username);
+
+            throw exception;
         }
     }
 }

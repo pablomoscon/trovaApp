@@ -1,5 +1,6 @@
 package com.trovaApp.dto.artist;
 
+import com.trovaApp.enums.Status;
 import com.trovaApp.model.Artist;
 
 public class ArtistBasicResponseDTO {
@@ -9,16 +10,18 @@ public class ArtistBasicResponseDTO {
     private String details;
     private String nationality;
     private String photo;
+    private Status status;
 
     public ArtistBasicResponseDTO() {
     }
 
-    public ArtistBasicResponseDTO(Long id, String name, String details, String nationality, String photo) {
+    public ArtistBasicResponseDTO(Long id, String name, String details, String nationality, String photo, Status status) {
         this.id = id;
         this.name = name;
         this.details = details;
         this.nationality = nationality;
         this.photo = photo;
+        this.status = status;
     }
 
     // Factory method para mapear desde la entidad
@@ -28,7 +31,8 @@ public class ArtistBasicResponseDTO {
                 artist.getName(),
                 artist.getDetails(),
                 artist.getNationality(),
-                artist.getPhoto()
+                artist.getPhoto(),
+                artist.getStatus()
         );
     }
 
@@ -73,4 +77,8 @@ public class ArtistBasicResponseDTO {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

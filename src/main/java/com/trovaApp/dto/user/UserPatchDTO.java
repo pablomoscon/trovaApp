@@ -1,5 +1,7 @@
 package com.trovaApp.dto.user;
 
+import com.trovaApp.enums.Role;
+import com.trovaApp.enums.Status;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 
@@ -10,25 +12,36 @@ public class UserPatchDTO {
     private UUID userId;
 
     @Size(min = 7, message = "Username must be at least 7 characters long")
-    private String newUsername;
+    private String username;
 
     @Email(message = "Email is invalid")
-    private String newEmail;
+    private String email;
 
-    private String newName;
+    private String name;
+    private Role role;
+    private Status status;
 
-    // Constructor vacío
+
+    // Empty constructor
     public UserPatchDTO() {}
 
-    // Constructor con parámetros
-    public UserPatchDTO(UUID userId, String newUsername, String newEmail, String newName) {
+    // Constructor with all fields
+    public UserPatchDTO(UUID userId,
+                        String username,
+                        String email,
+                        String name,
+                        Role role,
+                        Status status) {
+
         this.userId = userId;
-        this.newUsername = newUsername;
-        this.newEmail = newEmail;
-        this.newName = newName;
+        this.username= username;
+        this.email = email;
+        this.name = name;
+        this.role = role;
+        this.status = status;
     }
 
-    // Getters y setters
+    // Getters and setters
     public UUID getUserId() {
         return userId;
     }
@@ -37,27 +50,43 @@ public class UserPatchDTO {
         this.userId = userId;
     }
 
-    public String getNewUsername() {
-        return newUsername;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNewUsername(String newUsername) {
-        this.newUsername = newUsername;
+    public void setUsername(String newUsername) {
+        this.username = username;
     }
 
-    public String getNewEmail() {
-        return newEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNewEmail(String newEmail) {
-        this.newEmail = newEmail;
+    public void setNewEmail(String email) {
+        this.email = email;
     }
 
-    public String getNewName() {
-        return newName;
+    public String getName() {
+        return name;
     }
 
-    public void setNewName(String newName) {
-        this.newName = newName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

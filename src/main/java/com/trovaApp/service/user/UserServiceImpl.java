@@ -3,15 +3,18 @@ package com.trovaApp.service.user;
 import com.trovaApp.dto.user.UserPatchDTO;
 import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.enums.Role;
+import com.trovaApp.enums.Status;
 import com.trovaApp.exception.*;
 import com.trovaApp.model.Credential;
 import com.trovaApp.model.User;
 import com.trovaApp.repository.UserRepository;
+import com.trovaApp.service.activity.ActivityService;
 import com.trovaApp.service.credential.CredentialService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -21,11 +24,15 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final CredentialService credentialService;
+    private final ActivityService activityService;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, CredentialService credentialService) {
+    public UserServiceImpl(UserRepository userRepository,
+                           CredentialService credentialService,
+                           ActivityService activityService) {
         this.userRepository = userRepository;
         this.credentialService = credentialService;
+        this.activityService = activityService;
     }
 
     @Override
@@ -45,7 +52,9 @@ public class UserServiceImpl implements UserService {
         // Validate password format
         String password = signupUserDto.getPassword();
         if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+]).{6,}$")) {
-            throw new InvalidPasswordFormatException("Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character");
+            throw new InvalidPasswordFormatException(
+                    "Password must contain at least one uppercase letter, one lowercase letter, " +
+                            "one digit, and one special character");
         }
 
         // Validate the username length
@@ -72,6 +81,8 @@ public class UserServiceImpl implements UserService {
         Credential savedCredential = credentialService.createAndSaveCredential(signupUserDto.getPassword());
         user.setCredential(savedCredential);
 
+        activityService.logActivity(user, "Create user: " + user.getUsername());
+
         // Save the user
         return userRepository.save(user);
     }
@@ -84,14 +95,24 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Transactional
     @Override
     public List<User> findAll() {
-        return userRepository.findAll();
+        return userRepository.findAllWithActivities();
     }
 
+    @Transactional(readOnly = true)
     @Override
-    public Optional <User> findById(UUID userId) {
-        return userRepository.findById(userId);
+    public User findByIdWithActivities(UUID userId) {
+        return userRepository.findByIdWithActivities(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+    }
+
+    @Transactional
+    @Override
+    public User findById(UUID userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
     }
 
     @Override
@@ -108,35 +129,82 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public User patchUser(UUID userId, UserPatchDTO userPatchDTO) {
-        User user = this.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+        User user = this.findById(userId);
 
-        String newUsername = userPatchDTO.getNewUsername();
-        String newEmail = userPatchDTO.getNewEmail();
-        String newName = userPatchDTO.getNewName();
+        String username = userPatchDTO.getUsername();
+        String email = userPatchDTO.getEmail();
+        String name = userPatchDTO.getName();
+        Role role = userPatchDTO.getRole();
+        Status status = userPatchDTO.getStatus();
 
-        if (newUsername != null && !newUsername.equals(user.getUsername())) {
-            if (newUsername.length() < 7) {
+        if (username != null && !username.equals(user.getUsername())) {
+            if (username.length() < 7) {
                 throw new IllegalArgumentException("Username must be at least 7 characters long");
             }
-            if (userRepository.findByUsername(newUsername).isPresent()) {
+            if (userRepository.findByUsername(username).isPresent()) {
                 throw new UsernameAlreadyExistsException("Username is already in use");
             }
-            user.setUsername(newUsername);
+            user.setUsername(username);
         }
 
-        if (newEmail != null && !newEmail.equals(user.getEmail())) {
-            if (userRepository.findByEmail(newEmail).isPresent()) {
+        if (email != null && !email.equals(user.getEmail())) {
+            if (userRepository.findByEmail(email).isPresent()) {
                 throw new EmailAlreadyExistsException("Email is already in use");
             }
-            user.setEmail(newEmail);
+            user.setEmail(email);
         }
 
-        if (newName != null && !newName.equals(user.getName())) {
-            user.setName(newName);
+        if (name != null && !name.equals(user.getName())) {
+            user.setName(name);
         }
 
+        if (role != null && !role.equals(user.getRole())) {
+            user.setRole(role);
+        }
+
+        if (status != null && !status.equals(user.getStatus())) {
+            user.setStatus(status);
+        }
+
+        activityService.logActivity(user, "Edit user: " + user.getUsername());
         return userRepository.save(user);
     }
 
+    @Override
+    public void delete(UUID userId) {
+        User user = this.findById(userId);
+
+        user.setStatus(Status.DELETED);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void suspendUser(UUID userId) {
+        User user = this.findById(userId);
+
+        user.setStatus(Status.SUSPENDED);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void updateLastLogin(UUID userId) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setLastLogin(LocalDateTime.now());
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("User with ID " + userId + " not found");
+        }
+    }
+
+    @Transactional
+    @Override
+    public void incrementFailedLoginAttempts(String username) {
+        User user = this.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException("User with username " + username + " not found"));
+
+        user.setFailedLoginAttempts(user.getFailedLoginAttempts() + 1);
+        userRepository.save(user);
+    }
 }

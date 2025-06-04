@@ -59,7 +59,10 @@ public class SecurityConfig {
 
                                 .requestMatchers("/auth/sign-up", "/auth/sign-in").permitAll()
 
-                                .requestMatchers(HttpMethod.GET, "/albums/**", "/artist/**").permitAll()
+                                .requestMatchers(HttpMethod.GET,
+                                        "/albums/**",
+                                        "/artist/**")
+                                .permitAll()
 
                                 .anyRequest().authenticated()
                 )

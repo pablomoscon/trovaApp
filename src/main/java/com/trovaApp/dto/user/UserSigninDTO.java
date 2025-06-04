@@ -6,10 +6,11 @@ public class UserSigninDTO {
     private String password;
 
 
-    // Constructor vacío
-    public UserSigninDTO() {}
+    // Empty constructor
+    public UserSigninDTO() {
+    }
 
-    // Constructor con parámetros
+    // Constructor with parameters
     public UserSigninDTO(String username, String password) {
         this.username = username;
         this.password = password;

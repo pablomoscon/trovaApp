@@ -1,9 +1,9 @@
 package com.trovaApp.model;
 
 import com.trovaApp.enums.Genre;
+import com.trovaApp.enums.Status;
 import jakarta.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -59,9 +59,24 @@ public class Album {
     @Column(name = "display_artist_name", length = 200)
     private String displayArtistName;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status = Status.ACTIVE;
+
     public Album() {}
 
-    public Album(String photo, String title, List<Song> listOfSongs, String details, String cdNumber, Integer year, Artist artist, Set<Genre> genres, String displayArtistName) {
+    public Album(String photo,
+                 String title,
+                 List<Song> listOfSongs,
+                 String details,
+                 String cdNumber,
+                 Integer year,
+                 Artist artist,
+                 Set<Genre> genres,
+                 String displayArtistName,
+                 Date createdAt,
+                 Status status
+    ) {
         this.photo = photo;
         this.title = title;
         this.listOfSongs = listOfSongs;
@@ -71,6 +86,8 @@ public class Album {
         this.artist = artist;
         this.genres = genres;
         this.displayArtistName = displayArtistName;
+        this.createdAt = createdAt;
+        this.status = status;
     }
 
     @PrePersist
@@ -158,4 +175,8 @@ public class Album {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

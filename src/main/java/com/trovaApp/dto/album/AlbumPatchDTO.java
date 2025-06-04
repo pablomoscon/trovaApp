@@ -1,42 +1,114 @@
 package com.trovaApp.dto.album;
 
 import com.trovaApp.enums.Genre;
+import com.trovaApp.enums.Status;
+import jakarta.validation.constraints.*;
 
 import java.util.Set;
 
 public class AlbumPatchDTO {
+
+    @Size(min = 2, max = 100, message = "Title must be between 2 and 100 characters")
     private String title;
+
+    @Size(max = 500, message = "Details can have at most 500 characters")
     private String details;
+
+    @Size(max = 20, message = "CD number must have at most 20 characters")
     private String cdNumber;
+
+    @Pattern(
+            regexp = "^(https?://.*|/.*)?$",
+            message = "Photo must be a valid URL or relative path"
+    )
     private String photo;
+
+    @Min(value = 1900, message = "Year must be greater than or equal to 1900")
+    @Max(value = 2100, message = "Year must be less than or equal to 2100")
     private Integer year;
-    private Long artistId;
-    private Set<Genre> genres;
+
+    @Size(min = 2, max = 100, message = "Display artist name must be between 2 and 100 characters")
     private String displayArtistName;
 
-    // Getters y Setters
+    @Positive(message = "Artist ID must be a positive number")
+    private Long artistId;
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    @Size(min = 1, message = "At least one genre must be provided if genres are set")
+    private Set<@NotNull(message = "Genres must not contain null values") Genre> genres;
 
-    public String getDetails() { return details; }
-    public void setDetails(String details) { this.details = details; }
+    private Status status;
 
-    public String getCdNumber() { return cdNumber; }
-    public void setCdNumber(String cdNumber) { this.cdNumber = cdNumber; }
+    // --- Getters and Setters ---
 
-    public String getPhoto() { return photo; }
-    public void setPhoto(String photo) { this.photo = photo; }
+    public String getTitle() {
+        return title;
+    }
 
-    public Integer getYear() { return year; }
-    public void setYear(Integer year) { this.year = year; }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public Long getArtistId() { return artistId; }
-    public void setArtistId(Long artistId) { this.artistId = artistId; }
+    public String getDetails() {
+        return details;
+    }
 
-    public Set<Genre> getGenres() { return genres; }
-    public void setGenres(Set<Genre> genres) { this.genres = genres; }
+    public void setDetails(String details) {
+        this.details = details;
+    }
 
-    public String getDisplayArtistName() { return displayArtistName; }
-    public void setDisplayArtistName(String displayArtistName) { this.displayArtistName = displayArtistName; }
+    public String getCdNumber() {
+        return cdNumber;
+    }
+
+    public void setCdNumber(String cdNumber) {
+        this.cdNumber = cdNumber;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getDisplayArtistName() {
+        return displayArtistName;
+    }
+
+    public void setDisplayArtistName(String displayArtistName) {
+        this.displayArtistName = displayArtistName;
+    }
+
+    public Long getArtistId() {
+        return artistId;
+    }
+
+    public void setArtistId(Long artistId) {
+        this.artistId = artistId;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

@@ -1,7 +1,9 @@
 package com.trovaApp.model;
 
+import com.trovaApp.enums.Status;
 import jakarta.persistence.*;
 
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -22,8 +24,16 @@ public class Artist {
     @Column(name = "nationality", length = 100)
     private String nationality;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Date createdAt;
+
     @Column(name = "photo", columnDefinition = "TEXT") // <- Nuevo campo
     private String photo;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status = Status.ACTIVE;
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Album> albums;
@@ -34,11 +44,23 @@ public class Artist {
     public Artist() {
     }
 
-    public Artist(String name, String details, String nationality, String photo) {
+    public Artist(String name,
+                  String details,
+                  String nationality,
+                  String photo,
+                  Status status
+    ) {
         this.name = name;
         this.details = details;
         this.nationality = nationality;
         this.photo = photo;
+        this.createdAt = getCreatedAt();
+        this.status = status;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = new Date();
     }
 
     // Getters y Setters
@@ -92,5 +114,21 @@ public class Artist {
 
     public void setSongs(Set<Song> songs) {
         this.songs = songs;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
