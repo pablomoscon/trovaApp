@@ -4,6 +4,8 @@ import com.trovaApp.dto.user.UserPatchDTO;
 import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.enums.Role;
 import com.trovaApp.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -13,7 +15,8 @@ import java.util.UUID;
 public interface UserService {
     User save(UserSignupDTO userDto);
 
-    List<User> findAll();
+    @Transactional
+    Page<User> findAll(Pageable pageable);
 
     @Transactional(readOnly = true)
     User findByIdWithActivities(UUID userId);
@@ -36,4 +39,14 @@ public interface UserService {
     @Transactional
     void incrementFailedLoginAttempts(String username);
 
+    long getTotalUsers();
+
+    long getSuspendedUsers();
+
+    long getActiveUsers();
+
+    long getDeletedUsers();
+
+    @Transactional(readOnly = true)
+    Page<User> search(String term, int page, int size);
 }

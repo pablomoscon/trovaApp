@@ -1,13 +1,14 @@
 package com.trovaApp.service.artist;
 
-import com.trovaApp.dto.artist.ArtistBasicResponseDTO;
 import com.trovaApp.dto.artist.ArtistCreateDTO;
 import com.trovaApp.dto.artist.ArtistPatchDTO;
+import com.trovaApp.enums.Status;
 import com.trovaApp.exception.ArtistNotFoundException;
 import com.trovaApp.helper.S3Helper;
 import com.trovaApp.helper.UserHelper;
 import com.trovaApp.model.Artist;
-import com.trovaApp.repository.ArtistRepository;;
+import com.trovaApp.repository.ArtistRepository;
+import com.trovaApp.service.visit.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -20,15 +21,18 @@ import java.util.Optional;
 public class ArtistServiceImpl implements ArtistService {
 
     private final ArtistRepository artistRepository;
+    private final VisitService visitService;
     private final UserHelper userHelper;
     private final S3Helper s3Helper;
 
     @Autowired
     public ArtistServiceImpl(ArtistRepository artistRepository,
+                             VisitService visitService,
                              UserHelper userHelper,
                              S3Helper s3Helper
     ) {
         this.artistRepository = artistRepository;
+        this.visitService = visitService;
         this.userHelper = userHelper;
         this.s3Helper = s3Helper;
     }
@@ -53,10 +57,9 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Transactional(readOnly = true)
     @Override
-    public Page<ArtistBasicResponseDTO> findAll(int page, int size) {
+    public Page<Artist> findAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Artist> artists = artistRepository.findAll(pageable);
-        return artists.map(ArtistBasicResponseDTO::from);
+        return artistRepository.findAll(pageable);
     }
 
     @Transactional(readOnly = true)
@@ -66,29 +69,79 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
-    public Artist patchArtist(Long id, ArtistPatchDTO dto) {
+    public Artist patchArtist(Long id,
+                              ArtistPatchDTO dto,
+                              MultipartFile photo) {
+
         Artist artist = artistRepository.findById(id)
                 .orElseThrow(() -> new ArtistNotFoundException("Artist not found"));
 
         if (dto.getName() != null) artist.setName(dto.getName());
         if (dto.getDetails() != null) artist.setDetails(dto.getDetails());
         if (dto.getNationality() != null) artist.setNationality(dto.getNationality());
-        if (dto.getPhoto() != null) artist.setPhoto(dto.getPhoto());
         if (dto.getStatus() != null) artist.setStatus(dto.getStatus());
 
-        userHelper.logActivity("Updated artist: " + artist.getName());
+        if (photo != null && !photo.isEmpty()) {
+            String url = s3Helper.uploadPhoto(photo);
+            artist.setPhoto(url);
+        } else if (dto.getPhotoUrl() != null) {
+            artist.setPhoto(dto.getPhotoUrl());
+        }
 
+        userHelper.logActivity("Updated artist: " + artist.getName());
         return artistRepository.save(artist);
     }
 
     @Override
     public void deleteById(Long id) {
-
         Artist artist = artistRepository.findById(id)
                 .orElseThrow(() -> new ArtistNotFoundException("Artist not found"));
+
+        visitService.deleteByArtistId(id);
 
         userHelper.logActivity("Delete artist: " + artist.getName());
 
         artistRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<Artist> findByName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Artist name must not be null or empty");
+        }
+        return artistRepository.findByName(name.trim());
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Page<Artist> search(String term, int page, int size) {
+        if (term == null || term.trim().isEmpty()) {
+            // Empty term → return first page of all artists
+            return findAll(page, size);
+        }
+        Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
+        return artistRepository.searchByTerm(term.trim(), pageable);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Page<Artist> findAllWithAlbums(Pageable pageable) {
+        return artistRepository.findAll(pageable);
+    }
+
+    @Override
+    public long getTotalArtists() {
+        return artistRepository.count();
+    }
+
+    @Override
+    public long getActiveArtist() {
+        return artistRepository.countByStatus(Status.ACTIVE);
+    }
+
+    @Override
+    public long getSuspendedArtists() {
+        return artistRepository.countByStatus(Status.SUSPENDED);
     }
 }

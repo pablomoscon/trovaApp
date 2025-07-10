@@ -25,7 +25,7 @@ public class ArtistBasicResponseDTO {
     }
 
     // Factory method para mapear desde la entidad
-    public static ArtistBasicResponseDTO from(Artist artist) {
+    public static ArtistBasicResponseDTO fromModel(Artist artist) {
         return new ArtistBasicResponseDTO(
                 artist.getId(),
                 artist.getName(),

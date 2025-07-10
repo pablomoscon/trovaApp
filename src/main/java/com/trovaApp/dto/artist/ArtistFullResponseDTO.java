@@ -19,8 +19,7 @@ public class ArtistFullResponseDTO {
     private Set<AlbumResponseDTO> albums;
     private Status status;
 
-    public ArtistFullResponseDTO() {
-    }
+    public ArtistFullResponseDTO() {}
 
     public ArtistFullResponseDTO(Long id,
                                  String name,
@@ -29,8 +28,7 @@ public class ArtistFullResponseDTO {
                                  String photo,
                                  Set<AlbumResponseDTO> albums,
                                  Date createdAt,
-                                 Status status
-    ) {
+                                 Status status) {
         this.id = id;
         this.name = name;
         this.details = details;
@@ -41,11 +39,11 @@ public class ArtistFullResponseDTO {
         this.status = status;
     }
 
-    // Factory method para mapear desde la entidad
-
+    // Static factory method
     public static ArtistFullResponseDTO from(Artist artist) {
-        Set<AlbumResponseDTO> albumDTOs = artist.getAlbums().stream().map(
-                        AlbumResponseDTO::fromModel).collect(Collectors.toSet());
+        Set<AlbumResponseDTO> albumDTOs = artist.getAlbums().stream()
+                .map(AlbumResponseDTO::fromModel)
+                .collect(Collectors.toSet());
 
         return new ArtistFullResponseDTO(
                 artist.getId(),
@@ -55,18 +53,16 @@ public class ArtistFullResponseDTO {
                 artist.getPhoto(),
                 albumDTOs,
                 artist.getCreatedAt(),
-                artist.getStatus());
+                artist.getStatus()
+        );
     }
 
-    // Getters y Setters
-
-    public Long getId()
-    {
+    // Getters and setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(Long id)
-    {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -75,56 +71,39 @@ public class ArtistFullResponseDTO {
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
 
     public String getDetails() {
-
         return details;
     }
 
-    public void setDetails(String details)
-    {
+    public void setDetails(String details) {
         this.details = details;
     }
 
     public String getNationality() {
-
         return nationality;
     }
 
     public void setNationality(String nationality) {
-
         this.nationality = nationality;
     }
 
     public String getPhoto() {
-
         return photo;
     }
 
     public void setPhoto(String photo) {
-
         this.photo = photo;
     }
 
     public Set<AlbumResponseDTO> getAlbums() {
-
         return albums;
     }
 
     public void setAlbums(Set<AlbumResponseDTO> albums) {
-
         this.albums = albums;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
     }
 
     public Date getCreatedAt() {
@@ -133,5 +112,13 @@ public class ArtistFullResponseDTO {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

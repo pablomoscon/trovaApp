@@ -1,7 +1,11 @@
 package com.trovaApp.repository;
 
 import com.trovaApp.enums.Role;
+import com.trovaApp.enums.Status;
 import com.trovaApp.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -17,6 +21,9 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     Optional<User> findByEmail(String email);
 
+    @EntityGraph(attributePaths = {"activities"})
+    Optional<User> findWithActivitiesById(UUID id);
+
     @Modifying
     @Query("UPDATE User u SET u.role = :role WHERE u.username = :username")
     void updateUserRole(@Param("username") String username, @Param("role") Role role);
@@ -24,11 +31,19 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     @Query("SELECT u FROM User u LEFT JOIN FETCH u.credential WHERE u.username = :username")
     Optional<User> findByUsernameWithCredentials(@Param("username") String username);
 
-    @Query("SELECT u FROM User u LEFT JOIN FETCH u.activities")
-    List<User> findAllWithActivities();
+    @EntityGraph(attributePaths = {"activities"})
+    Page<User> findAllByStatusNot(Status status, Pageable pageable);
 
-    @Query("select u from User u left join fetch u.activities where u.id = :id")
-    Optional<User> findByIdWithActivities(@Param("id") UUID id);
+    @Query("""
+        SELECT u
+        FROM User u
+        WHERE LOWER(u.username) LIKE LOWER(CONCAT('%', :term, '%'))
+           OR LOWER(u.email) LIKE LOWER(CONCAT('%', :term, '%'))
+           OR LOWER(u.name) LIKE LOWER(CONCAT('%', :term, '%'))
+    """)
+    Page<User> searchUsers(@Param("term") String term, Pageable pageable);
+
+    long countByStatus(Status status);
 }
 
 

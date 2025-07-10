@@ -2,6 +2,8 @@ package com.trovaApp.service.album;
 
 import com.trovaApp.dto.album.AlbumCreateDTO;
 import com.trovaApp.dto.album.AlbumPatchDTO;
+import com.trovaApp.enums.Genre;
+import com.trovaApp.enums.Status;
 import com.trovaApp.exception.AlbumNotFoundException;
 import com.trovaApp.exception.ArtistNotFoundException;
 import com.trovaApp.helper.S3Helper;
@@ -15,16 +17,16 @@ import com.trovaApp.service.activity.ActivityService;
 import com.trovaApp.service.artist.ArtistService;
 import com.trovaApp.service.song.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AlbumServiceImpl implements AlbumService {
@@ -87,11 +89,28 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public Page<Album> findAll(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
+
         Page<Long> albumIdsPage = albumRepository.findAllAlbumIds(pageable);
 
-        List<Album> albums = albumRepository.findAllWithDetailsByIds(albumIdsPage.getContent());
+        List<Long> ids = albumIdsPage.getContent();
 
-        return new PageImpl<>(albums, pageable, albumIdsPage.getTotalElements());
+        List<Album> albums = albumRepository.findAllWithDetailsByIds(ids);
+
+        Map<Long, Album> albumMap = albums.stream()
+                .collect(Collectors.toMap(Album::getId, a -> a));
+
+        List<Album> orderedAlbums = ids.stream()
+                .map(albumMap::get)
+                .filter(Objects::nonNull)
+                .toList();
+
+        return new PageImpl<>(orderedAlbums, pageable, albumIdsPage.getTotalElements());
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Optional<Album> findById(Long id) {
+        return albumRepository.findById(id);
     }
 
     @Transactional(readOnly = true)
@@ -101,30 +120,74 @@ public class AlbumServiceImpl implements AlbumService {
                 .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public Page<Album> findFiltered(
+            int page,
+            int size,
+            List<String> artistNames,
+            List<Integer> years,
+            List<Genre> genres
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+
+        List<String> artistNamesNormalized = null;
+        if (artistNames != null && !artistNames.isEmpty()) {
+            artistNamesNormalized = artistNames.stream()
+                    .map(String::toLowerCase)
+                    .collect(Collectors.toList());
+        }
+
+        Page<Long> albumIdsPage = albumRepository.findFilteredAlbumIds(
+                artistNamesNormalized,
+                years,
+                genres,
+                pageable
+        );
+
+        if (albumIdsPage.isEmpty()) {
+            return new PageImpl<>(List.of(), pageable, 0);
+        }
+
+        List<Album> albums = albumRepository.findAllWithDetailsByIds(albumIdsPage.getContent());
+
+        Map<Long, Album> albumMap = albums.stream()
+                .collect(Collectors.toMap(Album::getId, a -> a));
+
+        List<Album> orderedAlbums = albumIdsPage.getContent().stream()
+                .map(albumMap::get)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+
+        return new PageImpl<>(orderedAlbums, pageable, albumIdsPage.getTotalElements());
+    }
+
     @Transactional
     @Override
     public Album patchAlbum(Long id, AlbumPatchDTO dto) {
         Album album = albumRepository.findWithDetailsById(id)
                 .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
 
-        // Update album fields if provided
         Optional.ofNullable(dto.getTitle()).ifPresent(album::setTitle);
         Optional.ofNullable(dto.getDetails()).ifPresent(album::setDetails);
         Optional.ofNullable(dto.getCdNumber()).ifPresent(album::setCdNumber);
-        Optional.ofNullable(dto.getPhoto()).ifPresent(album::setPhoto);
         Optional.ofNullable(dto.getYear()).ifPresent(album::setYear);
         Optional.ofNullable(dto.getGenres()).ifPresent(album::setGenres);
         Optional.ofNullable(dto.getDisplayArtistName()).ifPresent(album::setDisplayArtistName);
         Optional.ofNullable(dto.getStatus()).ifPresent(album::setStatus);
 
-        // If artist ID is provided, update the artist
         if (dto.getArtistId() != null) {
             Artist artist = artistService.findById(dto.getArtistId())
                     .orElseThrow(() -> new ArtistNotFoundException("Artist not found"));
             album.setArtist(artist);
         }
 
-        // Log the user's activity
+        MultipartFile photoFile = dto.getPhoto();
+        if (photoFile != null && !photoFile.isEmpty()) {
+            String photoUrl = s3Helper.uploadPhoto(photoFile);
+            album.setPhoto(photoUrl);
+        }
+
         userHelper.logActivity("Updated album: "
                 + album.getArtist().getName()
                 + " - " + album.getTitle());
@@ -148,9 +211,57 @@ public class AlbumServiceImpl implements AlbumService {
         albumRepository.deleteById(id);
     }
 
+    @Transactional
+    @Override
+    public Album saveRaw(Album album) {
+        return albumRepository.save(album);
+    }
+
     @Transactional(readOnly = true)
     @Override
     public Page<Album> findByArtistId(Long artistId, Pageable pageable) {
         return albumRepository.findByArtistId(artistId, pageable);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Page<Album> search(int page, int size, String query) {
+        if (query == null || query.trim().isEmpty()) {
+            return new PageImpl<>(List.of(), PageRequest.of(page, size), 0);
+        }
+
+        Pageable pageable = PageRequest.of(page, size);
+
+        Page<Long> albumIdsPage = albumRepository.searchAlbumIds(query.trim(), pageable);
+        if (albumIdsPage.isEmpty()) {
+            return new PageImpl<>(List.of(), pageable, 0);
+        }
+
+        List<Album> albums = albumRepository.findAllWithDetailsByIds(albumIdsPage.getContent());
+
+        Map<Long, Album> map = albums.stream()
+                .collect(Collectors.toMap(Album::getId, a -> a));
+
+        List<Album> ordered = albumIdsPage.getContent().stream()
+                .map(map::get)
+                .filter(Objects::nonNull)
+                .toList();
+
+        return new PageImpl<>(ordered, pageable, albumIdsPage.getTotalElements());
+    }
+
+    @Override
+    public long getTotalAlbums() {
+        return albumRepository.count();
+    }
+
+    @Override
+    public long getActiveAlbums() {
+        return albumRepository.countByStatus(Status.ACTIVE);
+    }
+
+    @Override
+    public long getSuspendedAlbums() {
+        return albumRepository.countByStatus(Status.SUSPENDED);
     }
 }

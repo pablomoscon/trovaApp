@@ -3,6 +3,7 @@ package com.trovaApp.dto.album;
 import com.trovaApp.enums.Genre;
 import com.trovaApp.enums.Status;
 import jakarta.validation.constraints.*;
+import org.springframework.web.multipart.MultipartFile;  // IMPORTAR MultipartFile
 
 import java.util.Set;
 
@@ -17,11 +18,7 @@ public class AlbumPatchDTO {
     @Size(max = 20, message = "CD number must have at most 20 characters")
     private String cdNumber;
 
-    @Pattern(
-            regexp = "^(https?://.*|/.*)?$",
-            message = "Photo must be a valid URL or relative path"
-    )
-    private String photo;
+    private MultipartFile photo;
 
     @Min(value = 1900, message = "Year must be greater than or equal to 1900")
     @Max(value = 2100, message = "Year must be less than or equal to 2100")
@@ -38,7 +35,6 @@ public class AlbumPatchDTO {
 
     private Status status;
 
-    // --- Getters and Setters ---
 
     public String getTitle() {
         return title;
@@ -64,11 +60,11 @@ public class AlbumPatchDTO {
         this.cdNumber = cdNumber;
     }
 
-    public String getPhoto() {
+    public MultipartFile getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(MultipartFile photo) {
         this.photo = photo;
     }
 

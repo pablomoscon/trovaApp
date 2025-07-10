@@ -41,6 +41,7 @@ public class UserByIdResponseDTO {
                 .collect(Collectors.toList());
     }
 
+
     public UUID getId() {
         return id;
     }

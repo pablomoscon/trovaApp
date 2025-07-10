@@ -28,7 +28,7 @@ public class Artist {
     @Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 
-    @Column(name = "photo", columnDefinition = "TEXT") // <- Nuevo campo
+    @Column(name = "photo", columnDefinition = "TEXT")
     private String photo;
 
     @Enumerated(EnumType.STRING)

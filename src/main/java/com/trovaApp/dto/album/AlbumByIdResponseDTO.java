@@ -1,26 +1,26 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongResponseDTO;
+import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.enums.Genre;
 import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
+import com.trovaApp.model.Song;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class AlbumResponseDTO {
+public class AlbumByIdResponseDTO {
     private Long id;
     private String title;
     private String details;
     private String cdNumber;
     private String photo;
     private Integer year;
+    private List<SongCreateDTO> listOfSongs;
     private Set<Genre> genres;
     private String artistName;
     private String displayArtistName;
     private Status status;
     private Date createdAt;
-    private List<SongResponseDTO> listOfSongs;
 
     // Getters y setters
     public Long getId() {
@@ -71,6 +71,14 @@ public class AlbumResponseDTO {
         this.year = year;
     }
 
+    public List<SongCreateDTO> getListOfSongs() {
+        return listOfSongs;
+    }
+
+    public void setListOfSongs(List<SongCreateDTO> listOfSongs) {
+        this.listOfSongs = listOfSongs;
+    }
+
     public Set<Genre> getGenres() {
         return genres;
     }
@@ -91,39 +99,20 @@ public class AlbumResponseDTO {
         return displayArtistName;
     }
 
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
+
+    public Date getCreatedAt() { return createdAt; }
+
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
+
     public void setDisplayArtistName(String displayArtistName) {
         this.displayArtistName = displayArtistName;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public List<SongResponseDTO> getListOfSongs() {
-        return listOfSongs;
-    }
-
-    public void setListOfSongs(List<SongResponseDTO> listOfSongs) {
-        this.listOfSongs = listOfSongs;
-    }
-
-    // Convert Album entity to DTO
-    public static AlbumResponseDTO fromModel(Album album) {
-        AlbumResponseDTO dto = new AlbumResponseDTO();
-
-        // Basic album info
+    public static AlbumByIdResponseDTO fromModel(Album album) {
+        AlbumByIdResponseDTO dto = new AlbumByIdResponseDTO();
         dto.setId(album.getId());
         dto.setTitle(album.getTitle());
         dto.setDetails(album.getDetails());
@@ -133,20 +122,25 @@ public class AlbumResponseDTO {
         dto.setStatus(album.getStatus());
         dto.setCreatedAt(album.getCreatedAt());
 
-        // Artist info
+        List<SongCreateDTO> songDTOs = new ArrayList<>();
+        Set<Long> songIds = new HashSet<>();
+
+        Long albumArtistId = album.getArtist() != null ? album.getArtist().getId() : null;
+
+        for (Song song : album.getListOfSongs()) {
+            if (song.getArtist() != null &&
+                    song.getArtist().getId().equals(albumArtistId) &&
+                    song.getId() != null &&
+                    songIds.add(song.getId())) {
+                songDTOs.add(SongCreateDTO.fromSong(song));
+            }
+        }
+
+        dto.setListOfSongs(songDTOs);
+
         dto.setGenres(album.getGenres());
         dto.setDisplayArtistName(album.getDisplayArtistName());
         dto.setArtistName(album.getArtist() != null ? album.getArtist().getName() : null);
-
-        // Map songs if present, otherwise set null
-        if (album.getListOfSongs() != null && !album.getListOfSongs().isEmpty()) {
-            dto.setListOfSongs(album.getListOfSongs().stream()
-                    .map(SongResponseDTO::fromModel)
-                    .collect(Collectors.toList()));
-        } else {
-            dto.setListOfSongs(null);  // No songs available
-        }
-
         return dto;
     }
 }

@@ -11,11 +11,14 @@ import com.trovaApp.repository.UserRepository;
 import com.trovaApp.service.activity.ActivityService;
 import com.trovaApp.service.credential.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -81,10 +84,11 @@ public class UserServiceImpl implements UserService {
         Credential savedCredential = credentialService.createAndSaveCredential(signupUserDto.getPassword());
         user.setCredential(savedCredential);
 
-        activityService.logActivity(user, "Create user: " + user.getUsername());
+        User savedUser = userRepository.save(user);
 
-        // Save the user
-        return userRepository.save(user);
+        activityService.logActivity(savedUser, "Create user: " + savedUser.getUsername());
+
+        return savedUser;
     }
 
     private Role getRoleFromString(String role) {
@@ -97,21 +101,21 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public List<User> findAll() {
-        return userRepository.findAllWithActivities();
+    public Page<User> findAll(Pageable pageable) {
+        return userRepository.findAllByStatusNot(Status.DELETED, pageable);
     }
 
     @Transactional(readOnly = true)
     @Override
     public User findByIdWithActivities(UUID userId) {
-        return userRepository.findByIdWithActivities(userId)
+        return userRepository.findWithActivitiesById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
     }
 
     @Transactional
     @Override
     public User findById(UUID userId) {
-        return userRepository.findById(userId)
+        return userRepository.findWithActivitiesById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
     }
 
@@ -207,4 +211,37 @@ public class UserServiceImpl implements UserService {
         user.setFailedLoginAttempts(user.getFailedLoginAttempts() + 1);
         userRepository.save(user);
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Page<User> search(String term, int page, int size) {
+        if (term == null || term.trim().isEmpty()) {
+            // Empty term → return first page of all users ordered by username ascending
+            Pageable pageable = PageRequest.of(page, size, Sort.by("username").ascending());
+            return userRepository.findAll(pageable);
+        }
+        Pageable pageable = PageRequest.of(page, size, Sort.by("username").ascending());
+        return userRepository.searchUsers(term.trim(), pageable);
+    }
+
+    @Override
+    public long getTotalUsers() {
+        return userRepository.count();
+    }
+
+    @Override
+    public long getSuspendedUsers() {
+        return userRepository.countByStatus(Status.SUSPENDED);
+    }
+
+    @Override
+    public long getActiveUsers() {
+        return userRepository.countByStatus(Status.ACTIVE);
+    }
+
+    @Override
+    public long getDeletedUsers() {
+        return userRepository.countByStatus(Status.DELETED);
+    }
 }
+
