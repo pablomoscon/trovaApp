@@ -4,11 +4,14 @@ import com.trovaApp.dto.song.SongPatchDTO;
 import com.trovaApp.dto.song.SongResponseDTO;
 import com.trovaApp.model.Song;
 import com.trovaApp.service.song.SongService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "songs", description = "Operations related to Songs")
 @RestController
 @RequestMapping("songs")
 public class SongController {
@@ -20,7 +23,7 @@ public class SongController {
         this.songService = songService;
     }
 
-
+    @Operation(summary = "Get a song by its ID")
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {
         Song song = songService.findById(id)
@@ -28,6 +31,7 @@ public class SongController {
         return ResponseEntity.ok(song);
     }
 
+    @Operation(summary = "Update partial fields of a song")
     @PatchMapping("/{id}")
     public ResponseEntity<?> patchSong(@PathVariable Long id, @RequestBody SongPatchDTO patchDTO) {
         Song updatedSong = songService.patchSong(id, patchDTO);

@@ -62,7 +62,9 @@ public class SecurityConfig {
 
                                 .requestMatchers(HttpMethod.GET,
                                         "/albums/**",
-                                        "/artist/**")
+                                        "/artist/**",
+                                        "/swagger-ui/**",
+                                        "/v3/api-docs/**")
                                 .permitAll()
 
                                 .anyRequest().authenticated()

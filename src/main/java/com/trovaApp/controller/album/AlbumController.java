@@ -11,6 +11,8 @@ import com.trovaApp.model.Album;
 import com.trovaApp.service.album.AlbumService;
 import com.trovaApp.service.visit.VisitService;
 import com.trovaApp.util.FileUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -26,29 +28,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Tag(name = "albums", description = "Operations related to Albums")
 @RestController
 @RequestMapping("/albums")
-
 public class AlbumController {
 
     private final AlbumService albumService;
     private final VisitService visitService;
     private final ObjectMapper objectMapper;
 
-
     @Autowired
     public AlbumController(
             AlbumService albumService,
             VisitService visitService,
             ObjectMapper objectMapper
-
     ) {
-
         this.albumService = albumService;
         this.objectMapper = objectMapper;
         this.visitService = visitService;
     }
 
+    @Operation(summary = "Create a new album with photo")
     @PostMapping
     public ResponseEntity<?> createAlbum(
             @RequestParam("album") String albumJson,
@@ -60,13 +60,13 @@ public class AlbumController {
         return new ResponseEntity<>(AlbumResponseDTO.fromModel(createdAlbum), HttpStatus.CREATED);
     }
 
+    @Operation(summary = "Get all albums paginated")
     @GetMapping
     public ResponseEntity<Map<String, Object>> findAll(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "15") int size
     ) {
         Page<Album> albumPage = albumService.findAll(page, size);
-
         List<AlbumResponseDTO> dtoList = albumPage.getContent().stream()
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
@@ -80,6 +80,7 @@ public class AlbumController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Get filtered albums by artist name, year, or genre")
     @GetMapping("/filter")
     public ResponseEntity<Map<String, Object>> getAlbums(
             @RequestParam(defaultValue = "0") int page,
@@ -111,9 +112,10 @@ public class AlbumController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Search albums by query text")
     @GetMapping("/search")
     public ResponseEntity<Map<String, Object>> searchAlbums(
-            @RequestParam String q,                     // texto a buscar
+            @RequestParam String q,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "15") int size
     ) {
@@ -133,13 +135,13 @@ public class AlbumController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Get albums by artist ID")
     @GetMapping("/by-artist/{artistId}")
     public ResponseEntity<Map<String, Object>> getAlbumsByArtist(
             @PathVariable Long artistId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "15") int size
     ) {
-        // order by title ascending, case‑insensitive
         Pageable pageable = PageRequest.of(
                 page,
                 size,
@@ -161,6 +163,7 @@ public class AlbumController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Get album details by ID, including songs")
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id, HttpServletRequest request) {
         Album album = albumService.getAlbumWithSongs(id);
@@ -171,6 +174,7 @@ public class AlbumController {
         return ResponseEntity.ok(AlbumByIdResponseDTO.fromModel(album));
     }
 
+    @Operation(summary = "Patch/update album partially")
     @PatchMapping("/{id}")
     public ResponseEntity<AlbumResponseDTO> patch(
             @PathVariable Long id,
@@ -179,6 +183,7 @@ public class AlbumController {
         return ResponseEntity.ok(AlbumResponseDTO.fromModel(updatedAlbum));
     }
 
+    @Operation(summary = "Delete album by ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         albumService.deleteById(id);

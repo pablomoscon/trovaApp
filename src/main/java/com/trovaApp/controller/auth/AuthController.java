@@ -1,10 +1,13 @@
 package com.trovaApp.controller.auth;
+
 import com.trovaApp.dto.user.UserResponseDTO;
 import com.trovaApp.dto.user.UserSigninDTO;
 import com.trovaApp.dto.user.UserSignupDTO;
 import com.trovaApp.model.User;
 import com.trovaApp.service.auth.AuthService;
 import com.trovaApp.service.user.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "auth", description = "Operations related to Authentication")
 @RestController
 @RequestMapping("auth")
 public class AuthController {
@@ -28,6 +32,7 @@ public class AuthController {
         this.userService = userService;
     }
 
+    @Operation(summary = "Register a new user")
     @PostMapping("sign-up")
     public ResponseEntity<?> signUp(@RequestBody @Valid UserSignupDTO signupUserDto) {
         try {
@@ -40,6 +45,7 @@ public class AuthController {
         }
     }
 
+    @Operation(summary = "Authenticate user and return JWT token")
     @PostMapping("sign-in")
     public ResponseEntity<?> signIn(@RequestBody UserSigninDTO signinUserDto, HttpServletRequest request) {
         User user = authService.signInAndReturnJwt(signinUserDto, request);

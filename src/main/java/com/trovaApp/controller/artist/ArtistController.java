@@ -8,6 +8,8 @@ import com.trovaApp.model.Artist;
 import com.trovaApp.service.artist.ArtistService;
 import com.trovaApp.service.visit.VisitService;
 import com.trovaApp.util.FileUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Tag(name = "artists", description = "Operations related to Artists")
 @RestController
 @RequestMapping("/artist")
-
 public class ArtistController {
 
     private final ArtistService artistService;
@@ -42,6 +43,7 @@ public class ArtistController {
         this.visitService = visitService;
     }
 
+    @Operation(summary = "Create a new artist with photo")
     @PostMapping
     public ResponseEntity<?> createArtist(@RequestParam("artist") String artistJson,
                                           @RequestPart("photo") MultipartFile photo
@@ -53,18 +55,19 @@ public class ArtistController {
         return new ResponseEntity<>(ArtistBasicResponseDTO.fromModel(artist), HttpStatus.CREATED);
     }
 
+    @Operation(summary = "Get paginated list of artists")
     @GetMapping
     public ResponseEntity<Page<ArtistBasicResponseDTO>> getArtists(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "9") int size) {
 
         Page<Artist> artistPage = artistService.findAll(page, size);
-
         Page<ArtistBasicResponseDTO> dtoPage = artistPage.map(ArtistBasicResponseDTO::fromModel);
 
         return ResponseEntity.ok(dtoPage);
     }
 
+    @Operation(summary = "Search artists by query")
     @GetMapping("/search")
     public ResponseEntity<Page<ArtistBasicResponseDTO>> searchArtists(
             @RequestParam String q,
@@ -76,6 +79,7 @@ public class ArtistController {
         return ResponseEntity.ok(dtoPage);
     }
 
+    @Operation(summary = "Get paginated artists with their albums")
     @GetMapping("/with-albums")
     public ResponseEntity<Page<ArtistFullResponseDTO>> findAllWithAlbums(
             @RequestParam(defaultValue = "0") int page,
@@ -97,6 +101,7 @@ public class ArtistController {
         return ResponseEntity.ok(dtoPage);
     }
 
+    @Operation(summary = "Get artist details by ID")
     @GetMapping("/{id}")
     public ResponseEntity<ArtistBasicResponseDTO> findById(@PathVariable Long id, HttpServletRequest request) {
         Artist artist = artistService.findById(id)
@@ -108,6 +113,7 @@ public class ArtistController {
         return ResponseEntity.ok(ArtistBasicResponseDTO.fromModel(artist));
     }
 
+    @Operation(summary = "Patch/update artist partially, optionally with new photo")
     @PatchMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ArtistBasicResponseDTO> patchArtist(
             @PathVariable Long id,
@@ -118,6 +124,7 @@ public class ArtistController {
         return ResponseEntity.ok(ArtistBasicResponseDTO.fromModel(updated));
     }
 
+    @Operation(summary = "Delete artist by ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         artistService.deleteById(id);
