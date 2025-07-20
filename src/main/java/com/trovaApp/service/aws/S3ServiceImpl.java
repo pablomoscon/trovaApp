@@ -66,7 +66,7 @@ public class S3ServiceImpl implements S3Service {
         // Set the expiration time (1 hour in this case)
         Date expiration = new Date();
         long expTimeMillis = expiration.getTime();
-        expTimeMillis += 1000 * 60 * 60;  // 1 hour expiration time
+        expTimeMillis += 1000 * 60 * 60;
         expiration.setTime(expTimeMillis);
 
         // Create a pre-signed URL request with GET method and expiration
