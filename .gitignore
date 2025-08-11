@@ -33,5 +33,9 @@ build/
 ### VS Code ###
 .vscode/
 
-# Ignorar archivo .development.env
-.development.env
+# Ignorar archivo .env
+.env
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

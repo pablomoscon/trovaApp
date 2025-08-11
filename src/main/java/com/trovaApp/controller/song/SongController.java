@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "songs", description = "Operations related to Songs")
 @RestController
 @RequestMapping("songs")
@@ -37,4 +39,16 @@ public class SongController {
         Song updatedSong = songService.patchSong(id, patchDTO);
         return ResponseEntity.ok(SongResponseDTO.fromModel(updatedSong));
     }
+
+    @Operation(summary = "Delete multiple songs by their IDs")
+    @DeleteMapping
+    public ResponseEntity<Void> deleteSongs(@RequestBody List<Long> ids) {
+        try {
+            songService.deleteByIds(ids);
+            return ResponseEntity.noContent().build();
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

@@ -6,7 +6,10 @@ import com.trovaApp.dto.album.AlbumByIdResponseDTO;
 import com.trovaApp.dto.album.AlbumCreateDTO;
 import com.trovaApp.dto.album.AlbumPatchDTO;
 import com.trovaApp.dto.album.AlbumResponseDTO;
+import com.trovaApp.dto.song.SongCreateDTO;
+import com.trovaApp.dto.song.SongResponseDTO;
 import com.trovaApp.enums.Genre;
+import com.trovaApp.helper.PaginationHelper;
 import com.trovaApp.model.Album;
 import com.trovaApp.service.album.AlbumService;
 import com.trovaApp.service.visit.VisitService;
@@ -14,15 +17,14 @@ import com.trovaApp.util.FileUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,6 +62,18 @@ public class AlbumController {
         return new ResponseEntity<>(AlbumResponseDTO.fromModel(createdAlbum), HttpStatus.CREATED);
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, String>> handleIllegalArgumentException(IllegalArgumentException ex) {
+        Map<String, String> error = Map.of("error", ex.getMessage());
+        return ResponseEntity.badRequest().body(error);
+    }
+
+    @ExceptionHandler(JsonProcessingException.class)
+    public ResponseEntity<Map<String, String>> handleJsonProcessingException(JsonProcessingException ex) {
+        Map<String, String> error = Map.of("error", "Invalid album JSON format");
+        return ResponseEntity.badRequest().body(error);
+    }
+
     @Operation(summary = "Get all albums paginated")
     @GetMapping
     public ResponseEntity<Map<String, Object>> findAll(
@@ -71,45 +85,41 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("albums", dtoList);
-        response.put("currentPage", albumPage.getNumber());
-        response.put("totalItems", albumPage.getTotalElements());
-        response.put("totalPages", albumPage.getTotalPages());
-
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
     }
 
-    @Operation(summary = "Get filtered albums by artist name, year, or genre")
     @GetMapping("/filter")
     public ResponseEntity<Map<String, Object>> getAlbums(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "15") int size,
             @RequestParam(required = false) List<String> artistName,
             @RequestParam(required = false) List<Integer> year,
-            @RequestParam(required = false) List<String> genre
+            @RequestParam(required = false) List<String> genre,
+            @RequestParam(required = false, defaultValue = "") String sort
     ) {
         List<Genre> genreEnums = null;
         if (genre != null && !genre.isEmpty()) {
             genreEnums = genre.stream()
-                    .map(g -> Genre.valueOf(g.toUpperCase()))
+                    .map(String::toUpperCase)
+                    .filter(g -> {
+                        try {
+                            Genre.valueOf(g);
+                            return true;
+                        } catch (IllegalArgumentException e) {
+                            return false;
+                        }
+                    })
+                    .map(Genre::valueOf)
                     .toList();
         }
 
-        Page<Album> albumPage = albumService.findFiltered(page, size, artistName, year, genreEnums);
+        Page<Album> albumPage = albumService.findFiltered(page, size, artistName, year, genreEnums, sort);
 
         List<AlbumResponseDTO> dtoList = albumPage.getContent().stream()
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        Map<String, Object> response = Map.of(
-                "albums", dtoList,
-                "currentPage", albumPage.getNumber(),
-                "totalItems", albumPage.getTotalElements(),
-                "totalPages", albumPage.getTotalPages()
-        );
-
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
     }
 
     @Operation(summary = "Search albums by query text")
@@ -125,14 +135,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        Map<String, Object> response = Map.of(
-                "albums", dtoList,
-                "currentPage", albumPage.getNumber(),
-                "totalItems", albumPage.getTotalElements(),
-                "totalPages", albumPage.getTotalPages()
-        );
-
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
     }
 
     @Operation(summary = "Get albums by artist ID")
@@ -140,36 +143,42 @@ public class AlbumController {
     public ResponseEntity<Map<String, Object>> getAlbumsByArtist(
             @PathVariable Long artistId,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "15") int size
+            @RequestParam(defaultValue = "15") int size,
+            @RequestParam(required = false, defaultValue = "") String sort
     ) {
-        Pageable pageable = PageRequest.of(
-                page,
-                size,
-                Sort.by(Sort.Order.asc("title").ignoreCase())
-        );
-
-        Page<Album> albumPage = albumService.findByArtistId(artistId, pageable);
+        Page<Album> albumPage = albumService.findByArtistId(artistId, page, size, sort);
 
         List<AlbumResponseDTO> dtoList = albumPage.getContent().stream()
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("albums", dtoList);
-        response.put("currentPage", albumPage.getNumber());
-        response.put("totalItems", albumPage.getTotalElements());
-        response.put("totalPages", albumPage.getTotalPages());
-
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
     }
+
+    @Operation(summary = "Add one or more songs to an album")
+    @PostMapping("/{albumId}/add-songs")
+    public ResponseEntity<List<SongResponseDTO>> addSongsToAlbum(
+            @PathVariable Long albumId,
+            @RequestBody List<SongCreateDTO> dtos) {
+
+        List<SongResponseDTO> response = albumService.addSongsToAlbum(albumId, dtos);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
 
     @Operation(summary = "Get album details by ID, including songs")
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id, HttpServletRequest request) {
         Album album = albumService.getAlbumWithSongs(id);
 
-        String sessionId = request.getSession().getId();
-        visitService.registerAlbumVisit(id, sessionId);
+        if (album == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Album not found");
+        }
+
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            visitService.registerAlbumVisit(id, session.getId());
+        }
 
         return ResponseEntity.ok(AlbumByIdResponseDTO.fromModel(album));
     }

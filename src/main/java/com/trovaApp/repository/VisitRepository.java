@@ -19,11 +19,23 @@ public interface VisitRepository extends JpaRepository<Visit, Long> {
 
     long countByArtist_Id(Long artistId);
 
-    @Query("SELECT v.album.id, COUNT(v) FROM Visit v WHERE v.album IS NOT NULL GROUP BY v.album.id ORDER BY COUNT(v) DESC")
-    List<Object[]> findMostVisitedAlbums();
+    @Query("""
+    SELECT a.id, a.title, COUNT(v)
+    FROM Visit v
+    JOIN v.album a
+    GROUP BY a.id, a.title
+    ORDER BY COUNT(v) DESC
+""")
+    List<Object[]> findMostVisitedAlbumsWithTitle();
 
-    @Query("SELECT v.artist.id, COUNT(v) FROM Visit v WHERE v.artist IS NOT NULL GROUP BY v.artist.id ORDER BY COUNT(v) DESC")
-    List<Object[]> findMostVisitedArtists();
+    @Query("""
+    SELECT ar.id, ar.name, COUNT(v)
+    FROM Visit v
+    JOIN v.artist ar
+    GROUP BY ar.id, ar.name
+    ORDER BY COUNT(v) DESC
+""")
+    List<Object[]> findMostVisitedArtistsWithName();
 
     @Transactional
     @Modifying

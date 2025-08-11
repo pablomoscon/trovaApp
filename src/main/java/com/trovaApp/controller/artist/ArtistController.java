@@ -88,15 +88,7 @@ public class ArtistController {
         Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
         Page<Artist> artistsPage = artistService.findAllWithAlbums(pageable);
 
-        List<ArtistFullResponseDTO> dtos = artistsPage.stream()
-                .map(ArtistFullResponseDTO::from)
-                .collect(Collectors.toList());
-
-        Page<ArtistFullResponseDTO> dtoPage = new PageImpl<>(
-                dtos,
-                pageable,
-                artistsPage.getTotalElements()
-        );
+        Page<ArtistFullResponseDTO> dtoPage = artistsPage.map(ArtistFullResponseDTO::from);
 
         return ResponseEntity.ok(dtoPage);
     }

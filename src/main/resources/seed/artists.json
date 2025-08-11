@@ -54,12 +54,6 @@
     "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/5aef4909-5678-460b-96b4-6e3295735ed7_o_1423579153.jpg"
   },
   {
-    "name": "Otros artistas",
-    "details": "El catálogo de Trova incluye también una variedad de artistas como Carlos Perciavalle, Corina Harry, Marcelo San Juan, Marikena Monti, Zurawski, Alberto Garralda, Trío Contemporáneo, entre otros. Estos artistas representan géneros diversos como el tango, música antigua, chanson francesa, trova contemporánea, jazz vocal y más, todos con una impronta singular dentro de la música popular y de autor.",
-    "nationality": "Argentina",
-    "photo": "https://res.cloudinary.com/dofznnphj/image/upload/v1719330000/uploads/placeholder-artist.png"
-  },
-  {
     "name": "Trío Contemporáneo",
     "details": "Grupo argentino que reinterpreta clásicos de Carlos Gardel con arreglos vocales e instrumentales innovadores. Su álbum 'Tiempo de Gardel' reúne 12 tangos emblemáticos como «Recuerdo malevo», «Lejana tierra mía» y «El día que me quieras».",
     "nationality": "Argentina",
@@ -81,13 +75,13 @@
     "name": "Conjunto de Música Antigua del Collegium Musicum",
     "details": "Ensamble argentino dedicado al repertorio medieval, renacentista y sefardí. Su álbum ‘Canciones ladinas y españolas’ (Trova) rescata romances y cantigas con instrumentos históricos.",
     "nationality": "Argentina",
-    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/db827f00-d552-4a0d-896e-f810cda5242a_Isologotipo-Mailing.avif"
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/fca6bb9e-99ab-4650-8252-ee9136f8bd68_Conjunto+de+Mu%CC%81sica+Antigua+del+Collegium+Musicum.png"
   },
   {
-    "name": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
+    "name": "Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros",
     "details": "Registro en vivo histórico de 1972 donde Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros inauguraron el formato acústico en el rock argentino. Publicado por Trova en el año .",
     "nationality": "Argentina",
-    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1db36174-b50c-4c7b-8731-3131de1fb004_sintitulo5_super_enhanced.png"
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/58bdf770-c8a1-4f60-b4d0-458ad0ace523_Acusticazo.avif"
   },
   {
     "name": "Corina Harry",

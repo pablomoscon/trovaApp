@@ -1,5 +1,6 @@
 package com.trovaApp.service.song;
 
+import com.trovaApp.dto.song.SongAddToAlbumDTO;
 import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.dto.song.SongPatchDTO;
 import com.trovaApp.model.Album;
@@ -14,5 +15,9 @@ public interface SongService {
 
     List<Song> create(List<SongCreateDTO> songDTOs, Album album, Artist artist);
 
+    List<Song> saveAll(List<Song> songs);
+
     Song patchSong(Long id, SongPatchDTO patchDTO);
+
+    void deleteByIds(List<Long> ids);
 }

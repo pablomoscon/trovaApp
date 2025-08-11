@@ -41,21 +41,21 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     // Filter albums by optional artist names, years and genres
     @Query("""
-                SELECT a.id FROM Album a
-                JOIN a.artist ar
-                WHERE (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
-                AND (:years IS NULL OR a.year IN :years)
-                AND (:genres IS NULL OR EXISTS (
-                    SELECT g FROM a.genres g WHERE g IN :genres
-                ))
-                ORDER BY ar.name ASC, a.year DESC
-            """)
+    SELECT a.id FROM Album a
+    JOIN a.artist ar
+    WHERE (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
+    AND (:years IS NULL OR a.year IN :years)
+    AND (:genres IS NULL OR EXISTS (
+        SELECT g FROM a.genres g WHERE g IN :genres
+    ))
+""")
     Page<Long> findFilteredAlbumIds(
             @Param("artistNames") List<String> artistNames,
             @Param("years") List<Integer> years,
             @Param("genres") List<Genre> genres,
             Pageable pageable
     );
+
 
     @Query("""
         SELECT a.id

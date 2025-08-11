@@ -1,11 +1,16 @@
 package com.trovaApp.dto.song;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.trovaApp.model.Song;
 
 public class SongCreateDTO {
+
     private String name;
     private String duration;
     private String artistName;
+
+    @JsonIgnore
+    private Long id;
 
     // Getters y setters
 

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class SongServiceImpl implements SongService {
@@ -18,7 +19,8 @@ public class SongServiceImpl implements SongService {
     private final SongRepository songRepository;
 
     @Autowired
-    public SongServiceImpl(SongRepository songRepository) {
+    public SongServiceImpl(
+            SongRepository songRepository) {
         this.songRepository = songRepository;
     }
 
@@ -30,18 +32,21 @@ public class SongServiceImpl implements SongService {
 
     @Override
     public List<Song> create(List<SongCreateDTO> songDTOs, Album album, Artist artist) {
-        List<Song> songs = new ArrayList<>();
-        for (SongCreateDTO songDTO : songDTOs) {
+        return songDTOs.stream().map(dto -> {
             Song song = new Song();
-            song.setName(songDTO.getName());
-            song.setDuration(songDTO.getDuration());
-            song.setAlbum(album);
+            song.setName(dto.getName());
+            song.setDuration(dto.getDuration());
             song.setArtist(artist);
-            song = songRepository.save(song);
-            songs.add(song);
-        }
-        return songs;
+            song.setAlbum(album);
+            return song;
+        }).collect(Collectors.toList());
     }
+
+    @Override
+    public List<Song> saveAll(List<Song> songs) {
+        return songRepository.saveAll(songs);
+    }
+
 
     @Override
     public Song patchSong(Long id, SongPatchDTO patchDTO) {
@@ -57,5 +62,18 @@ public class SongServiceImpl implements SongService {
         }
 
         return songRepository.save(song);
+    }
+
+    @Override
+    public void deleteByIds(List<Long> ids) {
+        List<Long> notFoundIds = ids.stream()
+                .filter(id -> !songRepository.existsById(id))
+                .toList();
+
+        if (!notFoundIds.isEmpty()) {
+            throw new EntityNotFoundException("Songs with ids " + notFoundIds + " not found");
+        }
+
+        songRepository.deleteAllById(ids);
     }
 }

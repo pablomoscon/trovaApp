@@ -1,6 +1,6 @@
 [
   {
-    "title": "Pulsación Fuga y Misterio",
+    "title": "Pulsación",
     "listOfSongs": [
       { "name": "Pulsacion Nº 1", "duration": "4:49" },
       { "name": "Pulsacion Nº 2", "duration": "4:12" },
@@ -12,13 +12,16 @@
       { "name": "Tocata Rea", "duration": "4:35" },
       { "name": "Tangata Del Alba", "duration": "4:51" }
     ],
-    "details": "Música instrumental de \"María de Buenos Aires\". Música, arreglos y dirección: Astor Piazzolla",
+    "details": "",
     "cdNumber": "CD 402",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/6a26c9a8-2e75-4b01-96f2-4b8d8aa7fefd_Piazzolla%20-%20Pulsacio%CC%81n.webp",
     "year": 1997,
     "genres": ["CONTEMPORÁNEA"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla y su orquesta"
+    "displayArtistName": "Astor Piazzolla y su orquesta",
+    "appleMusicLink": "https://music.apple.com/us/album/pulsacion/73585371",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEPITW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7hq3ztjc4lSac0k68F53zg"
   },
   {
     "title": "Adiós Nonino",
@@ -33,11 +36,14 @@
     ],
     "details": "Música, arreglos y dirección: Astor Piazzolla. Este álbum editado por TROVA originalmente en 1969 integra el Hall de la Fama de los GRAMMY Latinos.",
     "cdNumber": "CD 404",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/16f2eab7-f3c4-4739-aa18-763175fe1047_Astor%20Piazzolla%20-Adio%CC%81s%20Nonino%201969%201984.png",
     "year": 1969,
     "genres": ["TANGO"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla y su Quinteto"
+    "displayArtistName": "Astor Piazzolla y su Quinteto",
+    "appleMusicLink": "https://music.apple.com/us/album/adios-nonino-1969-1984/375530235",
+    "amazonMusicLink": "https://music.amazon.es/albums/B0095CPBQC",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5fye2pqiyYX0XwH3joTade"
   },
   {
     "title": "María de Buenos Aires parte 1",
@@ -53,11 +59,14 @@
     ],
     "details": "Música: Astor Piazzolla. Letra: Horacio Ferrer. Interpretada por Amelita Baltar, Hector de Rosas (canto), Horacio Ferrer (recitado), Astor Piazzolla (bandoneón) y orquesta.",
     "cdNumber": "CD 5013",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f504440e-6da5-4c2f-9d5a-e919445b0797_CD%205013.jpg",
     "year": 	1993,
     "genres": ["TANGO", "TEATRO_MUSICAL"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla"
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/maria-de-buenos-aires-vol-1/73584984",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IE8FGK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3jgVrHZQ0H0ghYUrCqBlb4"
   },
   {
     "title": "María de Buenos Aires parte 2",
@@ -73,11 +82,14 @@
     ],
     "details": "Música: Astor Piazzolla. Interpretada por Amelita Baltar y Hector de Rosas (canto), Horacio Ferrer (recitados) y Astor Piazzolla (bandoneón) y orquesta.",
     "cdNumber": "CD 5014",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/9da0a720-6399-4cec-9174-a10c795ffeb7_astor-piazzolla-and-horacio-ferrer-maria-de-buenos-aires-segunda-parte-Cover-Art.webp",
     "year": 1993,
     "genres": ["TANGO", "TEATRO_MUSICAL"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/maria-de-buenos-aires-vol-2/73585405",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICI0GW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5Rkq07eW4M2kvkIwSdmaxr"
   },
   {
     "title": "En Suite",
@@ -97,11 +109,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5059",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/8fd0dc36-4fc8-41f3-987a-66467a0c6fea_41yDZ9ZsnML.jpg",
     "year": 2004,
     "genres": [],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/piazzolla-en-suite/73585031",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00956YRSG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1PA8dSdtPzc5JlHfXlGypw"
   },
   {
     "title": "Agri",
@@ -121,11 +136,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5019",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/edae3f18-3eb3-46a9-b0dd-89124886a93f_7797417501925.png",
     "year": 2007,
     "genres": ["CONTEMPORÁNEA"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
   },
   {
     "title": "Astor Piazzolla & Amelita Baltar",
@@ -145,11 +163,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5060",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/cd823e07-a815-44a2-8b1e-30f745f94f92_ab67616d0000b27384f9edaf34f9c417bb4db656.jpeg",
     "year": 2005,
     "genres": ["TANGO", "TEATRO_MUSICAL"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/piazzolla-amelita-baltar/260454132",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DOIN62",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/30z0x3quz71hXLhKbfBaAw"
   },
   {
     "title": "Concertante",
@@ -166,11 +187,14 @@
     ],
     "details": "ACONCAGUA (Concierto para Bandoneón y Orquesta), TRES TANGOS (Para Bandoneón y Orquesta), SUITE PUNTA DEL ESTE",
     "cdNumber": "CD 5061",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/df49b04e-b7bb-400b-8d26-5fa008190fb4_images.jpeg",
     "year": 2006,
     "genres": ["CONTEMPORÁNEA"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/concertante/128597808",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IL8CRA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7EPkLx4lTHN1P2YbPE3w8h"
   },
   {
     "title": "Roma 1972 (En Vivo)",
@@ -190,11 +214,14 @@
     ],
     "details": "En vivo, grabado en Roma 1972",
     "cdNumber": "CD 5062",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/71b64ea0-b320-482f-a438-e0634e4036b1_descarga.jpeg",
     "year": 2006,
     "genres": ["TANGO", "JAZZ"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/roma-1972/295008224",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJ2BC4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7rBSGdntqCPo2B7j3F8iL1"
   },
   {
     "title": "Años de Soledad",
@@ -213,11 +240,14 @@
     ],
     "details": "Música, arreglos y dirección orquestal: Astor Piazzolla",
     "cdNumber": "CD 5056",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/3b335ed0-99a4-46df-a404-193fb5050f4e_CD%205056.jpg",
     "year": 1993,
     "genres": ["TANGO"],
     "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
+    "displayArtistName":  "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/a%C3%B1os-de-soledad/4680583",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00956EUUG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/60vaxpM1UuNEXnjOEvXmCp"
   },
   {
     "title": "Sonamos Pese a Todo",
@@ -237,11 +267,14 @@
     ],
     "details": "",
     "cdNumber": "CD 519",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a50948e7-f89d-46a1-9a07-869045dd96c2_CD%20519.jpg",
     "year": 1971,
     "genres": ["HUMOR_MUSICAL"],
     "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
+    "displayArtistName":  "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/sonamos-pese-a-todo/4680705",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ISKTAQ",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6Os9VReRTnOMwPFBzMuEXC"
   },
   {
     "title": "Cantata Laxatón",
@@ -255,11 +288,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5032",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/34f98f3b-0efa-4ac4-8181-6c58e967675b_CD%205032.jpg",
     "year": 1972,
     "genres": ["HUMOR_MUSICAL"],
     "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
+    "displayArtistName":  "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/cantata-laxat%C3%B3n/1100955011",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00954ZND6",
+    "spotifyLink": "http://open.spotify.com/intl-es/album/1DZoOsUOola2ROFayDu41e"
   },
   {
     "title": "Volumen 3",
@@ -277,14 +313,17 @@
     ],
     "details": "",
     "cdNumber": "CD 5043",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/ea990213-6420-49b5-ab09-2c205c46f3e2_CD%205043.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
+    "displayArtistName":  "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/volumen-3/73585435",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009553WTW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2D5WbWadvupWrgJKSyivIR"
   },
   {
-    "title": "Super humor con Les Luthiers",
+    "title": "Súper humor",
     "listOfSongs": [
       { "name": "Concerto Grosso Alla Rustica", "duration": "3:26" },
       { "name": "Tristezas de Manuela (Manuela's Blues)", "duration": "4:00" },
@@ -304,11 +343,14 @@
     ],
     "details": "",
     "cdNumber": "CD 405",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/eb6cf60d-7244-4201-b5c0-66a047c828af_CD%20405.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
+    "displayArtistName":  "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/super-humor-con-les-luthiers/4680670",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEM8QS",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/73PngV4Bljqgylypmj26y6"
   },
   {
     "title": "Lo Mejor/Peor de Les Luthiers",
@@ -326,14 +368,17 @@
     ],
     "details": "",
     "cdNumber": "CD 406",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/63c4e0c1-0dfe-4639-9b4d-efb2dbfd10a8_CD%20406.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Les Luthiers",
-    "displayArtistName": "Les Luthiers"
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "http://music.apple.com/us/album/lo-mejor-peor-de-les-luthiers/131279380",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IDV4HI",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5tO9uzWgjDtL9sEFlDsk5P"
   },
   {
-    "title": "UÑA RAMOS – QUENA DE LOS ANDES",
+    "title": "Quena de los Andes",
     "listOfSongs": [
       { "name": "Chiquita linda", "duration": "3:10" },
       { "name": "Eve", "duration": "3:00" },
@@ -350,11 +395,14 @@
     ],
     "details": "",
     "cdNumber": "CD 428",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/26030a94-c6e6-4524-9d73-a9c294b0dfcb_CD428%20Quena%20de%20los%20Andes.jpg",
     "year": 1975,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/quena-de-los-andes/921852170",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00NU977GI",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3AG3ZBPzchv6p4FYIeIZeq"
   },
   {
     "title": "El Cóndor Pasa",
@@ -374,14 +422,17 @@
     ],
     "details": "Con Domingo Cura, Tito Véliz, Edmundo Zaldívar (h) y Hugo Casas",
     "cdNumber": "CD 403",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/b3763f6c-388c-4a68-b587-98901d3f7332_CD%20403.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/el-condor-pasa/260467213",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICKM40",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3idLrihdzzclmiYAr107nu"
   },
   {
-    "title": "El Arte de la Quena\nEl cóndor pasa y sus mejores temas",
+    "title": "El Arte de la Quena",
     "listOfSongs": [
       { "name": "Palmeras",                 "duration": "3:28" },
       { "name": "Himno Al Inca",            "duration": "3:00" },
@@ -398,13 +449,16 @@
       { "name": "Triste Olvido",            "duration": "2:50" },
       { "name": "Plegaria Del Inca",        "duration": "3:20" }
     ],
-    "details": "",
+    "details": "El 'Cóndor pasa' y sus mejores temas",
     "cdNumber": "CD 524",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a346a4c1-ca83-49e1-81a1-893daf4f9733_CD%20524.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/el-arte-de-la-quena/260451519",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00992NXJU",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5YOuItbz3fn0H1lzupbhiW"
   },
   {
     "title": "La Magia de la Quena",
@@ -424,11 +478,14 @@
     ],
     "details": "Todos los temas compuestos por Uña Ramos y arreglados por Bruno Pauvarel, excepto los indicados con * arreglados por Daniel Sbarra",
     "cdNumber": "CD 407",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/12e816c9-ce29-4ab6-b10b-8b04a90ea2d3_CD%20407.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/la-magia-de-la-quena/140151687",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IHJ6D8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1dfMTGiGdbTZGyQ8wTeDr4"
   },
   {
     "title": "La Princesa del Mar",
@@ -449,11 +506,14 @@
     ],
     "details": "",
     "cdNumber": "CD 414",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4afa8d94-a519-414f-8f3b-b7ff67fc8d80_CD%20414.jpg",
     "year": 2001,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/la-princesa-del-mar/135335878",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICR4FA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5EcuLl2ghbjtib0B5ZtM43"
   },
   {
     "title": "Live in France 2004",
@@ -477,11 +537,14 @@
     ],
     "details": "Grabado en vivo en la iglesia de Notre Dame des Anges en Baixas, Francia",
     "cdNumber": "CD 425",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/911b4b97-202f-47cc-a0f0-208d57a32335_CD%20425.jpg",
     "year": 2004,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/live-in-france-2004/135335191",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CUMEJE",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/62beQcujYQLPevNTHsHz8F"
   },
   {
     "title": "The Sea Princess (Techno)",
@@ -491,11 +554,14 @@
     ],
     "details": "Compositor: Uña Ramos. Arreglos y músico acompañante: Bruno Ulysse Pauvarel",
     "cdNumber": "CD 426",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1fe08e79-9c20-411a-be6f-fcb51e501348_CD%20426.jpg",
     "year": 2004,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/the-sea-princess-la-princesa-del-mar-techno/135335591",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CUFOAK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/0kXAvHT9Hrlqjtlrd51Qpv"
   },
   {
     "title": "En la Filarmónica de Berlín",
@@ -515,11 +581,14 @@
     ],
     "details": "",
     "cdNumber": "CD 427",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/e0640a6b-bf42-4a83-ab8e-97def6bdff0d_Un%CC%83a%20Ramos%20-%20En%20la%20Filarmo%CC%81nica%20de%20Berli%CC%81n.png",
     "year": 2004,
     "genres": [],
     "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/en-la-filarm%C3%B3nica-de-berl%C3%ADn-en-vivo/206476082",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009II3IMW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1WxL6TE0Okf7raxs7NXdbY"
   },
   {
     "title": "Folklore sin mirar atrás Vol. 1",
@@ -541,11 +610,14 @@
     ],
     "details": "",
     "cdNumber": "CD 412",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4699a5bb-854d-44e3-9582-225e0f299030_CD%20412.jpg",
     "year": 1967,
     "genres": [],
     "artistName": "Cuarteto Zupay",
-    "displayArtistName": "Cuarteto Zupay"
+    "displayArtistName": "Cuarteto Zupay",
+    "appleMusicLink": "http://music.apple.com/us/album/folklore-sin-mirar-atr%C3%A1s/206312594",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009II0956",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6ABoWmFJS78TbSFh4MB3lW"
   },
   {
     "title": "Folklore sin mirar atrás Vol. 2",
@@ -564,11 +636,14 @@
     ],
     "details": "",
     "cdNumber": "CD 415",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/93b4182d-e137-4b7e-a761-ae85b209f83a_CD%20415.jpg",
     "year": 1968,
     "genres": [],
     "artistName": "Cuarteto Zupay",
-    "displayArtistName": "Cuarteto Zupay"
+    "displayArtistName": "Cuarteto Zupay",
+    "appleMusicLink": "https://music.apple.com/us/album/folklore-sin-mirar-atr%C3%A1s-vol-2/207235887",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CRZ1F6",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2LRfdRAD1Yj4OrAmRegEJV"
   },
   {
     "title": "Buscado",
@@ -600,11 +675,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5233, 7797417523323",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/6003dc48-9b7f-44e2-8a44-ff635d7ee175_CD%205233.jpg",
     "year": 2000,
     "genres": [],
     "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
+    "displayArtistName":"Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/buscado/129326552",
+    "amazonMusicLink": "https://music.amazon.es/albums/B0099322AU",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6SGPDHS9iKL49ZNsNEt2wS"
   },
   {
     "title": "El Pucheto – Cuentos de Wimpi",
@@ -629,11 +707,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5234, 7797417523422",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/ef9842e7-f9d0-4e97-ab6b-3901d0eec629_CD%205234.jpg",
     "year": 1969,
     "genres": [],
     "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
+    "displayArtistName":"Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/el-pucheto-cuentos-de-wimpi/129326153",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IGPB9M",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2xOpFagmvuElo5ZQGEB6q4"
   },
   {
     "title": "Encontrado",
@@ -660,11 +741,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5238, 7797417523828",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/c7b2b73a-7381-464a-b295-e3f0bc914486_CD%205238.jpg",
     "year": 1972,
     "genres": [],
     "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
+    "displayArtistName":"Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/encontrado/129326020",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ITFU2M",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3J85jmotsBGpLsDtFCTTSy"
   },
   {
     "title": "Canción con todos",
@@ -688,11 +772,14 @@
     ],
     "details": "Con Rosa Rodríguez Gerling.",
     "cdNumber": "CD 5211, 7797417521121",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/0075f62b-2ca3-4315-88f0-14606d1f502c_A.%20Tejada%20Go%CC%81mez%20-%20Cancio%CC%81n%20con%20todos.png\n\n",
     "year": 1971,
     "genres": [],
     "artistName": "Armando Tejada Gómez",
-    "displayArtistName": "Armando Tejada Gómez"
+    "displayArtistName": "Armando Tejada Gómez",
+    "appleMusicLink": "https://music.apple.com/us/album/cancion-con-todos/206485795",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5skMryWJKkrowjJWa9eTNd"
   },
   {
     "title": "Así nos gusta",
@@ -711,11 +798,14 @@
     ],
     "details": "Con Astor Piazzolla, Domingo Cura, Hugo Díaz y otros. Edición en CD del L.P. original de TROVA de 1969.",
     "cdNumber": "CD 5225, 7797417522524",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4cf7be7b-28d6-4b13-8085-3e87907d97c0_E.%20Lagos.jpg",
     "year": 1969,
     "genres": [],
     "artistName": "Eduardo Lagos",
-    "displayArtistName": "Eduardo Lagos"
+    "displayArtistName": "Eduardo Lagos",
+    "appleMusicLink": "https://music.apple.com/us/album/as%C3%AD-nos-gusta/640325649",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00CINT03A",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2OTFaR0XNI0DWUy616BlV1"
   },
   {
     "title": "Jazz en Nueva Orleans",
@@ -737,11 +827,14 @@
     ],
     "details": "",
     "cdNumber": "CD 111, 7797417011127",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f6117eb2-66c8-4726-b83c-1dd33f806c35_CD%20111.jpg",
     "year": 1966,
     "genres": [],
     "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
+    "displayArtistName":  "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/jazz-en-nueva-orleans/135677986",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DOOQA4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2NhqGeSGBboLIf9mWFhkZv"
   },
   {
     "title": "Jazz de Nueva Orleans en Buenos Aires y en Paris",
@@ -768,11 +861,14 @@
     ],
     "details": "Featuring Alfredo Espinoza, \"Uby\" González Lanuza, Martín Muller.",
     "cdNumber": "CD 112, 7797417011226",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/ee182aab-cb31-4ca8-86c4-55a3010bbb51_CD%20112.jpg\n\n",
     "year": 2006,
     "genres": [],
     "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
+    "displayArtistName":  "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/jazz-de-nueva-orleans-en-buenos-aires-y-en-paris/130249805",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJKQ2G",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5z1GrcRMiJNEzcWs3vfZVD"
   },
   {
     "title": "En Radio Nederland",
@@ -791,11 +887,14 @@
     ],
     "details": "Grabado el 10 de mayo de 1975 en el Gran Teatro Het Turfschip, Breda (Holanda).",
     "cdNumber": "CD 409, 7797417040929",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/b4a2b8a9-efa5-4ce7-bbbb-0d2ff27d6b26_CD%20409.jpg",
     "year": 1975,
     "genres": [],
     "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
+    "displayArtistName":  "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/en-radio-nederland/129325552",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00992WAMG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7MwPoqV5cBmZDV0dVvdyqD"
   },
   {
     "title": "Yo... Maria Creuza",
@@ -815,11 +914,14 @@
     ],
     "details": "",
     "cdNumber": "CD 400, 7797417040028",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/d45a7f85-54af-4951-9fce-2d233225a5b8_CD%20400.jpg",
     "year": 1971,
     "genres": [],
     "artistName": "Maria Creuza",
-    "displayArtistName": "Maria Creuza"
+    "displayArtistName": "Maria Creuza",
+    "appleMusicLink": "https://music.apple.com/us/album/yo-maria-creuza/135336403",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IELIR8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5Q77imv8zn3y5iXFV8TxTb"
   },
   {
     "title": "Voce abusou",
@@ -830,7 +932,7 @@
       { "name": "Quejas", "duration": "3:00" },
       { "name": "João Valentão", "duration": "2:25" },
       { "name": "¡Que locura!", "duration": "3:25" },
-      { "name": "Ossain", "duration": null },
+      { "name": "Ossain", "duration": "2:32" },
       { "name": "Fue la noche", "duration": "2:14" },
       { "name": "Morena flor", "duration": "2:52" },
       { "name": "Cariñoso", "duration": "2:25" },
@@ -839,11 +941,14 @@
     ],
     "details": "Con la participación de Sebastiao Tapajos y Pedro Dos Santos. Arreglos y dirección orquestal: Mike Ribas.",
     "cdNumber": "",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/68543483-2bf1-4b5f-ab64-3f409297a58a_CD%20401.jpg",
     "year": 1973,
     "genres": [],
     "artistName": "Maria Creuza",
-    "displayArtistName": "Maria Creuza"
+    "displayArtistName": "Maria Creuza",
+    "appleMusicLink": "https://music.apple.com/us/album/voce-abusou/135337360",
+    "amazonMusicLink": "http://music.amazon.es/albums/B009571YB8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2FVvYKfQG0S2ZKDNVq9Psv"
   },
   {
     "title": "Tiempo de Gardel",
@@ -863,11 +968,14 @@
     ],
     "details": "",
     "cdNumber": "CD 5201, 7797417520124",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/33d37050-e13d-47f6-a478-caf195d08e3d_Trio+Contempora%CC%81neo.png",
     "year": 2006,
     "genres": [],
     "artistName": "Trío Contemporáneo",
-    "displayArtistName": "Trío Contemporáneo"
+    "displayArtistName": "Trío Contemporáneo",
+    "appleMusicLink": "http://music.apple.com/us/album/tiempo-de-gardel/206325792",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IGQGAK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2IXTvvCqCxWaod24u3oAJg"
   },
   {
     "title": "Latido de Buenos Aires",
@@ -890,11 +998,14 @@
     ],
     "details": "Voz: Rodolfo Almar.",
     "cdNumber": "CD 5236",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/50313c89-db9b-4f89-bb8a-f08c99aa136d_Alberto%20Garralda%20-%20Latido%20de%20Buenos%20Aires.png",
     "year": 2006,
     "genres": [],
     "artistName": "Alberto Garralda",
-    "displayArtistName":"Alberto Garralda y Conjunto de Cuerdas"
+    "displayArtistName":"Alberto Garralda y Conjunto de Cuerdas",
+    "appleMusicLink": "https://music.apple.com/us/album/latido-de-buenos-aires/206322505",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IN3G4W",
+    "spotifyLink": "https://open.spotify.com/intl-es/track/3ALQFNs95T7vfKMTFq6Tgl"
   },
   {
     "title": "De Esta Manera",
@@ -902,9 +1013,12 @@
     "displayArtistName":"Alberto Garralda",
     "year": 2014,
     "cdNumber": "00",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/5a2c04fe-f656-4a9e-b41e-a50ced8797cb_Alberto%20Garralda%20-%20De%20esta%20manera.png",
     "genres": ["TANGO", "MÚSICA_INSTRUMENTAL"],
     "details": "Formato: EP. Duración: 21 min 51 s.",
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/38Ts3ilNXQhZS2FeIyo6xY",
     "listOfSongs": [
       { "name": "Intrigante", "duration": "3:50" },
       { "name": "De Esta Manera", "duration": "3:35" },
@@ -914,7 +1028,6 @@
       { "name": "Sucedió en Verano", "duration": "4:44" }
     ]
   },
-
   {
     "title": "Yo no... ¿y Ud.?",
     "artistName": "Carlos Perciavalle & Antonio Gasalla",
@@ -938,9 +1051,12 @@
     ],
     "details": "Dirección musical: Alberto Favero.",
     "cdNumber": "CD 5023, 779741750232",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1314e2ef-be5f-4228-b152-9e5070d75035_CD%205023.jpg",
     "year": 1998,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/yo-no-y-usted/206439518",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2Ff1g4WdHssdj1T1wTDgKe"
   },
   {
     "title": "Canciones ladinas y españolas",
@@ -972,11 +1088,14 @@
     "cdNumber": "",
     "photo": "",
     "year": 2006,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/canciones-ladinas-y-espa%C3%B1olas/289176244",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEUIHY",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4CBVGNCSWeTXHjUH01TmeT"
   },
   {
     "title": "Acusticazo",
-    "artistName": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
+    "artistName": "Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros",
     "displayArtistName": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
     "listOfSongs": [
       { "name": "Introducción", "duration": "0:41" },
@@ -991,9 +1110,12 @@
     ],
     "details": "Participan Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón, Edelmiro Molinari, Miguel y Eugenio, Carlos Daniel, Gabriela, Miguel Krochik.",
     "cdNumber": "CD 6054, 7797417605425",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/e0a163d8-ac26-41f8-aa0d-80f29d6f874c_Inte%CC%81rpretes%20varios%20-%20Acusticazo.png",
     "year": 1972,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/acusticazo/260471946",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IENFOW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/0ckhxBFDJZUuCRIH0TXdN5"
   },
   {
     "title": "Homenaje a Edith Piaf",
@@ -1015,9 +1137,43 @@
     ],
     "details": "",
     "cdNumber": "CD 6058, 7797417605821",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/e2a6a5ae-51f8-42ff-8579-3aad99dbe64f_Corina%20Harry%20-%20Homenaje%20a%20Edith%20Piaf.png",
     "year": 2006,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/homenaje-a-edith-piaf/206359503",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IG7VRM",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5qe0YjDOzKD8MgLWOwgGGr"
+  },
+  {
+    "title": "A mi patria",
+    "artistName": "Corina Harry",
+    "displayArtistName": "Corina Harry",
+    "listOfSongs": [
+      { "name": "Sé Que Mi Patria Tiene", "duration": "4:75" },
+      { "name": "El Arroyo Con el Viento", "duration": "2:11" },
+      { "name": "Niñito Sureño", "duration": "04:20" },
+      { "name": "Nueve Lunas", "duration": "4:39" },
+      { "name": "Un buen Chamamé", "duration": "2:23" },
+      { "name": "Las Lunas y el Gaucho", "duration": "3:33" },
+      { "name": "Sueño Eterno", "duration": "2:44" },
+      { "name": "Al Pueblo de Cuenca", "duration": "3:50" },
+      { "name": "Sólo Amor Como Camino", "duration": "2:18" },
+      { "name": "Manzana Verde", "duration": "5:31" },
+      { "name": "Zamba de la Memoria", "duration": "4:02" },
+      { "name": "Mi Tierra Merece Tanto", "duration": "2:37" },
+      { "name": "Los Senderos de Mi Sentir", "duration": "3:39" },
+      { "name": "Cristos en Carne de Hombres", "duration": "3:56" },
+      { "name": "A la Mujer Argentina", "duration": "3:34" },
+      { "name": "Nacimiento, Vida y Muerte", "duration": "3:27" }
+    ],
+    "details": "",
+    "cdNumber": "CD ----",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f25e0e7d-e5a8-4861-a71b-13bdb49edf37_Corina%20Harry%20-%20A%20mi%20patria.png",
+    "year": 2012,
+    "genres": ["FOLCLORE"],
+    "appleMusicLink": "",
+    "amazonMusicLink": "https://music.amazon.es/albums/B07GC99V6R",
+    "spotifyLink": ""
   },
   {
     "title": "Ne me quitte pas",
@@ -1041,9 +1197,12 @@
     ],
     "details": "",
     "cdNumber": "CD 6060, 7797417606026",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f49c3616-b961-47ce-83ef-959ef74f6ad4_Corina%20Harry%20-%20Ne%20me%20quitte%20pas.png",
     "year": 2007,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/ne-me-quitte-pas/289176195",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CAKKV8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4kvl8qQF5T3RlQv3E7yobl"
   },
   {
     "title": "Libre",
@@ -1065,9 +1224,12 @@
     ],
     "details": "",
     "cdNumber": "CD 6050, 7797417605029",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/adf98ad3-1cab-45ad-8f86-4882e7d3ae45_Marikena%20Monti%20-%20Libre.png",
     "year": 2007,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/marikena-libre/289176221",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DIUSXY",
+    "spotifyLink": "https://open.spotify.com/intl-es/track/47CBZFzX4gUzawAeafBwNI"
   },
   {
     "title": "Puente de madera",
@@ -1089,9 +1251,12 @@
     ],
     "details": "",
     "cdNumber": "CD 410, 7797417041025",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/5e28b4c2-8a06-4523-aca9-6157c7288125_CD410%20Puente%20de%20Madera.jpg",
     "year": 1979,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/puente-de-madera/920185206",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00NQ2P4LY",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4IZDGXRV8JCoqYZl0RydFN"
   },
   {
     "title": "Muñeca de porcelana",
@@ -1113,9 +1278,12 @@
     ],
     "details": "",
     "cdNumber": "CD 411, 7797417041124",
-    "photo": "",
-    "year": 1978,
-    "genres": []
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/80ecb6e0-98e7-4799-937b-1ce60cdbfa8c_CD411%20Mun%CC%83eca%20de%20Porcelana.jpg",
+    "year": 1992,
+    "genres": [],
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
   },
   {
     "title": "Un rosal pleno de música",
@@ -1137,9 +1305,12 @@
     ],
     "details": "",
     "cdNumber": "CD 423, 7797417042329",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a63cf1d7-840d-4718-bf56-472737c17bcf_CD423%20Un%20Rosal%20Pleno%20de%20Mu%CC%81sica.jpg",
     "year": 1993,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
   },
   {
     "title": "Tango a la Duke",
@@ -1147,16 +1318,16 @@
     "displayArtistName":"The Gustavo Beytelmann Trio",
     "listOfSongs": [
       {
-        "name": "In a Sentimental Mood / Me pongo sentimental",
+        "name": "Me pongo sentimental",
         "duration": "4:44"
       },
-      { "name": "Solitude / Soledad", "duration": "6:16" },
+      { "name": "Soledad", "duration": "6:16" },
       {
-        "name": "Caravan / Caravana",
+        "name": "Caravana",
         "duration": "3:34"
       },
       {
-        "name": "Satin Doll / Muñeca satinada",
+        "name": "Muñeca satinada",
         "duration": "7:09"
       },
       {
@@ -1164,11 +1335,11 @@
         "duration": "4:31"
       },
       {
-        "name": "Sophisticated Lady / Dama sofisticada",
+        "name": "Dama sofisticada",
         "duration": "5:03"
       },
       {
-        "name": "Prelude to a Kiss / Preludio de un beso",
+        "name": "Preludio de un beso",
         "duration": "4:53"
       },
       {
@@ -1176,7 +1347,7 @@
         "duration": "4:32"
       },
       {
-        "name": "Mood Indigo / Humor índigo",
+        "name": "Humor índigo",
         "duration": "3:38"
       },
       {
@@ -1185,10 +1356,14 @@
       }
     ],
     "details": "Con Roberto Tormo y Juan José Mosalini.",
-    "cdNumber": "CD 5237, 7797417523729",
-    "photo": "",
+    "cdNumber": "CD 5237",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1b435342-490d-486d-a288-f6a0632f4d2e_91uDyy29QXL._AC_SL1413_.jpg",
     "year": 1997,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/tango-%C3%A0-la-duke-feat-roberto-tormo-juan-jos%C3%A9-mosalini/1536725205",
+    "amazonMusicLink": "https://music.amazon.es/albums/B08L6LP9X4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6eMLdHllxG5ZiyTISGfj1Z"
+
   },
   {
     "title": "Milán 1984 Vol. 1",
@@ -1205,9 +1380,12 @@
     ],
     "details": "",
     "cdNumber": "CD 5063, 7797417506326",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/83d7444f-60c1-46bb-8ee8-c32c5ff06909_Astor%20Piazzolla%20-%20Mila%CC%81n%201984%20-%20Vol.%201.png",
     "year": 1984,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/milan-1984-vol-1/295008223",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CKKIHE",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2771kYlRmGnNZpE1TnH60I"
   },
   {
     "title": "Milán 1984 Vol. 2",
@@ -1225,9 +1403,12 @@
     ],
     "details": "",
     "cdNumber": "CD 5064, 7797417506425",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/181450cf-3a4f-45ed-b638-653dc571d96c_Astor%20Piazzolla%20-%20Mila%CC%81n%201984%20Vol.%202.png",
     "year": 1984,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/milan-1984-vol-2/375531894",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJWXCM",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6P9D61jrFKoaMNsQkQ36za"
   },
   {
     "title": "Canciones y danzas de música argentina",
@@ -1252,10 +1433,13 @@
       { "name": "Una flauta en la noche", "duration": "5:35" },
       { "name": "Alfonsina y el mar", "duration": "4:52" }
     ],
-    "details": "",
+    "details": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/719bda9e-250f-4ce3-8ccf-331eced5619c_CD424%20Un%CC%83a%20Ramos%20y%20sus%20Amigos.jpg",
     "cdNumber": "CD 424, 7797417042428",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/719bda9e-250f-4ce3-8ccf-331eced5619c_CD424%20Un%CC%83a%20Ramos%20y%20sus%20Amigos.jpg",
     "year": 1985,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/u%C3%B1a-ramos-y-sus-amigos-feat-miguel-%C3%A1ngel-estrella-jos%C3%A9/925803388",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00O6E9LGA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4w8ITYewMR8wSHIm9NMlMb"
   }
 ]

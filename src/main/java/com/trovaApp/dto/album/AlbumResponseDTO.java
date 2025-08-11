@@ -21,109 +21,60 @@ public class AlbumResponseDTO {
     private Status status;
     private Date createdAt;
     private List<SongResponseDTO> listOfSongs;
+    private String appleMusicLink;
+    private String amazonMusicLink;
+    private String spotifyLink;
 
-    // Getters y setters
-    public Long getId() {
-        return id;
-    }
+    // Getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getDetails() { return details; }
+    public void setDetails(String details) { this.details = details; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getCdNumber() { return cdNumber; }
+    public void setCdNumber(String cdNumber) { this.cdNumber = cdNumber; }
 
-    public String getDetails() {
-        return details;
-    }
+    public String getPhoto() { return photo; }
+    public void setPhoto(String photo) { this.photo = photo; }
 
-    public void setDetails(String details) {
-        this.details = details;
-    }
+    public Integer getYear() { return year; }
+    public void setYear(Integer year) { this.year = year; }
 
-    public String getCdNumber() {
-        return cdNumber;
-    }
+    public Set<Genre> getGenres() { return genres; }
+    public void setGenres(Set<Genre> genres) { this.genres = genres; }
 
-    public void setCdNumber(String cdNumber) {
-        this.cdNumber = cdNumber;
-    }
+    public String getArtistName() { return artistName; }
+    public void setArtistName(String artistName) { this.artistName = artistName; }
 
-    public String getPhoto() {
-        return photo;
-    }
+    public String getDisplayArtistName() { return displayArtistName; }
+    public void setDisplayArtistName(String displayArtistName) { this.displayArtistName = displayArtistName; }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+    public Status getStatus() { return status; }
+    public void setStatus(Status status) { this.status = status; }
 
-    public Integer getYear() {
-        return year;
-    }
+    public Date getCreatedAt() { return createdAt; }
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
 
-    public void setYear(Integer year) {
-        this.year = year;
-    }
+    public List<SongResponseDTO> getListOfSongs() { return listOfSongs; }
+    public void setListOfSongs(List<SongResponseDTO> listOfSongs) { this.listOfSongs = listOfSongs; }
 
-    public Set<Genre> getGenres() {
-        return genres;
-    }
+    public String getAppleMusicLink() { return appleMusicLink; }
+    public void setAppleMusicLink(String appleMusicLink) { this.appleMusicLink = appleMusicLink; }
 
-    public void setGenres(Set<Genre> genres) {
-        this.genres = genres;
-    }
+    public String getAmazonMusicLink() { return amazonMusicLink; }
+    public void setAmazonMusicLink(String amazonMusicLink) { this.amazonMusicLink = amazonMusicLink; }
 
-    public String getArtistName() {
-        return artistName;
-    }
-
-    public void setArtistName(String artistName) {
-        this.artistName = artistName;
-    }
-
-    public String getDisplayArtistName() {
-        return displayArtistName;
-    }
-
-    public void setDisplayArtistName(String displayArtistName) {
-        this.displayArtistName = displayArtistName;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public List<SongResponseDTO> getListOfSongs() {
-        return listOfSongs;
-    }
-
-    public void setListOfSongs(List<SongResponseDTO> listOfSongs) {
-        this.listOfSongs = listOfSongs;
-    }
+    public String getSpotifyLink() { return spotifyLink; }
+    public void setSpotifyLink(String spotifyLink) { this.spotifyLink = spotifyLink; }
 
     // Convert Album entity to DTO
     public static AlbumResponseDTO fromModel(Album album) {
         AlbumResponseDTO dto = new AlbumResponseDTO();
 
-        // Basic album info
         dto.setId(album.getId());
         dto.setTitle(album.getTitle());
         dto.setDetails(album.getDetails());
@@ -133,18 +84,20 @@ public class AlbumResponseDTO {
         dto.setStatus(album.getStatus());
         dto.setCreatedAt(album.getCreatedAt());
 
-        // Artist info
         dto.setGenres(album.getGenres());
         dto.setDisplayArtistName(album.getDisplayArtistName());
         dto.setArtistName(album.getArtist() != null ? album.getArtist().getName() : null);
 
-        // Map songs if present, otherwise set null
+        dto.setAppleMusicLink(album.getAppleMusicLink());
+        dto.setAmazonMusicLink(album.getAmazonMusicLink());
+        dto.setSpotifyLink(album.getSpotifyLink());
+
         if (album.getListOfSongs() != null && !album.getListOfSongs().isEmpty()) {
             dto.setListOfSongs(album.getListOfSongs().stream()
                     .map(SongResponseDTO::fromModel)
                     .collect(Collectors.toList()));
         } else {
-            dto.setListOfSongs(null);  // No songs available
+            dto.setListOfSongs(null);
         }
 
         return dto;

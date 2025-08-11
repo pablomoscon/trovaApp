@@ -14,6 +14,10 @@ public class AlbumSeedDTO {
     private List<String> genres;
     private String artistName;
     private String displayArtistName;
+    private String appleMusicLink;
+    private String amazonMusicLink;
+    private String spotifyLink;
+
 
     // Getters and setters
 
@@ -87,5 +91,29 @@ public class AlbumSeedDTO {
 
     public void setDisplayArtistName(String displayArtistName) {
         this.displayArtistName = displayArtistName;
+    }
+
+    public String getAppleMusicLink() {
+        return appleMusicLink;
+    }
+
+    public void setAppleMusicLink(String appleMusicLink) {
+        this.appleMusicLink = appleMusicLink;
+    }
+
+    public String getAmazonMusicLink() {
+        return amazonMusicLink;
+    }
+
+    public void setAmazonMusicLink(String amazonMusicLink) {
+        this.amazonMusicLink = amazonMusicLink;
+    }
+
+    public String getSpotifyLink() {
+        return spotifyLink;
+    }
+
+    public void setSpotifyLink(String spotifyLink) {
+        this.spotifyLink = spotifyLink;
     }
 }
