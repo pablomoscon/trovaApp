@@ -1,11 +1,11 @@
-# 🎶 TrovaApp
+# TrovaApp
 
 Aplicación backend desarrollada en **Java Spring Boot**, pensada para la gestión de recursos musicales (álbumes, artistas, usuarios, etc.).  
 El proyecto está preparado para ejecutarse tanto en entorno local como en contenedores Docker.
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 - Java 17+
 - Spring Boot
 - Spring Data JPA
@@ -15,7 +15,7 @@ El proyecto está preparado para ejecutarse tanto en entorno local como en conte
 
 ---
 
-## 📦 Instalación
+## Instalación
 
 ### 1. Clonar el repositorio
 ```bash
