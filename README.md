@@ -11,7 +11,7 @@ El proyecto está preparado para ejecutarse tanto en entorno local como en conte
 - Spring Data JPA
 - Maven
 - Docker & Docker Compose
-- (Base de datos: completar, ej. PostgreSQL / MySQL / H2)
+- (Base de datos: PostgreSQL / H2)
 
 ---
 
