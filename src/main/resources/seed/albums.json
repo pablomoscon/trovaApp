@@ -394,6 +394,77 @@
     "spotifyLink": "https://open.spotify.com/intl-es/album/5Rkq07eW4M2kvkIwSdmaxr"
   },
   {
+    "title": "Suite del Angel",
+    "cdNumber": "CD  ",
+    "year": 2005,
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "listOfSongs": [
+      {"name": "Introduccion del Angel", "duration": "4:34"},
+      {"name": "Milonga del Angel", "duration": "6:38"},
+      {"name": "La Muerte del Angel", "duration": "3:00"},
+      {"name": "Resurreccion del Angel", "duration": "6:41"},
+      {"name": "Años de Soledad", "duration": "4:46"},
+      {"name": "Escualo", "duration": "3:22"},
+      {"name": "Amelitango", "duration": "3:28"},
+      {"name": "Oblivion", "duration": "3:33"}
+    ],
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/2b1956f0-9b52-4965-9b82-114d8bb88a65_Astor%20Piazzolla%20-%20Suite%20del%20a%CC%81ngel.webp",
+    "appleMusicLink": "https://music.apple.com/ar/album/suite-del-%C3%A1ngel/901460820",
+    "amazonMusicLink": "https://music.amazon.in/albums/B00M1KAK52",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5VDTSdviLZrNlhdwGQsnP7",
+    "details": "42200",
+    "genres": ["TANGO"]
+  },
+  {
+    "title": "4 Seasons of Buenos Aires",
+    "cdNumber": "CD 0",
+    "year": 2005,
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "listOfSongs": [
+      {"name": "Invierno Porteño", "duration": "6:37"},
+      {"name": "Primavera Porteña", "duration": "5:12"},
+      {"name": "Otoño Porteño", "duration": "5:09"},
+      {"name": "Verano Porteño", "duration": "5:01"},
+      {"name": "Libertango", "duration": "4:09"},
+      {"name": "Michelangelo 70", "duration": "3:21"},
+      {"name": "Pulsacion Nº1", "duration": "4:52"},
+      {"name": "Tristeza de un Doble \"a\"", "duration": "7:13"}
+    ],
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/e9e0ece5-35f2-4262-9ef2-6701f162075c_Astor%20Piazzolla%20-%20Las%204%20estaciones%20de%20Buenos%20Aires.webp",
+    "appleMusicLink": "https://music.apple.com/ar/album/piazzolla-4-seasons-of-buenos-aires/900596338",
+    "amazonMusicLink": "https://music.amazon.in/albums/B00LXL4Y3E",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7jeP9xCPXXSbKlPdpWcUAV",
+    "details": "42202",
+    "genres": ["TANGO"]
+  },
+  {
+    "title": "Libertango – Buenos Aires Hora Cero",
+    "cdNumber": "CD 00",
+    "year": 2010,
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "listOfSongs": [
+      {"name": "Jorge Adios", "duration": "4:04"},
+      {"name": "Libertango", "duration": "2:46"},
+      {"name": "Ave Maria", "duration": "5:40"},
+      {"name": "L'Evasion", "duration": "6:06"},
+      {"name": "Buenos Aires Hora Cero", "duration": "5:58"},
+      {"name": "Baires 72", "duration": "5:52"},
+      {"name": "Oda Para Un Hippie", "duration": "5:47"},
+      {"name": "Fuga 9", "duration": "3:03"},
+      {"name": "Homenaje A Cordoba", "duration": "7:11"},
+      {"name": "En 3 x 4", "duration": "3:22"}
+    ],
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/0b95fc92-f609-415e-b6cc-c4335db80969_Astor%20Piazzolla%20-%20Libertaango%20Buenos%20Aires%20hora%20cero.webp",
+    "appleMusicLink": "https://music.apple.com/ar/album/libertango/376141813?i=376141820",
+    "amazonMusicLink": "https://music.amazon.in/albums/B003PRIX4U",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5aCJMfaCFKWA8Lek74q7no",
+    "details": "42203",
+    "genres": ["TANGO"]
+  },
+  {
     "title": "En Suite",
     "listOfSongs": [
       {
