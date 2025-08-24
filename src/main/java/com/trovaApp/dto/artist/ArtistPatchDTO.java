@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
@@ -19,11 +20,8 @@ public class ArtistPatchDTO {
     @Size(max = 100, message = "Nationality must have at most 100 characters")
     private String nationality;
 
-    @Pattern(
-            regexp = "^(https?://.*|/.*)?$",
-            message = "Photo URL must be a valid URL or relative path"
-    )
-    private String photoUrl;
+    // Optional photo (multipart file)
+    private MultipartFile photo;
 
     private Status status;
 
@@ -53,12 +51,12 @@ public class ArtistPatchDTO {
         this.nationality = nationality;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public MultipartFile getPhoto() {
+        return photo;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setPhoto(MultipartFile photo) {
+        this.photo = photo;
     }
 
     public Status getStatus() {

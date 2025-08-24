@@ -9,10 +9,11 @@ import com.trovaApp.dto.album.AlbumResponseDTO;
 import com.trovaApp.dto.song.SongCreateDTO;
 import com.trovaApp.dto.song.SongResponseDTO;
 import com.trovaApp.enums.Genre;
-import com.trovaApp.helper.PaginationHelper;
+import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
 import com.trovaApp.service.album.AlbumService;
 import com.trovaApp.service.visit.VisitService;
+import com.trovaApp.util.AlbumUtils;
 import com.trovaApp.util.FileUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -85,7 +86,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
     }
 
     @GetMapping("/filter")
@@ -119,7 +120,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
     }
 
     @Operation(summary = "Search albums by query text")
@@ -127,16 +128,18 @@ public class AlbumController {
     public ResponseEntity<Map<String, Object>> searchAlbums(
             @RequestParam String q,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "15") int size
+            @RequestParam(defaultValue = "15") int size,
+            @RequestParam(required = false) Status status
     ) {
-        Page<Album> albumPage = albumService.search(page, size, q);
+        Page<Album> albumPage = albumService.search(page, size, q, status);
 
         List<AlbumResponseDTO> dtoList = albumPage.getContent().stream()
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
     }
+
 
     @Operation(summary = "Get albums by artist ID")
     @GetMapping("/by-artist/{artistId}")
@@ -152,7 +155,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(PaginationHelper.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
     }
 
     @Operation(summary = "Add one or more songs to an album")

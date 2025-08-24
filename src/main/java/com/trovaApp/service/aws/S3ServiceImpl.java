@@ -26,7 +26,7 @@ public class S3ServiceImpl implements S3Service {
 
     @Override
     public String uploadFileToS3(MultipartFile file) {
-        String fileUrl = null;
+        String fileUrl;
 
         try {
             // Generate a unique key for the file to avoid collisions

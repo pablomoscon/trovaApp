@@ -3,6 +3,7 @@ package com.trovaApp.controller.artist;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.trovaApp.dto.artist.*;
+import com.trovaApp.enums.Status;
 import com.trovaApp.exception.ArtistNotFoundException;
 import com.trovaApp.model.Artist;
 import com.trovaApp.service.artist.ArtistService;
@@ -19,9 +20,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Tag(name = "artists", description = "Operations related to Artists")
 @RestController
@@ -59,12 +57,24 @@ public class ArtistController {
     @GetMapping
     public ResponseEntity<Page<ArtistBasicResponseDTO>> getArtists(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "9") int size) {
+            @RequestParam(defaultValue = "9") int size,
+            @RequestParam(required = false) Status status) {
 
-        Page<Artist> artistPage = artistService.findAll(page, size);
+        Page<Artist> artistPage = artistService.findAll(page, size, status);
         Page<ArtistBasicResponseDTO> dtoPage = artistPage.map(ArtistBasicResponseDTO::fromModel);
 
         return ResponseEntity.ok(dtoPage);
+    }
+
+    @Operation(summary = "Get a paginated list of artists with album count")
+    @GetMapping("/summary")
+    public ResponseEntity<Page<ArtistWithAlbumCountDTO>> getArtistsWithAlbumCount(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) Status status
+    ) {
+        Page<ArtistWithAlbumCountDTO> artistsPage = artistService.finArtistWithAlbumCount(page, size, status);
+        return ResponseEntity.ok(artistsPage);
     }
 
     @Operation(summary = "Search artists by query")
@@ -72,9 +82,10 @@ public class ArtistController {
     public ResponseEntity<Page<ArtistBasicResponseDTO>> searchArtists(
             @RequestParam String q,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "9") int size) {
+            @RequestParam(defaultValue = "9") int size,
+            @RequestParam(required = false) Status status) {
 
-        Page<Artist> artistPage = artistService.search(q, page, size);
+        Page<Artist> artistPage = artistService.search(q, page, size, status);
         Page<ArtistBasicResponseDTO> dtoPage = artistPage.map(ArtistBasicResponseDTO::fromModel);
         return ResponseEntity.ok(dtoPage);
     }

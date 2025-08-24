@@ -1,5 +1,6 @@
 package com.trovaApp.util;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -41,5 +42,14 @@ public class AlbumUtils {
                 .map(itemMap::get)
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    public static Map<String, Object> buildPagedResponse(String key, Page<?> page, List<?> content) {
+        return Map.of(
+                key, content,
+                "currentPage", page.getNumber(),
+                "totalItems", page.getTotalElements(),
+                "totalPages", page.getTotalPages()
+        );
     }
 }

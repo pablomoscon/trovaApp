@@ -20,6 +20,7 @@ import com.trovaApp.service.artist.ArtistService;
 import com.trovaApp.service.song.SongService;
 import com.trovaApp.util.AlbumUtils;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
@@ -225,6 +226,13 @@ public class AlbumServiceImpl implements AlbumService {
         return albumRepository.findByArtistId(artistId, pageable);
     }
 
+    // Get the total number of albums for a given artist by ID
+    @Transactional(readOnly = true)
+    @Override
+    public Long countAlbumsByArtist(Long artistId) {
+        return albumRepository.countByArtistId(artistId);
+    }
+
     // Get albums with filters
     @Transactional(readOnly = true)
     @Override
@@ -239,6 +247,16 @@ public class AlbumServiceImpl implements AlbumService {
         Pageable pageable = AlbumUtils.buildPageRequest(page, size, sortOrder);
         List<String> normalizedArtists = AlbumUtils.normalizeArtistNames(artistNames);
 
+        if (normalizedArtists != null && normalizedArtists.isEmpty()) {
+            normalizedArtists = null;
+        }
+        if (years != null && years.isEmpty()) {
+            years = null;
+        }
+        if (genres != null && genres.isEmpty()) {
+            genres = null;
+        }
+        
         Page<Long> albumIdsPage = albumRepository.findFilteredAlbumIds(normalizedArtists, years, genres, pageable);
         if (albumIdsPage.isEmpty()) {
             return Page.empty(pageable);
@@ -247,19 +265,28 @@ public class AlbumServiceImpl implements AlbumService {
         List<Album> albums = albumRepository.findAllWithDetailsByIds(albumIdsPage.getContent());
         List<Album> ordered = AlbumUtils.orderByIds(albumIdsPage.getContent(), albums, Album::getId);
 
+        ordered = ordered.stream()
+                .sorted(Comparator
+                        .comparing((Album a) -> a.getArtist().getName(), String.CASE_INSENSITIVE_ORDER)
+                        .thenComparing(Album::getTitle, String.CASE_INSENSITIVE_ORDER)
+                )
+                .toList();
+
         return new PageImpl<>(ordered, pageable, albumIdsPage.getTotalElements());
     }
 
     // Search albums
     @Transactional(readOnly = true)
     @Override
-    public Page<Album> search(int page, int size, String query) {
+    public Page<Album> search(int page, int size, String query, @Nullable Status status) {
         if (query == null || query.trim().isEmpty()) {
             return Page.empty(PageRequest.of(page, size));
         }
 
         Pageable pageable = PageRequest.of(page, size);
-        Page<Long> albumIdsPage = albumRepository.searchAlbumIds(query.trim(), pageable);
+
+        Page<Long> albumIdsPage = albumRepository.searchAlbumIds(query.trim(), status, pageable);
+
         if (albumIdsPage.isEmpty()) {
             return Page.empty(pageable);
         }
