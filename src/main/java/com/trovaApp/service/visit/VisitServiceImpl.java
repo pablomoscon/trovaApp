@@ -7,12 +7,14 @@ import com.trovaApp.repository.AlbumRepository;
 import com.trovaApp.repository.ArtistRepository;
 import com.trovaApp.repository.VisitRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class VisitServiceImpl implements VisitService {
@@ -27,13 +29,12 @@ public class VisitServiceImpl implements VisitService {
         this.artistRepository = artistRepository;
     }
 
-    @Transactional
     @Override
+    @Async
     public void registerAlbumVisit(Long albumId, String sessionId) {
         if (visitRepository.existsBySessionIdAndAlbum_Id(sessionId, albumId)) return;
 
-        Album album = albumRepository.findById(albumId).orElse(null);
-        if (album == null) return;
+        Album album = albumRepository.getReferenceById(albumId);
 
         Visit visit = new Visit();
         visit.setSessionId(sessionId);
@@ -44,12 +45,11 @@ public class VisitServiceImpl implements VisitService {
     }
 
     @Override
-    @Transactional
+    @Async
     public void registerArtistVisit(Long artistId, String sessionId) {
         if (visitRepository.existsBySessionIdAndArtist_Id(sessionId, artistId)) return;
 
-        Artist artist = artistRepository.findById(artistId).orElse(null);
-        if (artist == null) return;
+        Artist artist = artistRepository.getReferenceById(artistId);
 
         Visit visit = new Visit();
         visit.setSessionId(sessionId);
@@ -59,42 +59,47 @@ public class VisitServiceImpl implements VisitService {
         visitRepository.save(visit);
     }
 
+    @Async
     @Override
-    public long countAlbumVisits(Long albumId) {
-        return visitRepository.countByAlbum_Id(albumId);
+    public CompletableFuture<Long> countAlbumVisits(Long albumId) {
+
+        long count = visitRepository.countByAlbum_Id(albumId);
+        return CompletableFuture.completedFuture(count);
     }
 
+    @Async
     @Override
-    public long countArtistVisits(Long artistId) {
-        return visitRepository.countByArtist_Id(artistId);
+    public CompletableFuture<Long> countArtistVisits(Long artistId) {
+        long count = visitRepository.countByArtist_Id(artistId);
+        return CompletableFuture.completedFuture(count);
     }
 
     @Override
     public List<Map<String, Object>> getMostVisitedAlbums() {
-        List<Object[]> raw = visitRepository.findMostVisitedAlbums();
-        return raw.stream().map(row -> {
-            Long albumId = (Long) row[0];
-            Long count = (Long) row[1];
-            Map<String, Object> map = new HashMap<>();
-            map.put("albumId", albumId);
-            map.put("title", albumRepository.findById(albumId).map(a -> a.getTitle()).orElse("Unknown"));
-            map.put("visits", count);
-            return map;
-        }).toList();
+        return visitRepository.findMostVisitedAlbumsWithTitle()
+                .stream()
+                .map(row -> {
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("albumId", row[0]);
+                    map.put("title", row[1]);
+                    map.put("visits", row[2]);
+                    return map;
+                })
+                .toList();
     }
 
     @Override
     public List<Map<String, Object>> getMostVisitedArtists() {
-        List<Object[]> raw = visitRepository.findMostVisitedArtists();
-        return raw.stream().map(row -> {
-            Long artistId = (Long) row[0];
-            Long count = (Long) row[1];
-            Map<String, Object> map = new HashMap<>();
-            map.put("artistId", artistId);
-            map.put("name", artistRepository.findById(artistId).map(a -> a.getName()).orElse("Unknown"));
-            map.put("visits", count);
-            return map;
-        }).toList();
+        return visitRepository.findMostVisitedArtistsWithName()
+                .stream()
+                .map(row -> {
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("artistId", row[0]);
+                    map.put("name", row[1]);
+                    map.put("visits", row[2]);
+                    return map;
+                })
+                .toList();
     }
 
     @Transactional

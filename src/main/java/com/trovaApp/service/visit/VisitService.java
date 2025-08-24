@@ -1,20 +1,23 @@
 package com.trovaApp.service.visit;
 
 import jakarta.transaction.Transactional;
+import org.springframework.scheduling.annotation.Async;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public interface VisitService {
 
-    @Transactional
     void registerAlbumVisit(Long albumId, String sessionId);
 
     void registerArtistVisit(Long artistId, String sessionId);
 
-    long countAlbumVisits(Long albumId);
+    @Async
+    CompletableFuture<Long> countAlbumVisits(Long albumId);
 
-    long countArtistVisits(Long artistId);
+    @Async
+    CompletableFuture<Long> countArtistVisits(Long artistId);
 
     List<Map<String, Object>> getMostVisitedAlbums();
 

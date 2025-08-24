@@ -3,6 +3,8 @@ package com.trovaApp.service.artist;
 import com.trovaApp.dto.artist.ArtistBasicResponseDTO;
 import com.trovaApp.dto.artist.ArtistCreateDTO;
 import com.trovaApp.dto.artist.ArtistPatchDTO;
+import com.trovaApp.dto.artist.ArtistWithAlbumCountDTO;
+import com.trovaApp.enums.Status;
 import com.trovaApp.model.Artist;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +17,10 @@ public interface ArtistService {
     Artist create(ArtistCreateDTO dto, MultipartFile photo);
 
     @Transactional(readOnly = true)
-    Page<Artist> findAll(int page, int size);
+    Page<Artist> findAll(int page, int size, Status status);
+
+    @Transactional(readOnly = true)
+    Page<ArtistWithAlbumCountDTO> finArtistWithAlbumCount(int page, int size, Status status);
 
     Optional<Artist> findById(Long id);
 
@@ -28,7 +33,7 @@ public interface ArtistService {
     Optional<Artist> findByName(String artistName);
 
     @Transactional(readOnly = true)
-    Page<Artist> search(String term, int page, int size);
+    Page<Artist> search(String term, int page, int size, Status status);
 
     @Transactional(readOnly = true)
     Page<Artist> findAllWithAlbums(Pageable pageable);

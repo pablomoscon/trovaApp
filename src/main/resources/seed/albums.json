@@ -1,1162 +1,2420 @@
 [
   {
-    "title": "Pulsación Fuga y Misterio",
-    "listOfSongs": [
-      { "name": "Pulsacion Nº 1", "duration": "4:49" },
-      { "name": "Pulsacion Nº 2", "duration": "4:12" },
-      { "name": "Pulsacion Nº 4", "duration": "4:25" },
-      { "name": "Pulsacion Nº 5", "duration": "4:03" },
-      { "name": "Fuga Y Misterio", "duration": "3:11" },
-      { "name": "Contra Milonga A La Funerala", "duration": "5:00" },
-      { "name": "Allegro Tangabile", "duration": "4:35" },
-      { "name": "Tocata Rea", "duration": "4:35" },
-      { "name": "Tangata Del Alba", "duration": "4:51" }
-    ],
-    "details": "Música instrumental de \"María de Buenos Aires\". Música, arreglos y dirección: Astor Piazzolla",
-    "cdNumber": "CD 402",
-    "photo": "",
-    "year": 1997,
-    "genres": ["CONTEMPORÁNEA"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla y su orquesta"
-  },
-  {
-    "title": "Adiós Nonino",
-    "listOfSongs": [
-      { "name": "Adiós Nonino", "duration": "8:04" },
-      { "name": "Otoño Porteño", "duration": "5:10" },
-      { "name": "Michelangelo 70", "duration": "3:20" },
-      { "name": "Coral Tangata (Silfo Y Ondina)", "duration": "6:00" },
-      { "name": "Fugata", "duration": "3:50" },
-      { "name": "Soledad", "duration": "6:52" },
-      { "name": "Final", "duration": "7:47" }
-    ],
-    "details": "Música, arreglos y dirección: Astor Piazzolla. Este álbum editado por TROVA originalmente en 1969 integra el Hall de la Fama de los GRAMMY Latinos.",
-    "cdNumber": "CD 404",
-    "photo": "",
-    "year": 1969,
-    "genres": ["TANGO"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla y su Quinteto"
-  },
-  {
-    "title": "María de Buenos Aires parte 1",
-    "listOfSongs": [
-      { "name": "Alevare", "duration": "6:13" },
-      { "name": "Tema De Maria", "duration": "4:20" },
-      { "name": "Balada Para Un Organito Loco", "duration": "7:25" },
-      { "name": "Milonga Carrieguera", "duration": "5:17" },
-      { "name": "Fuga Y Misterio", "duration": "3:11" },
-      { "name": "Poema Valseado", "duration": "2:46" },
-      { "name": "Tocata Rea", "duration": "4:35" },
-      { "name": "Miserere Canyengue", "duration": "6:03" }
-    ],
-    "details": "Música: Astor Piazzolla. Letra: Horacio Ferrer. Interpretada por Amelita Baltar, Hector de Rosas (canto), Horacio Ferrer (recitado), Astor Piazzolla (bandoneón) y orquesta.",
-    "cdNumber": "CD 5013",
-    "photo": "",
-    "year": 	1993,
-    "genres": ["TANGO", "TEATRO_MUSICAL"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName": "Astor Piazzolla"
-  },
-  {
-    "title": "María de Buenos Aires parte 2",
-    "listOfSongs": [
-      { "name": "Contramilonga A La Funerala", "duration": "5:00" },
-      { "name": "Tangata Del Alba", "duration": "4:51" },
-      { "name": "Carta A Los Arboles Y A Las Chimeneas", "duration": "3:03" },
-      { "name": "Aria De Los Analistas", "duration": "8:35" },
-      { "name": "Romanza Del Duende", "duration": "5:30" },
-      { "name": "Allegro Tangabile", "duration": "2:50" },
-      { "name": "Milonga De La Anunciacion", "duration": "3:05" },
-      { "name": "Tangus Dei", "duration": "9:50" }
-    ],
-    "details": "Música: Astor Piazzolla. Interpretada por Amelita Baltar y Hector de Rosas (canto), Horacio Ferrer (recitados) y Astor Piazzolla (bandoneón) y orquesta.",
-    "cdNumber": "CD 5014",
-    "photo": "",
-    "year": 1993,
-    "genres": ["TANGO", "TEATRO_MUSICAL"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "En Suite",
-    "listOfSongs": [
-      { "name": "Introducción del Ángel", "duration": "4:32" },
-      { "name": "Milonga del Ángel", "duration": "6:36" },
-      { "name": "La muerte del Ángel", "duration": "2:58" },
-      { "name": "Resurrección del Ángel", "duration": "6:37" },
-      { "name": "Oblivion", "duration": "3:32" },
-      { "name": "Cavalcata", "duration": "3:56" },
-      { "name": "Enrico IV", "duration": "2:37" },
-      { "name": "Remembrance", "duration": "4:45" },
-      { "name": "Primavera porteña", "duration": "5:11" },
-      { "name": "Verano Porteño", "duration": "9:14" },
-      { "name": "Otoño porteño", "duration": "6:37" },
-      { "name": "Invierno porteño", "duration": "5:23" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5059",
-    "photo": "",
-    "year": 2004,
-    "genres": [],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Agri",
-    "listOfSongs": [
-      { "name": "Presagio", "duration": "5:00" },
-      { "name": "Bruno Y Sarah", "duration": "2:58" },
-      { "name": "Olhos De Resaca", "duration": "4:07" },
-      { "name": "Los Pájaros Perdidos", "duration": "2:58" },
-      { "name": "As Ilhas", "duration": "4:55" },
-      { "name": "Jardines De Africa", "duration": "2:35" },
-      { "name": "Muralla China", "duration": "3:19" },
-      { "name": "La Felure", "duration": "3:30" },
-      { "name": "Uomo Del Sud (Violín)", "duration": "3:54" },
-      { "name": "Uomo Del Sud (Bandoneón)", "duration": "3:54" },
-      { "name": "Soledad", "duration": "4:06" },
-      { "name": "Se Potessi Ancora", "duration": "3:56" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5019",
-    "photo": "",
-    "year": 2007,
-    "genres": ["CONTEMPORÁNEA"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Astor Piazzolla & Amelita Baltar",
-    "listOfSongs": [
-      { "name": "Preludio Para El Año 3001", "duration": "4:12" },
-      { "name": "Balada Para Mi Muerte", "duration": "4:12" },
-      { "name": "Balada Para Un Loco", "duration": "4:49" },
-      { "name": "Vamos, Nina", "duration": "3:39" },
-      { "name": "Las Ciudades", "duration": "4:34" },
-      { "name": "Los Paraguas De Buenos Aires", "duration": "4:52" },
-      { "name": "La Primera Palabra", "duration": "3:40" },
-      { "name": "No Quiero Otro", "duration": "4:39" },
-      { "name": "Pequeña Cancion Para Matilde", "duration": "2:48" },
-      { "name": "Violetas Populares", "duration": "4:35" },
-      { "name": "Chiquilin De Bachin", "duration": "4:26" },
-      { "name": "Milonga En Ay Menor", "duration": "3:36" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5060",
-    "photo": "",
-    "year": 2005,
-    "genres": ["TANGO", "TEATRO_MUSICAL"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Concertante",
-    "listOfSongs": [
-      { "name": "Aconcagua: Allegro Marcato", "duration": "7:48" },
-      { "name": "Aconcagua: Moderato", "duration": "7:11" },
-      { "name": "Aconcagua: Presto", "duration": "6:48" },
-      { "name": "Tres Tangos: Allegro Tranquilo", "duration": "7:22" },
-      { "name": "Tres Tangos: Moderato Místico", "duration": "5:30" },
-      { "name": "Tres Tangos: Allegreto Molto Marcato", "duration": "4:44" },
-      { "name": "Suite Punta Del Este: Introducción", "duration": "4:51" },
-      { "name": "Suite Punta Del Este: Coral", "duration": "10:16" },
-      { "name": "Suite Punta Del Este: Fuga", "duration": "3:59" }
-    ],
-    "details": "ACONCAGUA (Concierto para Bandoneón y Orquesta), TRES TANGOS (Para Bandoneón y Orquesta), SUITE PUNTA DEL ESTE",
-    "cdNumber": "CD 5061",
-    "photo": "",
-    "year": 2006,
-    "genres": ["CONTEMPORÁNEA"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Roma 1972 (En Vivo)",
-    "listOfSongs": [
-      { "name": "Fuga Y Misterio", "duration": "3:38" },
-      { "name": "Zum", "duration": "5:25" },
-      { "name": "Buenos Aires Hora Cero", "duration": "5:33" },
-      { "name": "Vardarito", "duration": "6:25" },
-      { "name": "Onda Nueve", "duration": "6:07" },
-      { "name": "La Muerte Del Angel", "duration": "3:01" },
-      { "name": "Tristeza De Un Doble \"A\"", "duration": "7:14" },
-      { "name": "Verano Porteño", "duration": "9:12" },
-      { "name": "Divertimento Nueve", "duration": "5:54" },
-      { "name": "Preludio Nueve", "duration": "7:01" },
-      { "name": "Adios Nonino", "duration": "11:30" },
-      { "name": "Mufa Sesenta Y Dos", "duration": "2:47" }
-    ],
-    "details": "En vivo, grabado en Roma 1972",
-    "cdNumber": "CD 5062",
-    "photo": "",
-    "year": 2006,
-    "genres": ["TANGO", "JAZZ"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Años de Soledad",
-    "listOfSongs": [
-      { "name": "Libertango", "duration": "3:04" },
-      { "name": "Oblivion", "duration": "3:30" },
-      { "name": "Biyuya", "duration": "6:05" },
-      { "name": "Salvador Allende", "duration": "5:03" },
-      { "name": "La Evasion", "duration": "6:02" },
-      { "name": "Años De Soledad", "duration": "4:42" },
-      { "name": "Zita", "duration": "6:13" },
-      { "name": "Escualo", "duration": "3:18" },
-      { "name": "Amelitango", "duration": "3:24" },
-      { "name": "Llueve Sobre Santiago", "duration": "3:59" },
-      { "name": "Bandoneon", "duration": "10:56" }
-    ],
-    "details": "Música, arreglos y dirección orquestal: Astor Piazzolla",
-    "cdNumber": "CD 5056",
-    "photo": "",
-    "year": 1993,
-    "genres": ["TANGO"],
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":  "Astor Piazzolla"
-  },
-  {
-    "title": "Sonamos Pese a Todo",
-    "listOfSongs": [
-      { "name": "Introducción",                                                        "duration": "2:40" },
-      { "name": "El alegre cazador que vuelve a su casa con un fuerte dolor acá",       "duration": "4:02" },
-      { "name": "Conozca el interior (Chacarera del ácido lisérgico)",                  "duration": "2:30" },
-      { "name": "El polen ya se esparce por el aire (Canción levemente obscena)",       "duration": "2:05" },
-      { "name": "Cantata de la planificación familiar",                                 "duration": "6:05" },
-      { "name": "Concerto grosso alla rústica",                                         "duration": "3:30" },
-      { "name": "Quinteto de vientos",                                      "duration": "2:53" },
-      { "name": "Oi Gadóñaya (Canción rusa)",                                           "duration": "2:30" },
-      { "name": "Epopeya de Edipo de Tebas (Cantar bastante de gesta)",                 "duration": "5:00" },
-      { "name": "Candonga de los colectiveros (Candombe‑milonga)",                      "duration": "2:15" },
-      { "name": "Teorema de Thales (Divertimento matemático)",                          "duration": "4:30" },
-      { "name": "Gloria Hosanna, That’s the Question (Nomenclátor sacro‑polifónico)",   "duration": "3:20" }
-    ],
-    "details": "",
-    "cdNumber": "CD 519",
-    "photo": "",
-    "year": 1971,
-    "genres": ["HUMOR_MUSICAL"],
-    "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
-  },
-  {
-    "title": "Cantata Laxatón",
-    "listOfSongs": [
-      { "name": "Cantata Laxatón",          "duration": "17:29" },
-      { "name": "Bolero de Mastropiero",    "duration": "5:04" },
-      { "name": "Tristezas del Manuela",    "duration": "3:59" },
-      { "name": "Pieza en forma de tango",  "duration": "4:11" },
-      { "name": "Si no fuera santiagueño",  "duration": "3:39" },
-      { "name": "Vals del segundo",         "duration": "3:04" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5032",
-    "photo": "",
-    "year": 1972,
-    "genres": ["HUMOR_MUSICAL"],
-    "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
-  },
-  {
-    "title": "Volumen 3",
-    "listOfSongs": [
-      { "name": "Voglio entrare per la finestra", "duration": "6:47" },
-      {
-        "name": "Miss Lilly Higgins sings shimmy in Mississippi´s spring",
-        "duration": "3:01"
-      },
-      { "name": "Ya el sol asomaba en el poniente", "duration": "6:03" },
-      { "name": "La Bossa Nostra", "duration": "8:00" },
-      { "name": "Romanza escocesa sin palabras", "duration": "2:35" },
-      { "name": "Suite los noticiarios cinematográficos", "duration": "8:00" },
-      { "name": "Fe de erratas", "duration": "0:45" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5043",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
-  },
-  {
-    "title": "Super humor con Les Luthiers",
-    "listOfSongs": [
-      { "name": "Concerto Grosso Alla Rustica", "duration": "3:26" },
-      { "name": "Tristezas de Manuela (Manuela's Blues)", "duration": "4:00" },
-      {
-        "name": "El Alegre Cazador Que Vuelve A Su Casa Con Un Fuerte Dolor Acá (Scherzo Concertante)",
-        "duration": "4:02"
-      },
-      { "name": "Pieza En Forma De Tango", "duration": "4:16" },
-      {
-        "name": "Gloria Hosanna, That's The Question (Nomenclator Sacro Polifónico)",
-        "duration": "3:16"
-      },
-      { "name": "Quinteto De Vientos (3er Movimiento)", "duration": "2:50" },
-      { "name": "Romanza Escocesa Sin Palabras", "duration": "2:35" },
-      { "name": "Voglio Entrare Per La Finestra", "duration": "6:47" },
-      { "name": "Suite Los Noticiarios Cinematográficos", "duration": "8:00" }
-    ],
-    "details": "",
-    "cdNumber": "CD 405",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Les Luthiers",
-    "displayArtistName":  "Les Luthiers"
-  },
-  {
-    "title": "Lo Mejor/Peor de Les Luthiers",
-    "listOfSongs": [
-      { "name": "Si No Fuera Santiagueño", "duration": "3:40" },
-      { "name": "Epopeya De Edipo De Tebas", "duration": "4:56" },
-      { "name": "Bolero De Mastropiero", "duration": "5:48" },
-      { "name": "Teorema De Thales", "duration": "4:34" },
-      { "name": "Oi Gadoñaya", "duration": "2:25" },
-      { "name": "Candonga De Los Colectiveros", "duration": "2:07" },
-      { "name": "Miss Lilly Higgins Sings Shimmy In Mississippi's Spring", "duration": "3:01" },
-      { "name": "La Bossa Nostra", "duration": "8:00" },
-      { "name": "Vals Del Segundo", "duration": "2:52" },
-      { "name": "Vals Del Segundo (Reprise)", "duration": "0:07" }
-    ],
-    "details": "",
-    "cdNumber": "CD 406",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Les Luthiers",
-    "displayArtistName": "Les Luthiers"
-  },
-  {
-    "title": "UÑA RAMOS – QUENA DE LOS ANDES",
-    "listOfSongs": [
-      { "name": "Chiquita linda", "duration": "3:10" },
-      { "name": "Eve", "duration": "3:00" },
-      { "name": "Montaña negra", "duration": "3:30" },
-      { "name": "Don Pablo", "duration": "3:20" },
-      { "name": "Cometa de luz", "duration": "3:15" },
-      { "name": "Anata chica", "duration": "3:25" },
-      { "name": "Bolivianita", "duration": "3:05" },
-      { "name": "Tokiko", "duration": "3:10" },
-      { "name": "Poncho blanco", "duration": "3:00" },
-      { "name": "Charango potosino", "duration": "3:20" },
-      { "name": "La voz del viento", "duration": "3:00" },
-      { "name": "Vidala del solitario", "duration": "3:00" }
-    ],
-    "details": "",
-    "cdNumber": "CD 428",
-    "photo": "",
-    "year": 1975,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "El Cóndor Pasa",
-    "listOfSongs": [
-      { "name": "Virgenes Del Sol",           "duration": "3:53" },
-      { "name": "Palmeras",                   "duration": "3:28" },
-      { "name": "Himno Al Inca",              "duration": "3:00" },
-      { "name": "El Cóndor Pasa",             "duration": "4:05" },
-      { "name": "El Viento",                  "duration": "3:47" },
-      { "name": "Triste Olvido",              "duration": "2:50" },
-      { "name": "Fiesta Aymara",              "duration": "3:32" },
-      { "name": "Aquellos Ojos Grises",       "duration": "3:20" },
-      { "name": "Semillas De Olvido",         "duration": "3:19" },
-      { "name": "El Humahuaquño",             "duration": "2:45" },
-      { "name": "De Lejos Parece Un Humo",    "duration": "3:07" },
-      { "name": "Plegaria Del Inca",          "duration": "3:20" }
-    ],
-    "details": "Con Domingo Cura, Tito Véliz, Edmundo Zaldívar (h) y Hugo Casas",
-    "cdNumber": "CD 403",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "El Arte de la Quena\nEl cóndor pasa y sus mejores temas",
-    "listOfSongs": [
-      { "name": "Palmeras",                 "duration": "3:28" },
-      { "name": "Himno Al Inca",            "duration": "3:00" },
-      { "name": "Nace El Carnaval",         "duration": "2:20" },
-      { "name": "El Cóndor Pasa",           "duration": "4:05" },
-      { "name": "Mi Linda Humahuaqueña",    "duration": "3:05" },
-      { "name": "Un Llanto En El Cerro",    "duration": "2:06" },
-      { "name": "Orureña",                  "duration": "2:14" },
-      { "name": "Aquellos Ojos Grises",     "duration": "3:20" },
-      { "name": "Uña Anata",                "duration": "3:11" },
-      { "name": "Semillas De Olvido",       "duration": "3:19" },
-      { "name": "El Humahuaqueño",          "duration": "2:45" },
-      { "name": "Oración Andina",           "duration": "2:12" },
-      { "name": "Triste Olvido",            "duration": "2:50" },
-      { "name": "Plegaria Del Inca",        "duration": "3:20" }
-    ],
-    "details": "",
-    "cdNumber": "CD 524",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "La Magia de la Quena",
-    "listOfSongs": [
-      { "name": "Camino De Llamas",           "duration": "2:58" },
-      { "name": "Capullito De Nieve",         "duration": "2:43" },
-      { "name": "Mercedes",                   "duration": "3:20" },
-      { "name": "Hono",                       "duration": "4:00" },
-      { "name": "El Valle De Las Amapolas",   "duration": "3:26" },
-      { "name": "Estela",                     "duration": "3:30" },
-      { "name": "Kenapop",                    "duration": "4:00" },
-      { "name": "Una Flauta En La Noche",     "duration": "4:16" },
-      { "name": "Nostalgias",                 "duration": "2:56" },
-      { "name": "El Gringo",                  "duration": "2:32" },
-      { "name": "La Paz",                     "duration": "2:32" },
-      { "name": "Pancho Karancho",            "duration": "2:56" }
-    ],
-    "details": "Todos los temas compuestos por Uña Ramos y arreglados por Bruno Pauvarel, excepto los indicados con * arreglados por Daniel Sbarra",
-    "cdNumber": "CD 407",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "La Princesa del Mar",
-    "listOfSongs": [
-      { "name": "Chiri Chiri",                                  "duration": "3:20" },
-      { "name": "Quais De Buenos-Aires",                        "duration": "4:26" },
-      { "name": "Ma Jolie Beniana",                             "duration": "2:43" },
-      { "name": "Chloé",                                        "duration": "2:48" },
-      { "name": "Oiseau Clochette",                             "duration": "3:49" },
-      { "name": "Jeu De Petites Chèvres",                       "duration": "2:46" },
-      { "name": "La Montagne Aux Sept Couleurs",                "duration": "3:33" },
-      { "name": "Couleur De Blé",                               "duration": "2:15" },
-      { "name": "Le Joueur De Flûte Du Castellet",              "duration": "4:18" },
-      { "name": "Chant D'Alouette",                             "duration": "2:45" },
-      { "name": "Je Suis Des Hauts Plateaux",                   "duration": "3:40" },
-      { "name": "Le Moissonneur",                               "duration": "2:29" },
-      { "name": "La Princesse De Mer",                          "duration": "12:35" }
-    ],
-    "details": "",
-    "cdNumber": "CD 414",
-    "photo": "",
-    "year": 2001,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "Live in France 2004",
-    "listOfSongs": [
-      { "name": "Flora",                    "duration": "3:34" },
-      { "name": "Hacia La Luna",           "duration": "4:47" },
-      { "name": "Beatriz",                 "duration": "6:21" },
-      { "name": "Canto De Alondra",        "duration": "3:04" },
-      { "name": "Canción Del Paisano",     "duration": "4:03" },
-      { "name": "Montaña De Siete Colores","duration": "3:47" },
-      { "name": "Sophia",                  "duration": "4:07" },
-      { "name": "Ritual De Las Vicuñas",   "duration": "4:00" },
-      { "name": "Puerto De Buenos Aires",  "duration": "4:29" },
-      { "name": "Eve",                     "duration": "4:17" },
-      { "name": "La Catedral",             "duration": "9:28" },
-      { "name": "Campo Santo",             "duration": "5:19" },
-      { "name": "Golondrinas",             "duration": "4:19" },
-      { "name": "El Flautista De Castellet","duration": "4:39" },
-      { "name": "Camino de Baixas",        "duration": "4:20" },
-      { "name": "Chiri Chiri",             "duration": "3:11" }
-    ],
-    "details": "Grabado en vivo en la iglesia de Notre Dame des Anges en Baixas, Francia",
-    "cdNumber": "CD 425",
-    "photo": "",
-    "year": 2004,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "The Sea Princess (Techno)",
-    "listOfSongs": [
-      { "name": "The Sea Princess (Versión extendida)", "duration": "7:53" },
-      { "name": "The Sea Princess (Versión dance)",     "duration": "3:59" }
-    ],
-    "details": "Compositor: Uña Ramos. Arreglos y músico acompañante: Bruno Ulysse Pauvarel",
-    "cdNumber": "CD 426",
-    "photo": "",
-    "year": 2004,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "En la Filarmónica de Berlín",
-    "listOfSongs": [
-      { "name": "Oda a Borges (En Vivo)",              "duration": "5:28" },
-      { "name": "Kirey (Linda) [En Vivo]",             "duration": "5:24" },
-      { "name": "Atahualpa (En Vivo)",                 "duration": "4:53" },
-      { "name": "Canto de Alondra (En Vivo)",          "duration": "3:00" },
-      { "name": "Ritual de Vicuñas (En Vivo)",         "duration": "3:49" },
-      { "name": "Amanecer (En Vivo)",                  "duration": "5:07" },
-      { "name": "Hacia la Luna (En Vivo)",             "duration": "5:14" },
-      { "name": "Una Flauta en la Noche (En Vivo)",    "duration": "6:19" },
-      { "name": "Los Pájaros del Viento (En Vivo)",    "duration": "6:49" },
-      { "name": "Campo Santo (En Vivo)",               "duration": "5:27" },
-      { "name": "La Princesa del Mar (En Vivo)",       "duration": "7:46" },
-      { "name": "Chiri Chiri (En Vivo)",               "duration": "3:15" }
-    ],
-    "details": "",
-    "cdNumber": "CD 427",
-    "photo": "",
-    "year": 2004,
-    "genres": [],
-    "artistName": "Uña Ramos",
-    "displayArtistName": "Uña Ramos"
-  },
-  {
-    "title": "Folklore sin mirar atrás Vol. 1",
-    "listOfSongs": [
-      { "name": "Antonino", "duration": "3:30" },
-      { "name": "Nunca sonaron tan dulces las campanas", "duration": "3:20" },
-      { "name": "Zamba del nuevo día", "duration": "3:00" },
-      { "name": "Canción para mi caja rota", "duration": "3:10" },
-      { "name": "Malambo en si mayor", "duration": "2:50" },
-      { "name": "Aire de milonga", "duration": "3:00" },
-      { "name": "Camino del indio", "duration": "3:30" },
-      { "name": "La caja chayera", "duration": "3:00" },
-      { "name": "Añoranzas", "duration": "3:10" },
-      { "name": "Adiós al abuelo campesino", "duration": "3:00" },
-      { "name": "San Lorenzo", "duration": "3:20" },
-      { "name": "Total qué", "duration": "3:00" },
-      { "name": "Chacarera de la copla perdida", "duration": "3:00" },
-      { "name": "Zamba del primer amor", "duration": "3:00" }
-    ],
-    "details": "",
-    "cdNumber": "CD 412",
-    "photo": "",
-    "year": 1967,
-    "genres": [],
-    "artistName": "Cuarteto Zupay",
-    "displayArtistName": "Cuarteto Zupay"
-  },
-  {
-    "title": "Folklore sin mirar atrás Vol. 2",
-    "listOfSongs": [
-      { "name": "Mi pueblo chico", "duration": "3:10" },
-      { "name": "La alabanza", "duration": "3:00" },
-      { "name": "Los castillos", "duration": "3:20" },
-      { "name": "Cuando llegue el alba", "duration": "3:10" },
-      { "name": "Por un viejo muerto", "duration": "3:00" },
-      { "name": "Balada para mi tierra", "duration": "3:30" },
-      { "name": "Chacarera de la copla perdida", "duration": "3:00" },
-      { "name": "Milonga triste", "duration": "3:00" },
-      { "name": "Zamba del primer amor", "duration": "3:00" },
-      { "name": "La rosa", "duration": "3:00" },
-      { "name": "El sable o la cruz", "duration": "3:00" }
-    ],
-    "details": "",
-    "cdNumber": "CD 415",
-    "photo": "",
-    "year": 1968,
-    "genres": [],
-    "artistName": "Cuarteto Zupay",
-    "displayArtistName": "Cuarteto Zupay"
-  },
-  {
-    "title": "Buscado",
-    "listOfSongs": [
-      { "name": "Provincia de Buenos Aires", "duration": "2:30" },
-      { "name": "Nunca te dije nada", "duration": "2:50" },
-      { "name": "Sencillito y de alpargatas", "duration": "2:40" },
-      { "name": "Huella sin huella", "duration": "3:00" },
-      { "name": "La paloma indiana", "duration": "3:10" },
-      { "name": "El Pucheto", "duration": "2:50" },
-      { "name": "De Nosedonde", "duration": "3:00" },
-      { "name": "Con tu permiso Don Vino", "duration": "3:00" },
-      {
-        "name": "Punteo para rancho muerto / Rancho muerto",
-        "duration": "3:20"
-      },
-      { "name": "Mi patria chica", "duration": "3:00" },
-      { "name": "Milonga corralera", "duration": "3:10" },
-      { "name": "El medio hermano", "duration": "3:30" },
-      { "name": "Lo que´s lindo", "duration": "3:00" },
-      { "name": "No es fácil comprender una guitarra", "duration": "3:20" },
-      { "name": "Ya viene clareando el día", "duration": "2:50" },
-      { "name": "Cornetín", "duration": "3:00" },
-      {
-        "name": "Qué de inconvenientes para visitar la Pancha",
-        "duration": "3:10"
-      },
-      { "name": "Solterito soy feliz", "duration": "3:00" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5233, 7797417523323",
-    "photo": "",
-    "year": 2000,
-    "genres": [],
-    "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
-  },
-  {
-    "title": "El Pucheto – Cuentos de Wimpi",
-    "listOfSongs": [
-      { "name": "El Pucheto", "duration": "4:30" },
-      { "name": "El medio hermano", "duration": "4:10" },
-      { "name": "El maltratado", "duration": "4:00" },
-      { "name": "Rimedio pa´todo", "duration": "3:50" },
-      { "name": "¿Carpincho?", "duration": "4:20" },
-      { "name": "Absalón Estavillo", "duration": "4:00" },
-      { "name": "Palmiro Recuero", "duration": "3:40" },
-      { "name": "La botella", "duration": "4:10" },
-      { "name": "La provocación", "duration": "3:30" },
-      { "name": "El olvidadizo", "duration": "4:00" },
-      { "name": "La yunta", "duration": "3:50" },
-      { "name": "El retobao", "duration": "4:00" },
-      { "name": "Los hermanos Zubieta", "duration": "4:10" },
-      { "name": "Apolinario Sanjurjo", "duration": "3:40" },
-      { "name": "El gromista", "duration": "4:00" },
-      { "name": "La caída de Selvago", "duration": "4:30" },
-      { "name": "Habelinda", "duration": "3:50" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5234, 7797417523422",
-    "photo": "",
-    "year": 1969,
-    "genres": [],
-    "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
-  },
-  {
-    "title": "Encontrado",
-    "listOfSongs": [
-      { "name": "El curandero", "duration": "3:12" },
-      { "name": "A Don Jorge Campos", "duration": "2:45" },
-      { "name": "Quisiera fuera mi niño", "duration": "3:30" },
-      { "name": "Con mis pobres besos pobres", "duration": "3:05" },
-      { "name": "Oración y guitarra", "duration": "2:50" },
-      { "name": "En cualquier tirón", "duration": "3:20" },
-      { "name": "A una ausente", "duration": "3:00" },
-      { "name": "Los Medina", "duration": "3:15" },
-      { "name": "Otra milonga cualquiera", "duration": "3:10" },
-      { "name": "Que brilla como el lucero", "duration": "2:55" },
-      { "name": "Trampa de seda", "duration": "3:25" },
-      { "name": "El regalo de mi amigo", "duration": "3:00" },
-      { "name": "Siesta de Enero", "duration": "2:40" },
-      { "name": "Te dije la verdad", "duration": "3:05" },
-      { "name": "Entre hombres", "duration": "3:15" },
-      { "name": "Cuando aclara de mi sueño el alba", "duration": "3:30" },
-      { "name": "Como chimango pa´l ojo", "duration": "3:00" },
-      { "name": "Polqueando en lo ´ña Ciriaca", "duration": "3:10" },
-      { "name": "Como indio pa´la bola", "duration": "3:20" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5238, 7797417523828",
-    "photo": "",
-    "year": 1972,
-    "genres": [],
-    "artistName": "Omar Moreno Palacios",
-    "displayArtistName":"Omar Moreno Palacios"
-  },
-  {
-    "title": "Canción con todos",
-    "listOfSongs": [
-      { "name": "Un grito de ida y vuelta", "duration": "3:10" },
-      { "name": "Canción con todos", "duration": "3:35" },
-      { "name": "María baguala", "duration": "3:20" },
-      { "name": "La vida dos veces", "duration": "3:00" },
-      { "name": "Canción de la ternura", "duration": "3:15" },
-      { "name": "Tonada tradicional cuyana", "duration": "3:25" },
-      { "name": "El aprendiz de brujo", "duration": "3:00" },
-      { "name": "El vino del pobre", "duration": "3:10" },
-      { "name": "Hombre en el tiempo", "duration": "3:30" },
-      { "name": "El pez por la boca muere", "duration": "3:00" },
-      { "name": "Torcaza, paloma torcaz", "duration": "3:20" },
-      { "name": "Tonada que Dios nos guarde", "duration": "3:15" },
-      { "name": "Pueblo chico, infierno grande", "duration": "3:25" },
-      { "name": "Canción del día que vuelve", "duration": "3:05" },
-      { "name": "Peatón, diga no", "duration": "3:10" },
-      { "name": "Tiempo de mayo", "duration": "3:20" }
-    ],
-    "details": "Con Rosa Rodríguez Gerling.",
-    "cdNumber": "CD 5211, 7797417521121",
-    "photo": "",
-    "year": 1971,
-    "genres": [],
-    "artistName": "Armando Tejada Gómez",
-    "displayArtistName": "Armando Tejada Gómez"
-  },
-  {
-    "title": "Así nos gusta",
-    "listOfSongs": [
-      { "name": "Zamba alegre", "duration": "3:00" },
-      { "name": "La séptima", "duration": "3:10" },
-      { "name": "La banquina", "duration": "3:20" },
-      { "name": "La olvidada", "duration": "3:15" },
-      { "name": "El agrícola", "duration": "3:05" },
-      { "name": "Zamba del que se queda", "duration": "3:25" },
-      { "name": "La vieja", "duration": "3:00" },
-      { "name": "Encontrar la verdad", "duration": "3:10" },
-      { "name": "La oncena", "duration": "3:20" },
-      { "name": "La bacha", "duration": "3:15" },
-      { "name": "Por vivir", "duration": "3:30" }
-    ],
-    "details": "Con Astor Piazzolla, Domingo Cura, Hugo Díaz y otros. Edición en CD del L.P. original de TROVA de 1969.",
-    "cdNumber": "CD 5225, 7797417522524",
-    "photo": "",
-    "year": 1969,
-    "genres": [],
-    "artistName": "Eduardo Lagos",
-    "displayArtistName": "Eduardo Lagos"
-  },
-  {
-    "title": "Jazz en Nueva Orleans",
-    "listOfSongs": [
-      { "name": "Alta sociedad", "duration": "3:05" },
-      { "name": "Blues de la tía Hagar", "duration": "3:15" },
-      { "name": "King Porter stomp", "duration": "3:10" },
-      { "name": "Blues del perro amarillo", "duration": "3:20" },
-      { "name": "Trote de la costa este", "duration": "3:00" },
-      { "name": "Así de apretado", "duration": "3:25" },
-      { "name": "Alegrías de Nueva Orleans", "duration": "3:30" },
-      { "name": "Mamá de medianoche", "duration": "3:10" },
-      { "name": "Rag perfecto", "duration": "3:20" },
-      { "name": "Saratoga swing", "duration": "3:15" },
-      { "name": "Acaba de irse", "duration": "3:05" },
-      { "name": "Stomp de la cabra", "duration": "3:25" },
-      { "name": "Blues de la vereda", "duration": "3:10" },
-      { "name": "Blues del carro de carbón", "duration": "3:15" }
-    ],
-    "details": "",
-    "cdNumber": "CD 111, 7797417011127",
-    "photo": "",
-    "year": 1966,
-    "genres": [],
-    "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
-  },
-  {
-    "title": "Jazz de Nueva Orleans en Buenos Aires y en Paris",
-    "listOfSongs": [
-      { "name": "Frankie and Johnny", "duration": "3:30" },
-      { "name": "Blues perezosos", "duration": "3:20" },
-      { "name": "Dulce muñequita", "duration": "3:25" },
-      { "name": "El canto", "duration": "3:15" },
-      { "name": "Blues del trabajador", "duration": "3:10" },
-      { "name": "Pantano de las ranitas", "duration": "3:00" },
-      { "name": "Blues de la reunión", "duration": "3:30" },
-      { "name": "Mobile stomp", "duration": "3:20" },
-      { "name": "Blues terribles", "duration": "3:25" },
-      { "name": "Estampida", "duration": "3:15" },
-      { "name": "Skid da de dat", "duration": "3:10" },
-      { "name": "Blues del establo", "duration": "3:20" },
-      { "name": "Blues del gato salvaje", "duration": "3:30" },
-      { "name": "Cushion foot stomp", "duration": "3:25" },
-      { "name": "Alegrías de Milenberg", "duration": "3:15" },
-      { "name": "Blues de Atlanta", "duration": "3:20" },
-      { "name": "Blues del vagón patrulla", "duration": "3:10" },
-      { "name": "Mermelada de clarinete", "duration": "3:30" },
-      { "name": "Mamá de la piel oscura", "duration": "3:20" }
-    ],
-    "details": "Featuring Alfredo Espinoza, \"Uby\" González Lanuza, Martín Muller.",
-    "cdNumber": "CD 112, 7797417011226",
-    "photo": "",
-    "year": 2006,
-    "genres": [],
-    "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
-  },
-  {
-    "title": "En Radio Nederland",
-    "listOfSongs": [
-      { "name": "Locución (Introducción)", "duration": "1:18" },
-      { "name": "Liza", "duration": "3:26" },
-      { "name": "Rosa madreselva", "duration": "3:36" },
-      { "name": "Blues melancólico", "duration": "4:15" },
-      { "name": "Vuelve dulce papá", "duration": "3:11" },
-      { "name": "Tengo ritmo", "duration": "2:40" },
-      { "name": "La estampida", "duration": "3:27" },
-      { "name": "El anfitrión", "duration": "1:54" },
-      { "name": "Blues de la vereda", "duration": "3:08" },
-      { "name": "Stomp del jubileo", "duration": "2:26" },
-      { "name": "Dulce Georgia Brown", "duration": "3:30" }
-    ],
-    "details": "Grabado el 10 de mayo de 1975 en el Gran Teatro Het Turfschip, Breda (Holanda).",
-    "cdNumber": "CD 409, 7797417040929",
-    "photo": "",
-    "year": 1975,
-    "genres": [],
-    "artistName": "Porteña Jazz Band",
-    "displayArtistName":  "Porteña Jazz Band"
-  },
-  {
-    "title": "Yo... Maria Creuza",
-    "listOfSongs": [
-      { "name": "Más que nada", "duration": "2:24" },
-      { "name": "Dindi", "duration": "2:37" },
-      { "name": "Chega de Saudade", "duration": "1:49" },
-      { "name": "Por causa de você", "duration": "2:35" },
-      { "name": "As Rosas", "duration": "3:15" },
-      { "name": "Chove lá fora", "duration": "2:10" },
-      { "name": "Cantador", "duration": "2:33" },
-      { "name": "Saudade da Bahia", "duration": "2:34" },
-      { "name": "Corcovado", "duration": "2:45" },
-      { "name": "Maria vai com as outras", "duration": "4:02" },
-      { "name": "Estrada do sol", "duration": "2:05" },
-      { "name": "Marina", "duration": "2:05" }
-    ],
-    "details": "",
-    "cdNumber": "CD 400, 7797417040028",
-    "photo": "",
-    "year": 1971,
-    "genres": [],
-    "artistName": "Maria Creuza",
-    "displayArtistName": "Maria Creuza"
-  },
-  {
-    "title": "Voce abusou",
-    "listOfSongs": [
-      { "name": "De Donde Vienes", "duration": "2:53" },
-      { "name": "¿Usted ya fue a Bahia?", "duration": "1:55" },
-      { "name": "Yo y la brisa", "duration": "3:04" },
-      { "name": "Quejas", "duration": "3:00" },
-      { "name": "João Valentão", "duration": "2:25" },
-      { "name": "¡Que locura!", "duration": "3:25" },
-      { "name": "Ossain", "duration": null },
-      { "name": "Fue la noche", "duration": "2:14" },
-      { "name": "Morena flor", "duration": "2:52" },
-      { "name": "Cariñoso", "duration": "2:25" },
-      { "name": "Insensatez", "duration": "2:37" },
-      { "name": "Voce abusou", "duration": "3:55" }
-    ],
-    "details": "Con la participación de Sebastiao Tapajos y Pedro Dos Santos. Arreglos y dirección orquestal: Mike Ribas.",
-    "cdNumber": "",
-    "photo": "",
-    "year": 1973,
-    "genres": [],
-    "artistName": "Maria Creuza",
-    "displayArtistName": "Maria Creuza"
-  },
-  {
-    "title": "Tiempo de Gardel",
-    "listOfSongs": [
-      { "name": "Recuerdo malevo", "duration": "3:00" },
-      { "name": "Lejana tierra mía", "duration": "2:57" },
-      { "name": "Golondrinas", "duration": "2:34" },
-      { "name": "Cuesta abajo", "duration": "4:00" },
-      { "name": "Soledad", "duration": "3:32" },
-      { "name": "Arrabal amargo", "duration": "3:22" },
-      { "name": "El día que me quieras", "duration": "3:04" },
-      { "name": "Volvió una noche", "duration": "3:16" },
-      { "name": "Mi Buenos Aires querido", "duration": "2:56" },
-      { "name": "Sus ojos se cerraron", "duration": "2:47" },
-      { "name": "Volver", "duration": "3:33" },
-      { "name": "Amores de estudiante", "duration": "3:33" }
-    ],
-    "details": "",
-    "cdNumber": "CD 5201, 7797417520124",
-    "photo": "",
-    "year": 2006,
-    "genres": [],
-    "artistName": "Trío Contemporáneo",
-    "displayArtistName": "Trío Contemporáneo"
-  },
-  {
     "title": "Latido de Buenos Aires",
     "listOfSongs": [
-      { "name": "Mensaje a la ciudad", "duration": "3:18" },
-      { "name": "Puntualmente en Buenos Aires", "duration": "3:08" },
-      { "name": "Mi redención", "duration": "3:07" },
-      { "name": "Latido de Buenos Aires", "duration": "3:14" },
-      { "name": "Trenzas", "duration": "3:04" },
-      { "name": "Pedacito de cielo", "duration": "3:09" },
-      { "name": "Luna, ciudad y misterio", "duration": "3:08" },
-      { "name": "Toda la música", "duration": "2:35" },
-      { "name": "La sota de basto", "duration": "3:31" },
-      { "name": "El corazón al Sur", "duration": "2:32" },
-      { "name": "Vamos que aún podemos", "duration": "3:08" },
-      { "name": "Desandando el tiempo", "duration": "3:38" },
-      { "name": "Reposo del porteño", "duration": "3:34" },
-      { "name": "Desnudando la ciudad", "duration": "3:15" },
-      { "name": "Danzarín", "duration": "3:01" }
+      {
+        "name": "Mensaje a la ciudad",
+        "duration": "3:18"
+      },
+      {
+        "name": "Puntualmente en Buenos Aires",
+        "duration": "3:08"
+      },
+      {
+        "name": "Mi redención",
+        "duration": "3:07"
+      },
+      {
+        "name": "Latido de Buenos Aires",
+        "duration": "3:14"
+      },
+      {
+        "name": "Trenzas",
+        "duration": "3:04"
+      },
+      {
+        "name": "Pedacito de cielo",
+        "duration": "3:09"
+      },
+      {
+        "name": "Luna, ciudad y misterio",
+        "duration": "3:08"
+      },
+      {
+        "name": "Toda la música",
+        "duration": "2:35"
+      },
+      {
+        "name": "La sota de basto",
+        "duration": "3:31"
+      },
+      {
+        "name": "El corazón al Sur",
+        "duration": "2:32"
+      },
+      {
+        "name": "Vamos que aún podemos",
+        "duration": "3:08"
+      },
+      {
+        "name": "Desandando el tiempo",
+        "duration": "3:38"
+      },
+      {
+        "name": "Reposo del porteño",
+        "duration": "3:34"
+      },
+      {
+        "name": "Desnudando la ciudad",
+        "duration": "3:15"
+      },
+      {
+        "name": "Danzarín",
+        "duration": "3:01"
+      }
     ],
     "details": "Voz: Rodolfo Almar.",
     "cdNumber": "CD 5236",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/50c0c464-c3b4-4a31-b9e4-e0a52aa4dd41_Alberto%20Garralda%20-%20Latido%20de%20Buenos%20Aires.webp",
     "year": 2006,
     "genres": [],
     "artistName": "Alberto Garralda",
-    "displayArtistName":"Alberto Garralda y Conjunto de Cuerdas"
+    "displayArtistName": "Alberto Garralda y Conjunto de Cuerdas",
+    "appleMusicLink": "https://music.apple.com/us/album/latido-de-buenos-aires/206322505",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IN3G4W",
+    "spotifyLink": "https://open.spotify.com/intl-es/track/3ALQFNs95T7vfKMTFq6Tgl"
   },
   {
     "title": "De Esta Manera",
     "artistName": "Alberto Garralda",
-    "displayArtistName":"Alberto Garralda",
+    "displayArtistName": "Alberto Garralda",
     "year": 2014,
     "cdNumber": "00",
-    "photo": "",
-    "genres": ["TANGO", "MÚSICA_INSTRUMENTAL"],
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/fa7c6b4c-fc32-48c6-a43e-de0423af7450_Alberto%20Garralda%20-%20De%20esta%20manera.webp",
+    "genres": [
+      "TANGO",
+      "MÚSICA_INSTRUMENTAL"
+    ],
     "details": "Formato: EP. Duración: 21 min 51 s.",
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/38Ts3ilNXQhZS2FeIyo6xY",
     "listOfSongs": [
-      { "name": "Intrigante", "duration": "3:50" },
-      { "name": "De Esta Manera", "duration": "3:35" },
-      { "name": "Punto de Vista", "duration": "3:29" },
-      { "name": "Mi Ángel Rubio", "duration": "2:45" },
-      { "name": "Los Duendes Nocturnos", "duration": "3:27" },
-      { "name": "Sucedió en Verano", "duration": "4:44" }
+      {
+        "name": "Intrigante",
+        "duration": "3:50"
+      },
+      {
+        "name": "De Esta Manera",
+        "duration": "3:35"
+      },
+      {
+        "name": "Punto de Vista",
+        "duration": "3:29"
+      },
+      {
+        "name": "Mi Ángel Rubio",
+        "duration": "2:45"
+      },
+      {
+        "name": "Los Duendes Nocturnos",
+        "duration": "3:27"
+      },
+      {
+        "name": "Sucedió en Verano",
+        "duration": "4:44"
+      }
     ]
   },
-
+  {
+    "title": "Canción con todos",
+    "listOfSongs": [
+      {
+        "name": "Un grito de ida y vuelta",
+        "duration": "3:10"
+      },
+      {
+        "name": "Canción con todos",
+        "duration": "3:35"
+      },
+      {
+        "name": "María baguala",
+        "duration": "3:20"
+      },
+      {
+        "name": "La vida dos veces",
+        "duration": "3:00"
+      },
+      {
+        "name": "Canción de la ternura",
+        "duration": "3:15"
+      },
+      {
+        "name": "Tonada tradicional cuyana",
+        "duration": "3:25"
+      },
+      {
+        "name": "El aprendiz de brujo",
+        "duration": "3:00"
+      },
+      {
+        "name": "El vino del pobre",
+        "duration": "3:10"
+      },
+      {
+        "name": "Hombre en el tiempo",
+        "duration": "3:30"
+      },
+      {
+        "name": "El pez por la boca muere",
+        "duration": "3:00"
+      },
+      {
+        "name": "Torcaza, paloma torcaz",
+        "duration": "3:20"
+      },
+      {
+        "name": "Tonada que Dios nos guarde",
+        "duration": "3:15"
+      },
+      {
+        "name": "Pueblo chico, infierno grande",
+        "duration": "3:25"
+      },
+      {
+        "name": "Canción del día que vuelve",
+        "duration": "3:05"
+      },
+      {
+        "name": "Peatón, diga no",
+        "duration": "3:10"
+      },
+      {
+        "name": "Tiempo de mayo",
+        "duration": "3:20"
+      }
+    ],
+    "details": "Con Rosa Rodríguez Gerling.",
+    "cdNumber": "CD 5211, 7797417521121",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/bff511c4-92eb-4531-8019-dfdff8b1ddae_A.%20Tejada%20Go%CC%81mez%20-%20Cancio%CC%81n%20con%20todos.webp",
+    "year": 1971,
+    "genres": [],
+    "artistName": "Armando Tejada Gómez",
+    "displayArtistName": "Armando Tejada Gómez",
+    "appleMusicLink": "https://music.apple.com/us/album/cancion-con-todos/206485795",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5skMryWJKkrowjJWa9eTNd"
+  },
+  {
+    "title": "Pulsación",
+    "listOfSongs": [
+      {
+        "name": "Pulsacion Nº 1",
+        "duration": "4:49"
+      },
+      {
+        "name": "Pulsacion Nº 2",
+        "duration": "4:12"
+      },
+      {
+        "name": "Pulsacion Nº 4",
+        "duration": "4:25"
+      },
+      {
+        "name": "Pulsacion Nº 5",
+        "duration": "4:03"
+      },
+      {
+        "name": "Fuga Y Misterio",
+        "duration": "3:11"
+      },
+      {
+        "name": "Contra Milonga A La Funerala",
+        "duration": "5:00"
+      },
+      {
+        "name": "Allegro Tangabile",
+        "duration": "4:35"
+      },
+      {
+        "name": "Tocata Rea",
+        "duration": "4:35"
+      },
+      {
+        "name": "Tangata Del Alba",
+        "duration": "4:51"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 402",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a104dc83-0de6-4db9-949c-0206fe633d3e_CD%20402.webp",
+    "year": 1997,
+    "genres": [
+      "CONTEMPORÁNEA"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla y su orquesta",
+    "appleMusicLink": "https://music.apple.com/us/album/pulsacion/73585371",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEPITW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7hq3ztjc4lSac0k68F53zg"
+  },
+  {
+    "title": "Adiós Nonino",
+    "listOfSongs": [
+      {
+        "name": "Adiós Nonino",
+        "duration": "8:04"
+      },
+      {
+        "name": "Otoño Porteño",
+        "duration": "5:10"
+      },
+      {
+        "name": "Michelangelo 70",
+        "duration": "3:20"
+      },
+      {
+        "name": "Coral Tangata (Silfo Y Ondina)",
+        "duration": "6:00"
+      },
+      {
+        "name": "Fugata",
+        "duration": "3:50"
+      },
+      {
+        "name": "Soledad",
+        "duration": "6:52"
+      },
+      {
+        "name": "Final",
+        "duration": "7:47"
+      }
+    ],
+    "details": "Música, arreglos y dirección: Astor Piazzolla. Este álbum editado por TROVA originalmente en 1969 integra el Hall de la Fama de los GRAMMY Latinos.",
+    "cdNumber": "CD 404",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a497706e-92eb-4bdb-a824-c6acf5cafdd2_Astor%20Piazzolla%20-Adio%CC%81s%20Nonino%201969%201984.webp",
+    "year": 1969,
+    "genres": [
+      "TANGO"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla y su Quinteto",
+    "appleMusicLink": "https://music.apple.com/us/album/adios-nonino-1969-1984/375530235",
+    "amazonMusicLink": "https://music.amazon.es/albums/B0095CPBQC",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5fye2pqiyYX0XwH3joTade"
+  },
+  {
+    "title": "María de Buenos Aires parte 1",
+    "listOfSongs": [
+      {
+        "name": "Alevare",
+        "duration": "6:13"
+      },
+      {
+        "name": "Tema De Maria",
+        "duration": "4:20"
+      },
+      {
+        "name": "Balada Para Un Organito Loco",
+        "duration": "7:25"
+      },
+      {
+        "name": "Milonga Carrieguera",
+        "duration": "5:17"
+      },
+      {
+        "name": "Fuga Y Misterio",
+        "duration": "3:11"
+      },
+      {
+        "name": "Poema Valseado",
+        "duration": "2:46"
+      },
+      {
+        "name": "Tocata Rea",
+        "duration": "4:35"
+      },
+      {
+        "name": "Miserere Canyengue",
+        "duration": "6:03"
+      }
+    ],
+    "details": "Música: Astor Piazzolla. Letra: Horacio Ferrer. Interpretada por Amelita Baltar, Hector de Rosas (canto), Horacio Ferrer (recitado), Astor Piazzolla (bandoneón) y orquesta.",
+    "cdNumber": "CD 5013",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/d923ac0e-9a09-482f-a8cd-21a10b5d9bf3_CD%205013.webp",
+    "year": 1993,
+    "genres": [
+      "TANGO",
+      "TEATRO_MUSICAL"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/maria-de-buenos-aires-vol-1/73584984",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IE8FGK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3jgVrHZQ0H0ghYUrCqBlb4"
+  },
+  {
+    "title": "María de Buenos Aires parte 2",
+    "listOfSongs": [
+      {
+        "name": "Contramilonga A La Funerala",
+        "duration": "5:00"
+      },
+      {
+        "name": "Tangata Del Alba",
+        "duration": "4:51"
+      },
+      {
+        "name": "Carta A Los Arboles Y A Las Chimeneas",
+        "duration": "3:03"
+      },
+      {
+        "name": "Aria De Los Analistas",
+        "duration": "8:35"
+      },
+      {
+        "name": "Romanza Del Duende",
+        "duration": "5:30"
+      },
+      {
+        "name": "Allegro Tangabile",
+        "duration": "2:50"
+      },
+      {
+        "name": "Milonga De La Anunciacion",
+        "duration": "3:05"
+      },
+      {
+        "name": "Tangus Dei",
+        "duration": "9:50"
+      }
+    ],
+    "details": "Música: Astor Piazzolla. Interpretada por Amelita Baltar y Hector de Rosas (canto), Horacio Ferrer (recitados) y Astor Piazzolla (bandoneón) y orquesta.",
+    "cdNumber": "CD 5014",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/8b9816ac-557e-4deb-bae2-cb4d880cc392_CD%205014.webp",
+    "year": 1993,
+    "genres": [
+      "TANGO",
+      "TEATRO_MUSICAL"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/maria-de-buenos-aires-vol-2/73585405",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICI0GW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5Rkq07eW4M2kvkIwSdmaxr"
+  },
+  {
+    "title": "En Suite",
+    "listOfSongs": [
+      {
+        "name": "Introducción del Ángel",
+        "duration": "4:32"
+      },
+      {
+        "name": "Milonga del Ángel",
+        "duration": "6:36"
+      },
+      {
+        "name": "La muerte del Ángel",
+        "duration": "2:58"
+      },
+      {
+        "name": "Resurrección del Ángel",
+        "duration": "6:37"
+      },
+      {
+        "name": "Oblivion",
+        "duration": "3:32"
+      },
+      {
+        "name": "Cavalcata",
+        "duration": "3:56"
+      },
+      {
+        "name": "Enrico IV",
+        "duration": "2:37"
+      },
+      {
+        "name": "Remembrance",
+        "duration": "4:45"
+      },
+      {
+        "name": "Primavera porteña",
+        "duration": "5:11"
+      },
+      {
+        "name": "Verano Porteño",
+        "duration": "9:14"
+      },
+      {
+        "name": "Otoño porteño",
+        "duration": "6:37"
+      },
+      {
+        "name": "Invierno porteño",
+        "duration": "5:23"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5059",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a5cce681-01f8-4b4c-affa-2454ce742fed_CD%205059.webp",
+    "year": 2004,
+    "genres": [],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/piazzolla-en-suite/73585031",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00956YRSG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1PA8dSdtPzc5JlHfXlGypw"
+  },
+  {
+    "title": "Agri",
+    "listOfSongs": [
+      {
+        "name": "Presagio",
+        "duration": "5:00"
+      },
+      {
+        "name": "Bruno Y Sarah",
+        "duration": "2:58"
+      },
+      {
+        "name": "Olhos De Resaca",
+        "duration": "4:07"
+      },
+      {
+        "name": "Los Pájaros Perdidos",
+        "duration": "2:58"
+      },
+      {
+        "name": "As Ilhas",
+        "duration": "4:55"
+      },
+      {
+        "name": "Jardines De Africa",
+        "duration": "2:35"
+      },
+      {
+        "name": "Muralla China",
+        "duration": "3:19"
+      },
+      {
+        "name": "La Felure",
+        "duration": "3:30"
+      },
+      {
+        "name": "Uomo Del Sud (Violín)",
+        "duration": "3:54"
+      },
+      {
+        "name": "Uomo Del Sud (Bandoneón)",
+        "duration": "3:54"
+      },
+      {
+        "name": "Soledad",
+        "duration": "4:06"
+      },
+      {
+        "name": "Se Potessi Ancora",
+        "duration": "3:56"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5019",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4a73b09c-ee40-42e8-8c84-1909b29bc1fa_Astor%20Piazzolla%20-%20Agri.webp",
+    "year": 2007,
+    "genres": [
+      "CONTEMPORÁNEA"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
+  },
+  {
+    "title": "Astor Piazzolla & Amelita Baltar",
+    "listOfSongs": [
+      {
+        "name": "Preludio Para El Año 3001",
+        "duration": "4:12"
+      },
+      {
+        "name": "Balada Para Mi Muerte",
+        "duration": "4:12"
+      },
+      {
+        "name": "Balada Para Un Loco",
+        "duration": "4:49"
+      },
+      {
+        "name": "Vamos, Nina",
+        "duration": "3:39"
+      },
+      {
+        "name": "Las Ciudades",
+        "duration": "4:34"
+      },
+      {
+        "name": "Los Paraguas De Buenos Aires",
+        "duration": "4:52"
+      },
+      {
+        "name": "La Primera Palabra",
+        "duration": "3:40"
+      },
+      {
+        "name": "No Quiero Otro",
+        "duration": "4:39"
+      },
+      {
+        "name": "Pequeña Cancion Para Matilde",
+        "duration": "2:48"
+      },
+      {
+        "name": "Violetas Populares",
+        "duration": "4:35"
+      },
+      {
+        "name": "Chiquilin De Bachin",
+        "duration": "4:26"
+      },
+      {
+        "name": "Milonga En Ay Menor",
+        "duration": "3:36"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5060",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/951cf1a3-5bf6-4103-bc9f-b5a6da7fffc4_CD%205060.webp",
+    "year": 2005,
+    "genres": [
+      "TANGO",
+      "TEATRO_MUSICAL"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/piazzolla-amelita-baltar/260454132",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DOIN62",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/30z0x3quz71hXLhKbfBaAw"
+  },
+  {
+    "title": "Concertante",
+    "listOfSongs": [
+      {
+        "name": "Aconcagua: Allegro Marcato",
+        "duration": "7:48"
+      },
+      {
+        "name": "Aconcagua: Moderato",
+        "duration": "7:11"
+      },
+      {
+        "name": "Aconcagua: Presto",
+        "duration": "6:48"
+      },
+      {
+        "name": "Tres Tangos: Allegro Tranquilo",
+        "duration": "7:22"
+      },
+      {
+        "name": "Tres Tangos: Moderato Místico",
+        "duration": "5:30"
+      },
+      {
+        "name": "Tres Tangos: Allegreto Molto Marcato",
+        "duration": "4:44"
+      },
+      {
+        "name": "Suite Punta Del Este: Introducción",
+        "duration": "4:51"
+      },
+      {
+        "name": "Suite Punta Del Este: Coral",
+        "duration": "10:16"
+      },
+      {
+        "name": "Suite Punta Del Este: Fuga",
+        "duration": "3:59"
+      }
+    ],
+    "details": "ACONCAGUA (Concierto para Bandoneón y Orquesta), TRES TANGOS (Para Bandoneón y Orquesta), SUITE PUNTA DEL ESTE",
+    "cdNumber": "CD 5061",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/6d4ce745-f318-4ea0-84b7-328105703996_Astor%20Piazzolla%20-%20Concertante.webp",
+    "year": 2006,
+    "genres": [
+      "CONTEMPORÁNEA"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/concertante/128597808",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IL8CRA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7EPkLx4lTHN1P2YbPE3w8h"
+  },
+  {
+    "title": "Roma 1972 (En Vivo)",
+    "listOfSongs": [
+      {
+        "name": "Fuga Y Misterio",
+        "duration": "3:38"
+      },
+      {
+        "name": "Zum",
+        "duration": "5:25"
+      },
+      {
+        "name": "Buenos Aires Hora Cero",
+        "duration": "5:33"
+      },
+      {
+        "name": "Vardarito",
+        "duration": "6:25"
+      },
+      {
+        "name": "Onda Nueve",
+        "duration": "6:07"
+      },
+      {
+        "name": "La Muerte Del Angel",
+        "duration": "3:01"
+      },
+      {
+        "name": "Tristeza De Un Doble \"A\"",
+        "duration": "7:14"
+      },
+      {
+        "name": "Verano Porteño",
+        "duration": "9:12"
+      },
+      {
+        "name": "Divertimento Nueve",
+        "duration": "5:54"
+      },
+      {
+        "name": "Preludio Nueve",
+        "duration": "7:01"
+      },
+      {
+        "name": "Adios Nonino",
+        "duration": "11:30"
+      },
+      {
+        "name": "Mufa Sesenta Y Dos",
+        "duration": "2:47"
+      }
+    ],
+    "details": "En vivo, grabado en Roma 1972",
+    "cdNumber": "CD 5062",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/c363d09e-fa57-482b-b36c-44dfc448b3b1_Astor+Piazzolla+-+Roma+1972.webp",
+    "year": 2006,
+    "genres": [
+      "TANGO",
+      "JAZZ"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/roma-1972/295008224",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJ2BC4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7rBSGdntqCPo2B7j3F8iL1"
+  },
+  {
+    "title": "Años de Soledad",
+    "listOfSongs": [
+      {
+        "name": "Libertango",
+        "duration": "3:04"
+      },
+      {
+        "name": "Oblivion",
+        "duration": "3:30"
+      },
+      {
+        "name": "Biyuya",
+        "duration": "6:05"
+      },
+      {
+        "name": "Salvador Allende",
+        "duration": "5:03"
+      },
+      {
+        "name": "La Evasion",
+        "duration": "6:02"
+      },
+      {
+        "name": "Años De Soledad",
+        "duration": "4:42"
+      },
+      {
+        "name": "Zita",
+        "duration": "6:13"
+      },
+      {
+        "name": "Escualo",
+        "duration": "3:18"
+      },
+      {
+        "name": "Amelitango",
+        "duration": "3:24"
+      },
+      {
+        "name": "Llueve Sobre Santiago",
+        "duration": "3:59"
+      },
+      {
+        "name": "Bandoneon",
+        "duration": "10:56"
+      }
+    ],
+    "details": "Música, arreglos y dirección orquestal: Astor Piazzolla",
+    "cdNumber": "CD 5056",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/261a4e1c-99fa-47a8-b0ca-b22dbd12c3df_CD%205056.webp",
+    "year": 1993,
+    "genres": [
+      "TANGO"
+    ],
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "appleMusicLink": "https://music.apple.com/us/album/a%C3%B1os-de-soledad/4680583",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00956EUUG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/60vaxpM1UuNEXnjOEvXmCp"
+  },
+  {
+    "title": "Milán 1984 Vol. 1",
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "listOfSongs": [
+      {
+        "name": "Biyuya",
+        "duration": "5:57"
+      },
+      {
+        "name": "Decarísimo",
+        "duration": "3:11"
+      },
+      {
+        "name": "Milonga del Ángel",
+        "duration": "6:32"
+      },
+      {
+        "name": "La muerte del Ángel",
+        "duration": "3:13"
+      },
+      {
+        "name": "Resurrección del Ángel",
+        "duration": "6:26"
+      },
+      {
+        "name": "Tristeza de un doble “A”",
+        "duration": "7:13"
+      },
+      {
+        "name": "Escualo",
+        "duration": "3:34"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5063, 7797417506326",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/c5b6851b-9485-4d09-a48f-8fa5806119ed_Astor%20Piazzolla%20-%20Mila%CC%81n%201984%20-%20Vol.%201.webp",
+    "year": 1984,
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/milan-1984-vol-1/295008223",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CKKIHE",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2771kYlRmGnNZpE1TnH60I"
+  },
+  {
+    "title": "Milán 1984 Vol. 2",
+    "artistName": "Astor Piazzolla",
+    "displayArtistName": "Astor Piazzolla",
+    "listOfSongs": [
+      {
+        "name": "Revirado",
+        "duration": "4:45"
+      },
+      {
+        "name": "Caliente",
+        "duration": "4:35"
+      },
+      {
+        "name": "Lunfardo",
+        "duration": "5:44"
+      },
+      {
+        "name": "Adiós Nonino",
+        "duration": "5:33"
+      },
+      {
+        "name": "Mumuki",
+        "duration": "8:26"
+      },
+      {
+        "name": "Verano porteño",
+        "duration": "4:55"
+      },
+      {
+        "name": "Chin chin",
+        "duration": "6:26"
+      },
+      {
+        "name": "Libertango",
+        "duration": "2:46"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5064, 7797417506425",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/920ddecb-d960-4856-acfc-3cbb71b46f46_Astor%20Piazzolla%20-%20Mila%CC%81n%201984%20Vol.%202.webp",
+    "year": 1984,
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/milan-1984-vol-2/375531894",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJWXCM",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6P9D61jrFKoaMNsQkQ36za"
+  },
   {
     "title": "Yo no... ¿y Ud.?",
     "artistName": "Carlos Perciavalle & Antonio Gasalla",
     "displayArtistName": "Carlos Perciavalle & Antonio Gasalla",
     "listOfSongs": [
-      { "name": "Somos inseparables", "duration": "4:47" },
-      { "name": "Café Concert", "duration": "2:47" },
-      { "name": "La muerte de Nabuco", "duration": "5:36" },
-      { "name": "La casa de mis tías", "duration": "5:14" },
-      { "name": "Chiquilín de Bachín", "duration": "4:00" },
-      { "name": "Ricardito", "duration": "6:34" },
-      { "name": "Los pobres / El gran partido", "duration": "7:56" },
+      {
+        "name": "Somos inseparables",
+        "duration": "4:47"
+      },
+      {
+        "name": "Café Concert",
+        "duration": "2:47"
+      },
+      {
+        "name": "La muerte de Nabuco",
+        "duration": "5:36"
+      },
+      {
+        "name": "La casa de mis tías",
+        "duration": "5:14"
+      },
+      {
+        "name": "Chiquilín de Bachín",
+        "duration": "4:00"
+      },
+      {
+        "name": "Ricardito",
+        "duration": "6:34"
+      },
+      {
+        "name": "Los pobres / El gran partido",
+        "duration": "7:56"
+      },
       {
         "name": "No puedo darte más que amor, nena (Jacqueline)",
         "duration": "2:51"
       },
-      { "name": "Ser la preclara", "duration": "3:31" },
-      { "name": "Rubias de New York", "duration": "2:17" },
-      { "name": "El coro", "duration": "2:55" },
-      { "name": "La lune / Somos inseparables", "duration": "3:00" }
+      {
+        "name": "Ser la preclara",
+        "duration": "3:31"
+      },
+      {
+        "name": "Rubias de New York",
+        "duration": "2:17"
+      },
+      {
+        "name": "El coro",
+        "duration": "2:55"
+      },
+      {
+        "name": "La lune / Somos inseparables",
+        "duration": "3:00"
+      }
     ],
     "details": "Dirección musical: Alberto Favero.",
     "cdNumber": "CD 5023, 779741750232",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/ca0c54b6-aaef-4f9e-ad5f-88a4bc20cda7_CD%205023.webp",
     "year": 1998,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/yo-no-y-usted/206439518",
+    "amazonMusicLink": "",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2Ff1g4WdHssdj1T1wTDgKe"
   },
   {
     "title": "Canciones ladinas y españolas",
     "artistName": "Conjunto de Música Antigua del Collegium Musicum de Buenos Aires",
     "displayArtistName": "Conjunto de Música Antigua del Collegium Musicum de Buenos Aires",
     "listOfSongs": [
-      { "name": "Pase el agua / Anónimo", "duration": "1:19" },
-      { "name": "En la fuente del rosel", "duration": "1:22" },
-      { "name": "¿Con qué la lavaré?", "duration": "2:52" },
-      { "name": "¿Cómo queréis madre?", "duration": "1:35" },
-      { "name": "Muchos van de amor heridos", "duration": "1:12" },
-      { "name": "Pavana 1", "duration": "1:15" },
-      { "name": "Falai miña amor", "duration": "1:32" },
-      { "name": "Pavana 4", "duration": "1:47" },
-      { "name": "Con amores la mi madre", "duration": "1:57" },
-      { "name": "Recercada", "duration": "1:26" },
-      { "name": "Si la noche hace escura", "duration": "2:04" },
-      { "name": "De Antequera sale el moro", "duration": "2:29" },
-      { "name": "Morenica a mí me llaman", "duration": "2:11" },
-      { "name": "Se paseava Silvana", "duration": "2:08" },
-      { "name": "Una matica de ruda", "duration": "1:34" },
-      { "name": "¿Por qué lloras blanca niña?", "duration": "3:17" },
-      { "name": "Tres hermanicas eran", "duration": "2:51" },
-      { "name": "Don Amadi", "duration": "1:54" },
-      { "name": "La rosa enflorece", "duration": "2:02" },
-      { "name": "El rey que muncho madruga", "duration": "1:56" }
+      {
+        "name": "Pase el agua / Anónimo",
+        "duration": "1:19"
+      },
+      {
+        "name": "En la fuente del rosel",
+        "duration": "1:22"
+      },
+      {
+        "name": "¿Con qué la lavaré?",
+        "duration": "2:52"
+      },
+      {
+        "name": "¿Cómo queréis madre?",
+        "duration": "1:35"
+      },
+      {
+        "name": "Muchos van de amor heridos",
+        "duration": "1:12"
+      },
+      {
+        "name": "Pavana 1",
+        "duration": "1:15"
+      },
+      {
+        "name": "Falai miña amor",
+        "duration": "1:32"
+      },
+      {
+        "name": "Pavana 4",
+        "duration": "1:47"
+      },
+      {
+        "name": "Con amores la mi madre",
+        "duration": "1:57"
+      },
+      {
+        "name": "Recercada",
+        "duration": "1:26"
+      },
+      {
+        "name": "Si la noche hace escura",
+        "duration": "2:04"
+      },
+      {
+        "name": "De Antequera sale el moro",
+        "duration": "2:29"
+      },
+      {
+        "name": "Morenica a mí me llaman",
+        "duration": "2:11"
+      },
+      {
+        "name": "Se paseava Silvana",
+        "duration": "2:08"
+      },
+      {
+        "name": "Una matica de ruda",
+        "duration": "1:34"
+      },
+      {
+        "name": "¿Por qué lloras blanca niña?",
+        "duration": "3:17"
+      },
+      {
+        "name": "Tres hermanicas eran",
+        "duration": "2:51"
+      },
+      {
+        "name": "Don Amadi",
+        "duration": "1:54"
+      },
+      {
+        "name": "La rosa enflorece",
+        "duration": "2:02"
+      },
+      {
+        "name": "El rey que muncho madruga",
+        "duration": "1:56"
+      }
     ],
     "details": "Intérpretes: Marga Grajer (canto), Judith Akoschky (clave y percusión), Gustavo Samela (flauta), Héctor Stafforini (guitarra y percusión).",
     "cdNumber": "",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/c07084a6-79f3-44cd-a93c-7a4e17a98cd2_Collegium%20Musicum%20-%20Canciones%20ladinas%20y%20espan%CC%83olas.webp",
     "year": 2006,
-    "genres": []
-  },
-  {
-    "title": "Acusticazo",
-    "artistName": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
-    "displayArtistName": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
-    "listOfSongs": [
-      { "name": "Introducción", "duration": "0:41" },
-      { "name": "Abre el día", "duration": "2:33" },
-      { "name": "Rodando", "duration": "7:18" },
-      { "name": "Vamos Negro", "duration": "7:55" },
-      { "name": "Cuando", "duration": "4:16" },
-      { "name": "Si vos sí, no. Si vos no, sí", "duration": "2:38" },
-      { "name": "Cortar el viento", "duration": "4:14" },
-      { "name": "Guilmar", "duration": "3:20" },
-      { "name": "Hombres de hierro", "duration": "6:02" }
-    ],
-    "details": "Participan Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón, Edelmiro Molinari, Miguel y Eugenio, Carlos Daniel, Gabriela, Miguel Krochik.",
-    "cdNumber": "CD 6054, 7797417605425",
-    "photo": "",
-    "year": 1972,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/canciones-ladinas-y-espa%C3%B1olas/289176244",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEUIHY",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4CBVGNCSWeTXHjUH01TmeT"
   },
   {
     "title": "Homenaje a Edith Piaf",
     "artistName": "Corina Harry",
     "displayArtistName": "Corina Harry",
     "listOfSongs": [
-      { "name": "Sous le ciel de Paris", "duration": "3:54" },
-      { "name": "Mea culpa", "duration": "3:17" },
-      { "name": "C'est un homme terrible", "duration": "2:23" },
-      { "name": "La vie en rose", "duration": "4:06" },
-      { "name": "Padam... Padam", "duration": "3:25" },
-      { "name": "Emporte-moi", "duration": "3:40" },
-      { "name": "L'homme à la moto", "duration": "2:15" },
-      { "name": "Carmen's story", "duration": "3:22" },
-      { "name": "Rien de rien", "duration": "2:33" },
-      { "name": "Non, je ne regrette rien", "duration": "2:27" },
-      { "name": "Musique à tout va", "duration": "3:11" },
-      { "name": "Milord", "duration": "4:44" }
+      {
+        "name": "Sous le ciel de Paris",
+        "duration": "3:54"
+      },
+      {
+        "name": "Mea culpa",
+        "duration": "3:17"
+      },
+      {
+        "name": "C'est un homme terrible",
+        "duration": "2:23"
+      },
+      {
+        "name": "La vie en rose",
+        "duration": "4:06"
+      },
+      {
+        "name": "Padam... Padam",
+        "duration": "3:25"
+      },
+      {
+        "name": "Emporte-moi",
+        "duration": "3:40"
+      },
+      {
+        "name": "L'homme à la moto",
+        "duration": "2:15"
+      },
+      {
+        "name": "Carmen's story",
+        "duration": "3:22"
+      },
+      {
+        "name": "Rien de rien",
+        "duration": "2:33"
+      },
+      {
+        "name": "Non, je ne regrette rien",
+        "duration": "2:27"
+      },
+      {
+        "name": "Musique à tout va",
+        "duration": "3:11"
+      },
+      {
+        "name": "Milord",
+        "duration": "4:44"
+      }
     ],
     "details": "",
     "cdNumber": "CD 6058, 7797417605821",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/29fbe099-740c-43ed-a6a0-ab984e675ea0_Corina%20Harry%20-%20Homenaje%20a%20Edith%20Piaf.webp",
     "year": 2006,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/homenaje-a-edith-piaf/206359503",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IG7VRM",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5qe0YjDOzKD8MgLWOwgGGr"
+  },
+  {
+    "title": "A mi patria",
+    "artistName": "Corina Harry",
+    "displayArtistName": "Corina Harry",
+    "listOfSongs": [
+      {
+        "name": "Sé Que Mi Patria Tiene",
+        "duration": "3:45"
+      },
+      {
+        "name": "El Arroyo Con el Viento",
+        "duration": "2:11"
+      },
+      {
+        "name": "Niñito Sureño",
+        "duration": "4:20"
+      },
+      {
+        "name": "Nueve Lunas",
+        "duration": "4:39"
+      },
+      {
+        "name": "Un buen Chamamé",
+        "duration": "2:23"
+      },
+      {
+        "name": "Las Lunas y el Gaucho",
+        "duration": "3:33"
+      },
+      {
+        "name": "Sueño Eterno",
+        "duration": "2:44"
+      },
+      {
+        "name": "Al Pueblo de Cuenca",
+        "duration": "3:50"
+      },
+      {
+        "name": "Sólo Amor Como Camino",
+        "duration": "2:18"
+      },
+      {
+        "name": "Manzana Verde",
+        "duration": "5:31"
+      },
+      {
+        "name": "Zamba de la Memoria",
+        "duration": "4:02"
+      },
+      {
+        "name": "Mi Tierra Merece Tanto",
+        "duration": "2:37"
+      },
+      {
+        "name": "Los Senderos de Mi Sentir",
+        "duration": "3:39"
+      },
+      {
+        "name": "Cristos en Carne de Hombres",
+        "duration": "3:56"
+      },
+      {
+        "name": "A la Mujer Argentina",
+        "duration": "3:34"
+      },
+      {
+        "name": "Nacimiento, Vida y Muerte",
+        "duration": "3:27"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD ----",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/2048c533-afe3-412b-8872-ed712f83e142_Corina%20Harry%20-%20A%20mi%20patria.webp",
+    "year": 2012,
+    "genres": [
+      "FOLCLORE"
+    ],
+    "appleMusicLink": "",
+    "amazonMusicLink": "https://music.amazon.es/albums/B07GC99V6R",
+    "spotifyLink": ""
   },
   {
     "title": "Ne me quitte pas",
     "artistName": "Corina Harry",
     "displayArtistName": "Corina Harry",
     "listOfSongs": [
-      { "name": "Un homme et une femme", "duration": "3:02" },
-      { "name": "Que c’est triste Venise", "duration": "2:55" },
-      { "name": "La foule", "duration": "3:31" },
-      { "name": "Ne me quitte pas", "duration": "3:36" },
-      { "name": "Mon dieu", "duration": "3:17" },
-      { "name": "La bohème", "duration": "4:10" },
-      { "name": "Mon manège à moi", "duration": "2:55" },
-      { "name": "Et maintenant", "duration": "3:46" },
-      { "name": "Les bicyclettes de Belsize", "duration": "3:10" },
-      { "name": "La goulante du pauvre Jean", "duration": "1:53" },
-      { "name": "Hymne à l'amour", "duration": "3:36" },
-      { "name": "Autumn leaves", "duration": "3:59" },
-      { "name": "C’est à Mayerling", "duration": "3:11" },
-      { "name": "La Marseillaise", "duration": "1:27" }
+      {
+        "name": "Un homme et une femme",
+        "duration": "3:02"
+      },
+      {
+        "name": "Que c’est triste Venise",
+        "duration": "2:55"
+      },
+      {
+        "name": "La foule",
+        "duration": "3:31"
+      },
+      {
+        "name": "Ne me quitte pas",
+        "duration": "3:36"
+      },
+      {
+        "name": "Mon dieu",
+        "duration": "3:17"
+      },
+      {
+        "name": "La bohème",
+        "duration": "4:10"
+      },
+      {
+        "name": "Mon manège à moi",
+        "duration": "2:55"
+      },
+      {
+        "name": "Et maintenant",
+        "duration": "3:46"
+      },
+      {
+        "name": "Les bicyclettes de Belsize",
+        "duration": "3:10"
+      },
+      {
+        "name": "La goulante du pauvre Jean",
+        "duration": "1:53"
+      },
+      {
+        "name": "Hymne à l'amour",
+        "duration": "3:36"
+      },
+      {
+        "name": "Autumn leaves",
+        "duration": "3:59"
+      },
+      {
+        "name": "C’est à Mayerling",
+        "duration": "3:11"
+      },
+      {
+        "name": "La Marseillaise",
+        "duration": "1:27"
+      }
     ],
     "details": "",
     "cdNumber": "CD 6060, 7797417606026",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/290eecc4-518f-456a-9176-3762e4fa3a95_Corina%20Harry%20-%20Ne%20me%20quitte%20pas.webp",
     "year": 2007,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "http://music.apple.com/us/album/ne-me-quitte-pas/289176195",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CAKKV8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4kvl8qQF5T3RlQv3E7yobl"
+  },
+  {
+    "title": "Folklore sin mirar atrás Vol. 1",
+    "listOfSongs": [
+      {
+        "name": "Antonino",
+        "duration": "3:30"
+      },
+      {
+        "name": "Nunca sonaron tan dulces las campanas",
+        "duration": "3:20"
+      },
+      {
+        "name": "Zamba del nuevo día",
+        "duration": "3:00"
+      },
+      {
+        "name": "Canción para mi caja rota",
+        "duration": "3:10"
+      },
+      {
+        "name": "Malambo en si mayor",
+        "duration": "2:50"
+      },
+      {
+        "name": "Aire de milonga",
+        "duration": "3:00"
+      },
+      {
+        "name": "Camino del indio",
+        "duration": "3:30"
+      },
+      {
+        "name": "La caja chayera",
+        "duration": "3:00"
+      },
+      {
+        "name": "Añoranzas",
+        "duration": "3:10"
+      },
+      {
+        "name": "Adiós al abuelo campesino",
+        "duration": "3:00"
+      },
+      {
+        "name": "San Lorenzo",
+        "duration": "3:20"
+      },
+      {
+        "name": "Total qué",
+        "duration": "3:00"
+      },
+      {
+        "name": "Chacarera de la copla perdida",
+        "duration": "3:00"
+      },
+      {
+        "name": "Zamba del primer amor",
+        "duration": "3:00"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 412",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/3de2e68b-529f-471a-a94d-c841f18ac89d_CD%20412.webp",
+    "year": 1967,
+    "genres": [],
+    "artistName": "Cuarteto Zupay",
+    "displayArtistName": "Cuarteto Zupay",
+    "appleMusicLink": "http://music.apple.com/us/album/folklore-sin-mirar-atr%C3%A1s/206312594",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009II0956",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6ABoWmFJS78TbSFh4MB3lW"
+  },
+  {
+    "title": "Folklore sin mirar atrás Vol. 2",
+    "listOfSongs": [
+      {
+        "name": "Mi pueblo chico",
+        "duration": "3:10"
+      },
+      {
+        "name": "La alabanza",
+        "duration": "3:00"
+      },
+      {
+        "name": "Los castillos",
+        "duration": "3:20"
+      },
+      {
+        "name": "Cuando llegue el alba",
+        "duration": "3:10"
+      },
+      {
+        "name": "Por un viejo muerto",
+        "duration": "3:00"
+      },
+      {
+        "name": "Balada para mi tierra",
+        "duration": "3:30"
+      },
+      {
+        "name": "Chacarera de la copla perdida",
+        "duration": "3:00"
+      },
+      {
+        "name": "Milonga triste",
+        "duration": "3:00"
+      },
+      {
+        "name": "Zamba del primer amor",
+        "duration": "3:00"
+      },
+      {
+        "name": "La rosa",
+        "duration": "3:00"
+      },
+      {
+        "name": "El sable o la cruz",
+        "duration": "3:00"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 415",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/70749dd4-3078-4197-aab8-be78df311800_CD%20415.webp",
+    "year": 1968,
+    "genres": [],
+    "artistName": "Cuarteto Zupay",
+    "displayArtistName": "Cuarteto Zupay",
+    "appleMusicLink": "https://music.apple.com/us/album/folklore-sin-mirar-atr%C3%A1s-vol-2/207235887",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CRZ1F6",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2LRfdRAD1Yj4OrAmRegEJV"
+  },
+  {
+    "title": "Así nos gusta",
+    "listOfSongs": [
+      {
+        "name": "Zamba alegre",
+        "duration": "3:00"
+      },
+      {
+        "name": "La séptima",
+        "duration": "3:10"
+      },
+      {
+        "name": "La banquina",
+        "duration": "3:20"
+      },
+      {
+        "name": "La olvidada",
+        "duration": "3:15"
+      },
+      {
+        "name": "El agrícola",
+        "duration": "3:05"
+      },
+      {
+        "name": "Zamba del que se queda",
+        "duration": "3:25"
+      },
+      {
+        "name": "La vieja",
+        "duration": "3:00"
+      },
+      {
+        "name": "Encontrar la verdad",
+        "duration": "3:10"
+      },
+      {
+        "name": "La oncena",
+        "duration": "3:20"
+      },
+      {
+        "name": "La bacha",
+        "duration": "3:15"
+      },
+      {
+        "name": "Por vivir",
+        "duration": "3:30"
+      }
+    ],
+    "details": "Con Astor Piazzolla, Domingo Cura, Hugo Díaz y otros. Edición en CD del L.P. original de TROVA de 1969.",
+    "cdNumber": "CD 5225, 7797417522524",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/b39e0f5c-0bc8-452f-ade3-e82cb29fb759_E.%20Lagos.webp",
+    "year": 1969,
+    "genres": [],
+    "artistName": "Eduardo Lagos",
+    "displayArtistName": "Eduardo Lagos",
+    "appleMusicLink": "https://music.apple.com/us/album/as%C3%AD-nos-gusta/640325649",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00CINT03A",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2OTFaR0XNI0DWUy616BlV1"
+  },
+  {
+    "title": "Sonamos Pese a Todo",
+    "listOfSongs": [
+      {
+        "name": "Introducción",
+        "duration": "2:40"
+      },
+      {
+        "name": "El alegre cazador que vuelve a su casa con un fuerte dolor acá",
+        "duration": "4:02"
+      },
+      {
+        "name": "Conozca el interior (Chacarera del ácido lisérgico)",
+        "duration": "2:30"
+      },
+      {
+        "name": "El polen ya se esparce por el aire (Canción levemente obscena)",
+        "duration": "2:05"
+      },
+      {
+        "name": "Cantata de la planificación familiar",
+        "duration": "6:05"
+      },
+      {
+        "name": "Concerto grosso alla rústica",
+        "duration": "3:30"
+      },
+      {
+        "name": "Quinteto de vientos",
+        "duration": "2:53"
+      },
+      {
+        "name": "Oi Gadóñaya (Canción rusa)",
+        "duration": "2:30"
+      },
+      {
+        "name": "Epopeya de Edipo de Tebas (Cantar bastante de gesta)",
+        "duration": "5:00"
+      },
+      {
+        "name": "Candonga de los colectiveros (Candombe‑milonga)",
+        "duration": "2:15"
+      },
+      {
+        "name": "Teorema de Thales (Divertimento matemático)",
+        "duration": "4:30"
+      },
+      {
+        "name": "Gloria Hosanna, That’s the Question (Nomenclátor sacro‑polifónico)",
+        "duration": "3:20"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 519",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/c750c686-f8a6-4ccc-b18f-8d232933ed8f_CD%20519.webp",
+    "year": 1971,
+    "genres": [
+      "HUMOR_MUSICAL"
+    ],
+    "artistName": "Les Luthiers",
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/sonamos-pese-a-todo/4680705",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ISKTAQ",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6Os9VReRTnOMwPFBzMuEXC"
+  },
+  {
+    "title": "Cantata Laxatón",
+    "listOfSongs": [
+      {
+        "name": "Cantata Laxatón",
+        "duration": "17:29"
+      },
+      {
+        "name": "Bolero de Mastropiero",
+        "duration": "5:04"
+      },
+      {
+        "name": "Tristezas del Manuela",
+        "duration": "3:59"
+      },
+      {
+        "name": "Pieza en forma de tango",
+        "duration": "4:11"
+      },
+      {
+        "name": "Si no fuera santiagueño",
+        "duration": "3:39"
+      },
+      {
+        "name": "Vals del segundo",
+        "duration": "3:04"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5032",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/79040080-29bc-4285-bd85-886858c577ba_CD%205032.webp",
+    "year": 1972,
+    "genres": [
+      "HUMOR_MUSICAL"
+    ],
+    "artistName": "Les Luthiers",
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/cantata-laxat%C3%B3n/1100955011",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00954ZND6",
+    "spotifyLink": "http://open.spotify.com/intl-es/album/1DZoOsUOola2ROFayDu41e"
+  },
+  {
+    "title": "Volumen 3",
+    "listOfSongs": [
+      {
+        "name": "Voglio entrare per la finestra",
+        "duration": "6:47"
+      },
+      {
+        "name": "Miss Lilly Higgins sings shimmy in Mississippi´s spring",
+        "duration": "3:01"
+      },
+      {
+        "name": "Ya el sol asomaba en el poniente",
+        "duration": "6:03"
+      },
+      {
+        "name": "La Bossa Nostra",
+        "duration": "8:00"
+      },
+      {
+        "name": "Romanza escocesa sin palabras",
+        "duration": "2:35"
+      },
+      {
+        "name": "Suite los noticiarios cinematográficos",
+        "duration": "8:00"
+      },
+      {
+        "name": "Fe de erratas",
+        "duration": "0:45"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 5043",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/37fc9339-c18e-49a7-968e-3d7bb1751b57_CD%205043.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Les Luthiers",
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/volumen-3/73585435",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009553WTW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2D5WbWadvupWrgJKSyivIR"
+  },
+  {
+    "title": "Súper humor",
+    "listOfSongs": [
+      {
+        "name": "Concerto Grosso Alla Rustica",
+        "duration": "3:26"
+      },
+      {
+        "name": "Tristezas de Manuela (Manuela's Blues)",
+        "duration": "4:00"
+      },
+      {
+        "name": "El Alegre Cazador Que Vuelve A Su Casa Con Un Fuerte Dolor Acá (Scherzo Concertante)",
+        "duration": "4:02"
+      },
+      {
+        "name": "Pieza En Forma De Tango",
+        "duration": "4:16"
+      },
+      {
+        "name": "Gloria Hosanna, That's The Question (Nomenclator Sacro Polifónico)",
+        "duration": "3:16"
+      },
+      {
+        "name": "Quinteto De Vientos (3er Movimiento)",
+        "duration": "2:50"
+      },
+      {
+        "name": "Romanza Escocesa Sin Palabras",
+        "duration": "2:35"
+      },
+      {
+        "name": "Voglio Entrare Per La Finestra",
+        "duration": "6:47"
+      },
+      {
+        "name": "Suite Los Noticiarios Cinematográficos",
+        "duration": "8:00"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 405",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/d3fa9de0-9e15-4c3d-97ff-b5fd0cad41d9_CD%20405.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Les Luthiers",
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "https://music.apple.com/us/album/super-humor-con-les-luthiers/4680670",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IEM8QS",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/73PngV4Bljqgylypmj26y6"
+  },
+  {
+    "title": "Lo Mejor/Peor de Les Luthiers",
+    "listOfSongs": [
+      {
+        "name": "Si No Fuera Santiagueño",
+        "duration": "3:40"
+      },
+      {
+        "name": "Epopeya De Edipo De Tebas",
+        "duration": "4:56"
+      },
+      {
+        "name": "Bolero De Mastropiero",
+        "duration": "5:48"
+      },
+      {
+        "name": "Teorema De Thales",
+        "duration": "4:34"
+      },
+      {
+        "name": "Oi Gadoñaya",
+        "duration": "2:25"
+      },
+      {
+        "name": "Candonga De Los Colectiveros",
+        "duration": "2:07"
+      },
+      {
+        "name": "Miss Lilly Higgins Sings Shimmy In Mississippi's Spring",
+        "duration": "3:01"
+      },
+      {
+        "name": "La Bossa Nostra",
+        "duration": "8:00"
+      },
+      {
+        "name": "Vals Del Segundo",
+        "duration": "2:52"
+      },
+      {
+        "name": "Vals Del Segundo (Reprise)",
+        "duration": "0:07"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 406",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/6a3b3dd8-9bc9-40e5-9f8f-1b78a9558027_CD%20406.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Les Luthiers",
+    "displayArtistName": "Les Luthiers",
+    "appleMusicLink": "http://music.apple.com/us/album/lo-mejor-peor-de-les-luthiers/131279380",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IDV4HI",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5tO9uzWgjDtL9sEFlDsk5P"
+  },
+  {
+    "title": "Acusticazo",
+    "artistName": "Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros",
+    "displayArtistName": "Varios Artistas (Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón y otros)",
+    "listOfSongs": [
+      {
+        "name": "Introducción",
+        "duration": "0:41"
+      },
+      {
+        "name": "Abre el día",
+        "duration": "2:33"
+      },
+      {
+        "name": "Rodando",
+        "duration": "7:18"
+      },
+      {
+        "name": "Vamos Negro",
+        "duration": "7:55"
+      },
+      {
+        "name": "Cuando",
+        "duration": "4:16"
+      },
+      {
+        "name": "Si vos sí, no. Si vos no, sí",
+        "duration": "2:38"
+      },
+      {
+        "name": "Cortar el viento",
+        "duration": "4:14"
+      },
+      {
+        "name": "Guilmar",
+        "duration": "3:20"
+      },
+      {
+        "name": "Hombres de hierro",
+        "duration": "6:02"
+      }
+    ],
+    "details": "Participan Litto Nebbia, León Gieco, Raúl Porchetto, David Lebón, Edelmiro Molinari, Miguel y Eugenio, Carlos Daniel, Gabriela, Miguel Krochik.",
+    "cdNumber": "CD 6054",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/cfd76417-8be3-42d0-8f04-1c13d4ed7926_Inte%CC%81rpretes%20varios%20-%20Acusticazo.webp",
+    "year": 1972,
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/acusticazo/260471946",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IENFOW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/0ckhxBFDJZUuCRIH0TXdN5"
+  },
+  {
+    "title": "Yo... Maria Creuza",
+    "listOfSongs": [
+      {
+        "name": "Más que nada",
+        "duration": "2:24"
+      },
+      {
+        "name": "Dindi",
+        "duration": "2:37"
+      },
+      {
+        "name": "Chega de Saudade",
+        "duration": "1:49"
+      },
+      {
+        "name": "Por causa de você",
+        "duration": "2:35"
+      },
+      {
+        "name": "As Rosas",
+        "duration": "3:15"
+      },
+      {
+        "name": "Chove lá fora",
+        "duration": "2:10"
+      },
+      {
+        "name": "Cantador",
+        "duration": "2:33"
+      },
+      {
+        "name": "Saudade da Bahia",
+        "duration": "2:34"
+      },
+      {
+        "name": "Corcovado",
+        "duration": "2:45"
+      },
+      {
+        "name": "Maria vai com as outras",
+        "duration": "4:02"
+      },
+      {
+        "name": "Estrada do sol",
+        "duration": "2:05"
+      },
+      {
+        "name": "Marina",
+        "duration": "2:05"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 400",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/9ccee304-6bf1-4618-b445-8e3d4e26b9cf_CD%20400.webp",
+    "year": 1971,
+    "genres": [],
+    "artistName": "Maria Creuza",
+    "displayArtistName": "Maria Creuza",
+    "appleMusicLink": "https://music.apple.com/us/album/yo-maria-creuza/135336403",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IELIR8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5Q77imv8zn3y5iXFV8TxTb"
+  },
+  {
+    "title": "Voce abusou",
+    "listOfSongs": [
+      {
+        "name": "De Donde Vienes",
+        "duration": "2:53"
+      },
+      {
+        "name": "¿Usted ya fue a Bahia?",
+        "duration": "1:55"
+      },
+      {
+        "name": "Yo y la brisa",
+        "duration": "3:04"
+      },
+      {
+        "name": "Quejas",
+        "duration": "3:00"
+      },
+      {
+        "name": "João Valentão",
+        "duration": "2:25"
+      },
+      {
+        "name": "¡Que locura!",
+        "duration": "3:25"
+      },
+      {
+        "name": "Ossain",
+        "duration": "2:32"
+      },
+      {
+        "name": "Fue la noche",
+        "duration": "2:14"
+      },
+      {
+        "name": "Morena flor",
+        "duration": "2:52"
+      },
+      {
+        "name": "Cariñoso",
+        "duration": "2:25"
+      },
+      {
+        "name": "Insensatez",
+        "duration": "2:37"
+      },
+      {
+        "name": "Voce abusou",
+        "duration": "3:55"
+      }
+    ],
+    "details": "Con la participación de Sebastiao Tapajos y Pedro Dos Santos. Arreglos y dirección orquestal: Mike Ribas.",
+    "cdNumber": "CD 401",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/615d526d-b143-4d79-bfaa-e7b734d179f2_CD%20401.webp",
+    "year": 1973,
+    "genres": [],
+    "artistName": "Maria Creuza",
+    "displayArtistName": "Maria Creuza",
+    "appleMusicLink": "https://music.apple.com/us/album/voce-abusou/135337360",
+    "amazonMusicLink": "http://music.amazon.es/albums/B009571YB8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2FVvYKfQG0S2ZKDNVq9Psv"
   },
   {
     "title": "Libre",
     "artistName": "Marikena Monti",
     "displayArtistName": "Marikena Monti",
     "listOfSongs": [
-      { "name": "Marikita Montes", "duration": "2:20" },
-      { "name": "Si un hijo quieren de mí", "duration": "2:39" },
-      { "name": "Cuando un amigo se va", "duration": "4:08" },
-      { "name": "Antes y después", "duration": "3:04" },
-      { "name": "Aunque lágrimas nos cueste", "duration": "3:02" },
-      { "name": "Sudamérica", "duration": "3:24" },
-      { "name": "Anímate", "duration": "2:57" },
-      { "name": "Ya voy", "duration": "4:24" },
-      { "name": "El viejo de la galera", "duration": "2:23" },
-      { "name": "Libre", "duration": "3:59" },
-      { "name": "La soledad", "duration": "2:58" },
-      { "name": "Sabes que aquí estamos América", "duration": "5:06" }
+      {
+        "name": "Marikita Montes",
+        "duration": "2:20"
+      },
+      {
+        "name": "Si un hijo quieren de mí",
+        "duration": "2:39"
+      },
+      {
+        "name": "Cuando un amigo se va",
+        "duration": "4:08"
+      },
+      {
+        "name": "Antes y después",
+        "duration": "3:04"
+      },
+      {
+        "name": "Aunque lágrimas nos cueste",
+        "duration": "3:02"
+      },
+      {
+        "name": "Sudamérica",
+        "duration": "3:24"
+      },
+      {
+        "name": "Anímate",
+        "duration": "2:57"
+      },
+      {
+        "name": "Ya voy",
+        "duration": "4:24"
+      },
+      {
+        "name": "El viejo de la galera",
+        "duration": "2:23"
+      },
+      {
+        "name": "Libre",
+        "duration": "3:59"
+      },
+      {
+        "name": "La soledad",
+        "duration": "2:58"
+      },
+      {
+        "name": "Sabes que aquí estamos América",
+        "duration": "5:06"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 6050, 7797417605029",
-    "photo": "",
+    "cdNumber": "CD 6050",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4daafb45-839e-4dbb-9ec6-de3f3e15bec4_Marikena%20Monti%20-%20Libre.webp",
     "year": 2007,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/marikena-libre/289176221",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DIUSXY",
+    "spotifyLink": "https://open.spotify.com/intl-es/track/47CBZFzX4gUzawAeafBwNI"
   },
   {
-    "title": "Puente de madera",
-    "artistName": "Uña Ramos",
-    "displayArtistName":  "Uña Ramos",
+    "title": "Buscado",
     "listOfSongs": [
-      { "name": "Puente de madera", "duration": "3:55" },
-      { "name": "Cajita de música", "duration": "3:26" },
-      { "name": "Notas de fuego", "duration": "2:30" },
-      { "name": "La ronda de las estrellas", "duration": "3:00" },
-      { "name": "Reflejos de sol", "duration": "4:00" },
-      { "name": "Poncho gris", "duration": "1:53" },
-      { "name": "Danza del amanecer", "duration": "2:15" },
-      { "name": "Castillo dormido", "duration": "3:04" },
-      { "name": "Color de otoño", "duration": "2:29" },
-      { "name": "Viento norteño", "duration": "3:00" },
-      { "name": "Flor de jazmín", "duration": "3:35" },
-      { "name": "La garganta del diablo", "duration": "2:18" }
+      {
+        "name": "Provincia de Buenos Aires",
+        "duration": "2:30"
+      },
+      {
+        "name": "Nunca te dije nada",
+        "duration": "2:50"
+      },
+      {
+        "name": "Sencillito y de alpargatas",
+        "duration": "2:40"
+      },
+      {
+        "name": "Huella sin huella",
+        "duration": "3:00"
+      },
+      {
+        "name": "La paloma indiana",
+        "duration": "3:10"
+      },
+      {
+        "name": "El Pucheto",
+        "duration": "2:50"
+      },
+      {
+        "name": "De Nosedonde",
+        "duration": "3:00"
+      },
+      {
+        "name": "Con tu permiso Don Vino",
+        "duration": "3:00"
+      },
+      {
+        "name": "Punteo para rancho muerto / Rancho muerto",
+        "duration": "3:20"
+      },
+      {
+        "name": "Mi patria chica",
+        "duration": "3:00"
+      },
+      {
+        "name": "Milonga corralera",
+        "duration": "3:10"
+      },
+      {
+        "name": "El medio hermano",
+        "duration": "3:30"
+      },
+      {
+        "name": "Lo que´s lindo",
+        "duration": "3:00"
+      },
+      {
+        "name": "No es fácil comprender una guitarra",
+        "duration": "3:20"
+      },
+      {
+        "name": "Ya viene clareando el día",
+        "duration": "2:50"
+      },
+      {
+        "name": "Cornetín",
+        "duration": "3:00"
+      },
+      {
+        "name": "Qué de inconvenientes para visitar la Pancha",
+        "duration": "3:10"
+      },
+      {
+        "name": "Solterito soy feliz",
+        "duration": "3:00"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 410, 7797417041025",
-    "photo": "",
-    "year": 1979,
-    "genres": []
+    "cdNumber": "CD 5233, 7797417523323",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/30d65b34-faae-4afa-a9e8-d0154acc2361_CD%205233.webp",
+    "year": 2000,
+    "genres": [],
+    "artistName": "Omar Moreno Palacios",
+    "displayArtistName": "Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/buscado/129326552",
+    "amazonMusicLink": "https://music.amazon.es/albums/B0099322AU",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6SGPDHS9iKL49ZNsNEt2wS"
   },
   {
-    "title": "Muñeca de porcelana",
-    "artistName": "Uña Ramos",
-    "displayArtistName":  "Uña Ramos",
+    "title": "El Pucheto – Cuentos de Wimpi",
     "listOfSongs": [
-      { "name": "Muñeca de porcelana", "duration": "2:38" },
-      { "name": "Cometa de luz", "duration": "4:37" },
-      { "name": "Hananoko", "duration": "3:01" },
-      { "name": "Camino del pastor", "duration": "3:14" },
-      { "name": "El hombre volante", "duration": "1:54" },
-      { "name": "El flautero", "duration": "1:45" },
-      { "name": "Danza de la mariposa", "duration": "2:39" },
-      { "name": "Liseron", "duration": "3:59" },
-      { "name": "Casa de tierra", "duration": "2:35" },
-      { "name": "Rocotito", "duration": "3:22" },
-      { "name": "El Ekeko", "duration": "1:47" },
-      { "name": "Duerme bolivianito", "duration": "2:26" }
+      {
+        "name": "El Pucheto",
+        "duration": "4:30"
+      },
+      {
+        "name": "El medio hermano",
+        "duration": "4:10"
+      },
+      {
+        "name": "El maltratado",
+        "duration": "4:00"
+      },
+      {
+        "name": "Rimedio pa´todo",
+        "duration": "3:50"
+      },
+      {
+        "name": "¿Carpincho?",
+        "duration": "4:20"
+      },
+      {
+        "name": "Absalón Estavillo",
+        "duration": "4:00"
+      },
+      {
+        "name": "Palmiro Recuero",
+        "duration": "3:40"
+      },
+      {
+        "name": "La botella",
+        "duration": "4:10"
+      },
+      {
+        "name": "La provocación",
+        "duration": "3:30"
+      },
+      {
+        "name": "El olvidadizo",
+        "duration": "4:00"
+      },
+      {
+        "name": "La yunta",
+        "duration": "3:50"
+      },
+      {
+        "name": "El retobao",
+        "duration": "4:00"
+      },
+      {
+        "name": "Los hermanos Zubieta",
+        "duration": "4:10"
+      },
+      {
+        "name": "Apolinario Sanjurjo",
+        "duration": "3:40"
+      },
+      {
+        "name": "El gromista",
+        "duration": "4:00"
+      },
+      {
+        "name": "La caída de Selvago",
+        "duration": "4:30"
+      },
+      {
+        "name": "Habelinda",
+        "duration": "3:50"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 411, 7797417041124",
-    "photo": "",
-    "year": 1978,
-    "genres": []
+    "cdNumber": "CD 5234",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/3fe97eb2-a0a6-4e67-8c76-ee1aca057fd1_CD%205234.webp",
+    "year": 1969,
+    "genres": [],
+    "artistName": "Omar Moreno Palacios",
+    "displayArtistName": "Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/el-pucheto-cuentos-de-wimpi/129326153",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IGPB9M",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2xOpFagmvuElo5ZQGEB6q4"
   },
   {
-    "title": "Un rosal pleno de música",
-    "artistName": "Uña Ramos",
-    "displayArtistName":  "Uña Ramos",
+    "title": "Encontrado",
     "listOfSongs": [
-      { "name": "Un rosal pleno de música", "duration": "5:47" },
-      { "name": "Caballito de totora", "duration": "4:12" },
-      { "name": "Liseron", "duration": "4:58" },
-      { "name": "Nelva", "duration": "3:15" },
-      { "name": "El mitayo", "duration": "3:30" },
-      { "name": "Vidala del caminante", "duration": "4:54" },
-      { "name": "Mamita linda", "duration": "5:32" },
-      { "name": "Eco del puente", "duration": "4:06" },
-      { "name": "Mi muñequita", "duration": "2:51" },
-      { "name": "Don Pablo", "duration": "4:11" },
-      { "name": "Río chico", "duration": "2:58" },
-      { "name": "Camino de fiesta", "duration": "3:48" }
+      {
+        "name": "El curandero",
+        "duration": "3:12"
+      },
+      {
+        "name": "A Don Jorge Campos",
+        "duration": "2:45"
+      },
+      {
+        "name": "Quisiera fuera mi niño",
+        "duration": "3:30"
+      },
+      {
+        "name": "Con mis pobres besos pobres",
+        "duration": "3:05"
+      },
+      {
+        "name": "Oración y guitarra",
+        "duration": "2:50"
+      },
+      {
+        "name": "En cualquier tirón",
+        "duration": "3:20"
+      },
+      {
+        "name": "A una ausente",
+        "duration": "3:00"
+      },
+      {
+        "name": "Los Medina",
+        "duration": "3:15"
+      },
+      {
+        "name": "Otra milonga cualquiera",
+        "duration": "3:10"
+      },
+      {
+        "name": "Que brilla como el lucero",
+        "duration": "2:55"
+      },
+      {
+        "name": "Trampa de seda",
+        "duration": "3:25"
+      },
+      {
+        "name": "El regalo de mi amigo",
+        "duration": "3:00"
+      },
+      {
+        "name": "Siesta de Enero",
+        "duration": "2:40"
+      },
+      {
+        "name": "Te dije la verdad",
+        "duration": "3:05"
+      },
+      {
+        "name": "Entre hombres",
+        "duration": "3:15"
+      },
+      {
+        "name": "Cuando aclara de mi sueño el alba",
+        "duration": "3:30"
+      },
+      {
+        "name": "Como chimango pa´l ojo",
+        "duration": "3:00"
+      },
+      {
+        "name": "Polqueando en lo ´ña Ciriaca",
+        "duration": "3:10"
+      },
+      {
+        "name": "Como indio pa´la bola",
+        "duration": "3:20"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 423, 7797417042329",
-    "photo": "",
-    "year": 1993,
-    "genres": []
+    "cdNumber": "CD 5238",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a7b48d90-71bb-4578-8398-18dc9df6be0a_CD%205238.webp",
+    "year": 1972,
+    "genres": [],
+    "artistName": "Omar Moreno Palacios",
+    "displayArtistName": "Omar Moreno Palacios",
+    "appleMusicLink": "https://music.apple.com/us/album/encontrado/129326020",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ITFU2M",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3J85jmotsBGpLsDtFCTTSy"
+  },
+  {
+    "title": "Jazz en Nueva Orleans",
+    "listOfSongs": [
+      {
+        "name": "Alta sociedad",
+        "duration": "3:05"
+      },
+      {
+        "name": "Blues de la tía Hagar",
+        "duration": "3:15"
+      },
+      {
+        "name": "King Porter stomp",
+        "duration": "3:10"
+      },
+      {
+        "name": "Blues del perro amarillo",
+        "duration": "3:20"
+      },
+      {
+        "name": "Trote de la costa este",
+        "duration": "3:00"
+      },
+      {
+        "name": "Así de apretado",
+        "duration": "3:25"
+      },
+      {
+        "name": "Alegrías de Nueva Orleans",
+        "duration": "3:30"
+      },
+      {
+        "name": "Mamá de medianoche",
+        "duration": "3:10"
+      },
+      {
+        "name": "Rag perfecto",
+        "duration": "3:20"
+      },
+      {
+        "name": "Saratoga swing",
+        "duration": "3:15"
+      },
+      {
+        "name": "Acaba de irse",
+        "duration": "3:05"
+      },
+      {
+        "name": "Stomp de la cabra",
+        "duration": "3:25"
+      },
+      {
+        "name": "Blues de la vereda",
+        "duration": "3:10"
+      },
+      {
+        "name": "Blues del carro de carbón",
+        "duration": "3:15"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 111",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/6892a324-2933-439c-842b-5f12ca94d0f5_CD%20111.webp",
+    "year": 1966,
+    "genres": [],
+    "artistName": "Porteña Jazz Band",
+    "displayArtistName": "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/jazz-en-nueva-orleans/135677986",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009DOOQA4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2NhqGeSGBboLIf9mWFhkZv"
+  },
+  {
+    "title": "Jazz de Nueva Orleans en Buenos Aires y en Paris",
+    "listOfSongs": [
+      {
+        "name": "Frankie and Johnny",
+        "duration": "3:30"
+      },
+      {
+        "name": "Blues perezosos",
+        "duration": "3:20"
+      },
+      {
+        "name": "Dulce muñequita",
+        "duration": "3:25"
+      },
+      {
+        "name": "El canto",
+        "duration": "3:15"
+      },
+      {
+        "name": "Blues del trabajador",
+        "duration": "3:10"
+      },
+      {
+        "name": "Pantano de las ranitas",
+        "duration": "3:00"
+      },
+      {
+        "name": "Blues de la reunión",
+        "duration": "3:30"
+      },
+      {
+        "name": "Mobile stomp",
+        "duration": "3:20"
+      },
+      {
+        "name": "Blues terribles",
+        "duration": "3:25"
+      },
+      {
+        "name": "Estampida",
+        "duration": "3:15"
+      },
+      {
+        "name": "Skid da de dat",
+        "duration": "3:10"
+      },
+      {
+        "name": "Blues del establo",
+        "duration": "3:20"
+      },
+      {
+        "name": "Blues del gato salvaje",
+        "duration": "3:30"
+      },
+      {
+        "name": "Cushion foot stomp",
+        "duration": "3:25"
+      },
+      {
+        "name": "Alegrías de Milenberg",
+        "duration": "3:15"
+      },
+      {
+        "name": "Blues de Atlanta",
+        "duration": "3:20"
+      },
+      {
+        "name": "Blues del vagón patrulla",
+        "duration": "3:10"
+      },
+      {
+        "name": "Mermelada de clarinete",
+        "duration": "3:30"
+      },
+      {
+        "name": "Mamá de la piel oscura",
+        "duration": "3:20"
+      }
+    ],
+    "details": "Featuring Alfredo Espinoza, \"Uby\" González Lanuza, Martín Muller.",
+    "cdNumber": "CD 112",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/2949e465-2c50-4002-9cb9-232efffc21de_CD%20112.webp",
+    "year": 2006,
+    "genres": [],
+    "artistName": "Porteña Jazz Band",
+    "displayArtistName": "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/jazz-de-nueva-orleans-en-buenos-aires-y-en-paris/130249805",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IJKQ2G",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5z1GrcRMiJNEzcWs3vfZVD"
+  },
+  {
+    "title": "En Radio Nederland",
+    "listOfSongs": [
+      {
+        "name": "Locución (Introducción)",
+        "duration": "1:18"
+      },
+      {
+        "name": "Liza",
+        "duration": "3:26"
+      },
+      {
+        "name": "Rosa madreselva",
+        "duration": "3:36"
+      },
+      {
+        "name": "Blues melancólico",
+        "duration": "4:15"
+      },
+      {
+        "name": "Vuelve dulce papá",
+        "duration": "3:11"
+      },
+      {
+        "name": "Tengo ritmo",
+        "duration": "2:40"
+      },
+      {
+        "name": "La estampida",
+        "duration": "3:27"
+      },
+      {
+        "name": "El anfitrión",
+        "duration": "1:54"
+      },
+      {
+        "name": "Blues de la vereda",
+        "duration": "3:08"
+      },
+      {
+        "name": "Stomp del jubileo",
+        "duration": "2:26"
+      },
+      {
+        "name": "Dulce Georgia Brown",
+        "duration": "3:30"
+      }
+    ],
+    "details": "Grabado el 10 de mayo de 1975 en el Gran Teatro Het Turfschip, Breda (Holanda).",
+    "cdNumber": "CD 409",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/5bbaf794-eb1e-471b-a62a-8a73d0e73abd_CD%20409.webp",
+    "year": 1975,
+    "genres": [],
+    "artistName": "Porteña Jazz Band",
+    "displayArtistName": "Porteña Jazz Band",
+    "appleMusicLink": "https://music.apple.com/us/album/en-radio-nederland/129325552",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00992WAMG",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/7MwPoqV5cBmZDV0dVvdyqD"
   },
   {
     "title": "Tango a la Duke",
     "artistName": "The Gustavo Beytelmann Trio",
-    "displayArtistName":"The Gustavo Beytelmann Trio",
+    "displayArtistName": "The Gustavo Beytelmann Trio",
     "listOfSongs": [
       {
-        "name": "In a Sentimental Mood / Me pongo sentimental",
+        "name": "Me pongo sentimental",
         "duration": "4:44"
       },
-      { "name": "Solitude / Soledad", "duration": "6:16" },
       {
-        "name": "Caravan / Caravana",
+        "name": "Soledad",
+        "duration": "6:16"
+      },
+      {
+        "name": "Caravana",
         "duration": "3:34"
       },
       {
-        "name": "Satin Doll / Muñeca satinada",
+        "name": "Muñeca satinada",
         "duration": "7:09"
       },
       {
@@ -1164,11 +2422,11 @@
         "duration": "4:31"
       },
       {
-        "name": "Sophisticated Lady / Dama sofisticada",
+        "name": "Dama sofisticada",
         "duration": "5:03"
       },
       {
-        "name": "Prelude to a Kiss / Preludio de un beso",
+        "name": "Preludio de un beso",
         "duration": "4:53"
       },
       {
@@ -1176,7 +2434,7 @@
         "duration": "4:32"
       },
       {
-        "name": "Mood Indigo / Humor índigo",
+        "name": "Humor índigo",
         "duration": "3:38"
       },
       {
@@ -1185,77 +2443,827 @@
       }
     ],
     "details": "Con Roberto Tormo y Juan José Mosalini.",
-    "cdNumber": "CD 5237, 7797417523729",
-    "photo": "",
+    "cdNumber": "CD 5237",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1b435342-490d-486d-a288-f6a0632f4d2e_91uDyy29QXL._AC_SL1413_.jpg",
     "year": 1997,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/tango-%C3%A0-la-duke-feat-roberto-tormo-juan-jos%C3%A9-mosalini/1536725205",
+    "amazonMusicLink": "https://music.amazon.es/albums/B08L6LP9X4",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/6eMLdHllxG5ZiyTISGfj1Z"
   },
   {
-    "title": "Milán 1984 Vol. 1",
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":"Astor Piazzolla",
+    "title": "Tiempo de Gardel",
     "listOfSongs": [
-      { "name": "Biyuya", "duration": "5:57" },
-      { "name": "Decarísimo", "duration": "3:11" },
-      { "name": "Milonga del Ángel", "duration": "6:32" },
-      { "name": "La muerte del Ángel", "duration": "3:13" },
-      { "name": "Resurrección del Ángel", "duration": "6:26" },
-      { "name": "Tristeza de un doble “A”", "duration": "7:13" },
-      { "name": "Escualo", "duration": "3:34" }
+      {
+        "name": "Recuerdo malevo",
+        "duration": "3:00"
+      },
+      {
+        "name": "Lejana tierra mía",
+        "duration": "2:57"
+      },
+      {
+        "name": "Golondrinas",
+        "duration": "2:34"
+      },
+      {
+        "name": "Cuesta abajo",
+        "duration": "4:00"
+      },
+      {
+        "name": "Soledad",
+        "duration": "3:32"
+      },
+      {
+        "name": "Arrabal amargo",
+        "duration": "3:22"
+      },
+      {
+        "name": "El día que me quieras",
+        "duration": "3:04"
+      },
+      {
+        "name": "Volvió una noche",
+        "duration": "3:16"
+      },
+      {
+        "name": "Mi Buenos Aires querido",
+        "duration": "2:56"
+      },
+      {
+        "name": "Sus ojos se cerraron",
+        "duration": "2:47"
+      },
+      {
+        "name": "Volver",
+        "duration": "3:33"
+      },
+      {
+        "name": "Amores de estudiante",
+        "duration": "3:33"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 5063, 7797417506326",
-    "photo": "",
-    "year": 1984,
-    "genres": []
+    "cdNumber": "CD 5201, 7797417520124",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f60b680a-0b90-47c6-bbf9-e4cf9caa47c6_Tri%CC%81o%20Contempora%CC%81neo%20-%20Tiempo%20de%20Gardel.webp",
+    "year": 2006,
+    "genres": [],
+    "artistName": "Trío Contemporáneo",
+    "displayArtistName": "Trío Contemporáneo",
+    "appleMusicLink": "http://music.apple.com/us/album/tiempo-de-gardel/206325792",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IGQGAK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/2IXTvvCqCxWaod24u3oAJg"
   },
   {
-    "title": "Milán 1984 Vol. 2",
-    "artistName": "Astor Piazzolla",
-    "displayArtistName":"Astor Piazzolla",
+    "title": "Quena de los Andes",
     "listOfSongs": [
-      { "name": "Revirado", "duration": "4:45" },
-      { "name": "Caliente", "duration": "4:35" },
-      { "name": "Lunfardo", "duration": "5:44" },
-      { "name": "Adiós Nonino", "duration": "5:33" },
-      { "name": "Mumuki", "duration": "8:26" },
-      { "name": "Verano porteño", "duration": "4:55" },
-      { "name": "Chin chin", "duration": "6:26" },
-      { "name": "Libertango", "duration": "2:46" }
+      {
+        "name": "Chiquita linda",
+        "duration": "3:10"
+      },
+      {
+        "name": "Eve",
+        "duration": "3:00"
+      },
+      {
+        "name": "Montaña negra",
+        "duration": "3:30"
+      },
+      {
+        "name": "Don Pablo",
+        "duration": "3:20"
+      },
+      {
+        "name": "Cometa de luz",
+        "duration": "3:15"
+      },
+      {
+        "name": "Anata chica",
+        "duration": "3:25"
+      },
+      {
+        "name": "Bolivianita",
+        "duration": "3:05"
+      },
+      {
+        "name": "Tokiko",
+        "duration": "3:10"
+      },
+      {
+        "name": "Poncho blanco",
+        "duration": "3:00"
+      },
+      {
+        "name": "Charango potosino",
+        "duration": "3:20"
+      },
+      {
+        "name": "La voz del viento",
+        "duration": "3:00"
+      },
+      {
+        "name": "Vidala del solitario",
+        "duration": "3:00"
+      }
     ],
     "details": "",
-    "cdNumber": "CD 5064, 7797417506425",
-    "photo": "",
-    "year": 1984,
-    "genres": []
+    "cdNumber": "CD 428",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/b66b4728-a38a-446a-a871-eac16b7754b3_CD428%20Quena%20de%20los%20Andes.webp",
+    "year": 1975,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/quena-de-los-andes/921852170",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00NU977GI",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3AG3ZBPzchv6p4FYIeIZeq"
+  },
+  {
+    "title": "El Cóndor Pasa",
+    "listOfSongs": [
+      {
+        "name": "Virgenes Del Sol",
+        "duration": "3:53"
+      },
+      {
+        "name": "Palmeras",
+        "duration": "3:28"
+      },
+      {
+        "name": "Himno Al Inca",
+        "duration": "3:00"
+      },
+      {
+        "name": "El Cóndor Pasa",
+        "duration": "4:05"
+      },
+      {
+        "name": "El Viento",
+        "duration": "3:47"
+      },
+      {
+        "name": "Triste Olvido",
+        "duration": "2:50"
+      },
+      {
+        "name": "Fiesta Aymara",
+        "duration": "3:32"
+      },
+      {
+        "name": "Aquellos Ojos Grises",
+        "duration": "3:20"
+      },
+      {
+        "name": "Semillas De Olvido",
+        "duration": "3:19"
+      },
+      {
+        "name": "El Humahuaquño",
+        "duration": "2:45"
+      },
+      {
+        "name": "De Lejos Parece Un Humo",
+        "duration": "3:07"
+      },
+      {
+        "name": "Plegaria Del Inca",
+        "duration": "3:20"
+      }
+    ],
+    "details": "Con Domingo Cura, Tito Véliz, Edmundo Zaldívar (h) y Hugo Casas",
+    "cdNumber": "CD 403",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/4b14e5c1-d24e-4fc1-a426-b733eb790176_CD%20403.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/el-condor-pasa/260467213",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICKM40",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/3idLrihdzzclmiYAr107nu"
+  },
+  {
+    "title": "El Arte de la Quena",
+    "listOfSongs": [
+      {
+        "name": "Palmeras",
+        "duration": "3:28"
+      },
+      {
+        "name": "Himno Al Inca",
+        "duration": "3:00"
+      },
+      {
+        "name": "Nace El Carnaval",
+        "duration": "2:20"
+      },
+      {
+        "name": "El Cóndor Pasa",
+        "duration": "4:05"
+      },
+      {
+        "name": "Mi Linda Humahuaqueña",
+        "duration": "3:05"
+      },
+      {
+        "name": "Un Llanto En El Cerro",
+        "duration": "2:06"
+      },
+      {
+        "name": "Orureña",
+        "duration": "2:14"
+      },
+      {
+        "name": "Aquellos Ojos Grises",
+        "duration": "3:20"
+      },
+      {
+        "name": "Uña Anata",
+        "duration": "3:11"
+      },
+      {
+        "name": "Semillas De Olvido",
+        "duration": "3:19"
+      },
+      {
+        "name": "El Humahuaqueño",
+        "duration": "2:45"
+      },
+      {
+        "name": "Oración Andina",
+        "duration": "2:12"
+      },
+      {
+        "name": "Triste Olvido",
+        "duration": "2:50"
+      },
+      {
+        "name": "Plegaria Del Inca",
+        "duration": "3:20"
+      }
+    ],
+    "details": "El 'Cóndor pasa' y sus mejores temas",
+    "cdNumber": "CD 524",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/860568ab-8894-49c7-a5d6-8a43b3653c0a_CD%20524.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/el-arte-de-la-quena/260451519",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00992NXJU",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5YOuItbz3fn0H1lzupbhiW"
+  },
+  {
+    "title": "La Magia de la Quena",
+    "listOfSongs": [
+      {
+        "name": "Camino De Llamas",
+        "duration": "2:58"
+      },
+      {
+        "name": "Capullito De Nieve",
+        "duration": "2:43"
+      },
+      {
+        "name": "Mercedes",
+        "duration": "3:20"
+      },
+      {
+        "name": "Hono",
+        "duration": "4:00"
+      },
+      {
+        "name": "El Valle De Las Amapolas",
+        "duration": "3:26"
+      },
+      {
+        "name": "Estela",
+        "duration": "3:30"
+      },
+      {
+        "name": "Kenapop",
+        "duration": "4:00"
+      },
+      {
+        "name": "Una Flauta En La Noche",
+        "duration": "4:16"
+      },
+      {
+        "name": "Nostalgias",
+        "duration": "2:56"
+      },
+      {
+        "name": "El Gringo",
+        "duration": "2:32"
+      },
+      {
+        "name": "La Paz",
+        "duration": "2:32"
+      },
+      {
+        "name": "Pancho Karancho",
+        "duration": "2:56"
+      }
+    ],
+    "details": "Todos los temas compuestos por Uña Ramos y arreglados por Bruno Pauvarel, excepto los indicados con * arreglados por Daniel Sbarra",
+    "cdNumber": "CD 407",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a0fe7906-5cb0-40ad-a609-9d85d6ab6ad7_CD%20407.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/la-magia-de-la-quena/140151687",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009IHJ6D8",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1dfMTGiGdbTZGyQ8wTeDr4"
+  },
+  {
+    "title": "La Princesa del Mar",
+    "listOfSongs": [
+      {
+        "name": "Chiri Chiri",
+        "duration": "3:20"
+      },
+      {
+        "name": "Quais De Buenos-Aires",
+        "duration": "4:26"
+      },
+      {
+        "name": "Ma Jolie Beniana",
+        "duration": "2:43"
+      },
+      {
+        "name": "Chloé",
+        "duration": "2:48"
+      },
+      {
+        "name": "Oiseau Clochette",
+        "duration": "3:49"
+      },
+      {
+        "name": "Jeu De Petites Chèvres",
+        "duration": "2:46"
+      },
+      {
+        "name": "La Montagne Aux Sept Couleurs",
+        "duration": "3:33"
+      },
+      {
+        "name": "Couleur De Blé",
+        "duration": "2:15"
+      },
+      {
+        "name": "Le Joueur De Flûte Du Castellet",
+        "duration": "4:18"
+      },
+      {
+        "name": "Chant D'Alouette",
+        "duration": "2:45"
+      },
+      {
+        "name": "Je Suis Des Hauts Plateaux",
+        "duration": "3:40"
+      },
+      {
+        "name": "Le Moissonneur",
+        "duration": "2:29"
+      },
+      {
+        "name": "La Princesse De Mer",
+        "duration": "12:35"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 414",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/02f85d06-255d-4adb-98d3-68236c65127c_CD%20414.webp",
+    "year": 2001,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/la-princesa-del-mar/135335878",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009ICR4FA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/5EcuLl2ghbjtib0B5ZtM43"
+  },
+  {
+    "title": "Live in France 2004",
+    "listOfSongs": [
+      {
+        "name": "Flora",
+        "duration": "3:34"
+      },
+      {
+        "name": "Hacia La Luna",
+        "duration": "4:47"
+      },
+      {
+        "name": "Beatriz",
+        "duration": "6:21"
+      },
+      {
+        "name": "Canto De Alondra",
+        "duration": "3:04"
+      },
+      {
+        "name": "Canción Del Paisano",
+        "duration": "4:03"
+      },
+      {
+        "name": "Montaña De Siete Colores",
+        "duration": "3:47"
+      },
+      {
+        "name": "Sophia",
+        "duration": "4:07"
+      },
+      {
+        "name": "Ritual De Las Vicuñas",
+        "duration": "4:00"
+      },
+      {
+        "name": "Puerto De Buenos Aires",
+        "duration": "4:29"
+      },
+      {
+        "name": "Eve",
+        "duration": "4:17"
+      },
+      {
+        "name": "La Catedral",
+        "duration": "9:28"
+      },
+      {
+        "name": "Campo Santo",
+        "duration": "5:19"
+      },
+      {
+        "name": "Golondrinas",
+        "duration": "4:19"
+      },
+      {
+        "name": "El Flautista De Castellet",
+        "duration": "4:39"
+      },
+      {
+        "name": "Camino de Baixas",
+        "duration": "4:20"
+      },
+      {
+        "name": "Chiri Chiri",
+        "duration": "3:11"
+      }
+    ],
+    "details": "Grabado en vivo en la iglesia de Notre Dame des Anges en Baixas, Francia",
+    "cdNumber": "CD 425",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/1cdae030-aa00-454a-b4c0-fb8081f4da2d_CD+425.webp",
+    "year": 2004,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/live-in-france-2004/135335191",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CUMEJE",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/62beQcujYQLPevNTHsHz8F"
+  },
+  {
+    "title": "The Sea Princess (Techno)",
+    "listOfSongs": [
+      {
+        "name": "The Sea Princess (Versión extendida)",
+        "duration": "7:53"
+      },
+      {
+        "name": "The Sea Princess (Versión dance)",
+        "duration": "3:59"
+      }
+    ],
+    "details": "Compositor: Uña Ramos. Arreglos y músico acompañante: Bruno Ulysse Pauvarel",
+    "cdNumber": "CD 426",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f446e754-773f-40ec-a612-bbc0cb54a9c3_CD%20426.webp",
+    "year": 2004,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/the-sea-princess-la-princesa-del-mar-techno/135335591",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009CUFOAK",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/0kXAvHT9Hrlqjtlrd51Qpv"
+  },
+  {
+    "title": "En la Filarmónica de Berlín",
+    "listOfSongs": [
+      {
+        "name": "Oda a Borges (En Vivo)",
+        "duration": "5:28"
+      },
+      {
+        "name": "Kirey (Linda) [En Vivo]",
+        "duration": "5:24"
+      },
+      {
+        "name": "Atahualpa (En Vivo)",
+        "duration": "4:53"
+      },
+      {
+        "name": "Canto de Alondra (En Vivo)",
+        "duration": "3:00"
+      },
+      {
+        "name": "Ritual de Vicuñas (En Vivo)",
+        "duration": "3:49"
+      },
+      {
+        "name": "Amanecer (En Vivo)",
+        "duration": "5:07"
+      },
+      {
+        "name": "Hacia la Luna (En Vivo)",
+        "duration": "5:14"
+      },
+      {
+        "name": "Una Flauta en la Noche (En Vivo)",
+        "duration": "6:19"
+      },
+      {
+        "name": "Los Pájaros del Viento (En Vivo)",
+        "duration": "6:49"
+      },
+      {
+        "name": "Campo Santo (En Vivo)",
+        "duration": "5:27"
+      },
+      {
+        "name": "La Princesa del Mar (En Vivo)",
+        "duration": "7:46"
+      },
+      {
+        "name": "Chiri Chiri (En Vivo)",
+        "duration": "3:15"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 427",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/92eebf0e-3ed6-4a95-9111-e2803aa3e65c_Un%CC%83a%20Ramos%20-%20En%20la%20Filarmo%CC%81nica%20de%20Berli%CC%81n.webp",
+    "year": 2004,
+    "genres": [],
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "appleMusicLink": "https://music.apple.com/us/album/en-la-filarm%C3%B3nica-de-berl%C3%ADn-en-vivo/206476082",
+    "amazonMusicLink": "https://music.amazon.es/albums/B009II3IMW",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/1WxL6TE0Okf7raxs7NXdbY"
+  },
+  {
+    "title": "Puente de madera",
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "listOfSongs": [
+      {
+        "name": "Puente de madera",
+        "duration": "3:55"
+      },
+      {
+        "name": "Cajita de música",
+        "duration": "3:26"
+      },
+      {
+        "name": "Notas de fuego",
+        "duration": "2:30"
+      },
+      {
+        "name": "La ronda de las estrellas",
+        "duration": "3:00"
+      },
+      {
+        "name": "Reflejos de sol",
+        "duration": "4:00"
+      },
+      {
+        "name": "Poncho gris",
+        "duration": "1:53"
+      },
+      {
+        "name": "Danza del amanecer",
+        "duration": "2:15"
+      },
+      {
+        "name": "Castillo dormido",
+        "duration": "3:04"
+      },
+      {
+        "name": "Color de otoño",
+        "duration": "2:29"
+      },
+      {
+        "name": "Viento norteño",
+        "duration": "3:00"
+      },
+      {
+        "name": "Flor de jazmín",
+        "duration": "3:35"
+      },
+      {
+        "name": "La garganta del diablo",
+        "duration": "2:18"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 410, 7797417041025",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/a2e7b243-314b-4150-80cf-be0ef5e35d2b_CD410%20Puente%20de%20Madera.webp",
+    "year": 1979,
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/puente-de-madera/920185206",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00NQ2P4LY",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4IZDGXRV8JCoqYZl0RydFN"
+  },
+  {
+    "title": "Muñeca de porcelana",
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "listOfSongs": [
+      {
+        "name": "Muñeca de porcelana",
+        "duration": "2:38"
+      },
+      {
+        "name": "Cometa de luz",
+        "duration": "4:37"
+      },
+      {
+        "name": "Hananoko",
+        "duration": "3:01"
+      },
+      {
+        "name": "Camino del pastor",
+        "duration": "3:14"
+      },
+      {
+        "name": "El hombre volante",
+        "duration": "1:54"
+      },
+      {
+        "name": "El flautero",
+        "duration": "1:45"
+      },
+      {
+        "name": "Danza de la mariposa",
+        "duration": "2:39"
+      },
+      {
+        "name": "Liseron",
+        "duration": "3:59"
+      },
+      {
+        "name": "Casa de tierra",
+        "duration": "2:35"
+      },
+      {
+        "name": "Rocotito",
+        "duration": "3:22"
+      },
+      {
+        "name": "El Ekeko",
+        "duration": "1:47"
+      },
+      {
+        "name": "Duerme bolivianito",
+        "duration": "2:26"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 411, 7797417041124",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/f38fd6fc-31d8-4991-b406-c4fbf108bfdc_CD411%20Mun%CC%83eca%20de%20Porcelana.webp",
+    "year": 1992,
+    "genres": [],
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
+  },
+  {
+    "title": "Un rosal pleno de música",
+    "artistName": "Uña Ramos",
+    "displayArtistName": "Uña Ramos",
+    "listOfSongs": [
+      {
+        "name": "Un rosal pleno de música",
+        "duration": "5:47"
+      },
+      {
+        "name": "Caballito de totora",
+        "duration": "4:12"
+      },
+      {
+        "name": "Liseron",
+        "duration": "4:58"
+      },
+      {
+        "name": "Nelva",
+        "duration": "3:15"
+      },
+      {
+        "name": "El mitayo",
+        "duration": "3:30"
+      },
+      {
+        "name": "Vidala del caminante",
+        "duration": "4:54"
+      },
+      {
+        "name": "Mamita linda",
+        "duration": "5:32"
+      },
+      {
+        "name": "Eco del puente",
+        "duration": "4:06"
+      },
+      {
+        "name": "Mi muñequita",
+        "duration": "2:51"
+      },
+      {
+        "name": "Don Pablo",
+        "duration": "4:11"
+      },
+      {
+        "name": "Río chico",
+        "duration": "2:58"
+      },
+      {
+        "name": "Camino de fiesta",
+        "duration": "3:48"
+      }
+    ],
+    "details": "",
+    "cdNumber": "CD 423, 7797417042329",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/91773827-a86b-4e3e-a313-13099df09b9e_CD423%20Un%20Rosal%20Pleno%20de%20Mu%CC%81sica.webp",
+    "year": 1993,
+    "genres": [],
+    "appleMusicLink": "",
+    "amazonMusicLink": "",
+    "spotifyLink": ""
   },
   {
     "title": "Canciones y danzas de música argentina",
     "artistName": "Uña Ramos",
-    "displayArtistName":  "Uña Ramos y sus amigos",
+    "displayArtistName": "Uña Ramos y sus amigos",
     "listOfSongs": [
-      { "name": "Allemande y Gavotte", "duration": "3:52" },
+      {
+        "name": "Allemande y Gavotte",
+        "duration": "3:52"
+      },
       {
         "name": "Aires nacionales argentinos Triste Nº 1 Jujuy",
         "duration": "3:06"
       },
-      { "name": "Se equivocó la paloma", "duration": "1:46" },
-      { "name": "Dos palomitas", "duration": "4:41" },
-      { "name": "Sarabanda", "duration": "3:35" },
-      { "name": "Triste Nº 5 en Do menor", "duration": "2:45" },
-      { "name": "Zamba de Vargas", "duration": "4:48" },
-      { "name": "La rosa y el sauce", "duration": "3:04" },
-      { "name": "Aire criollo Nº 1", "duration": "1:31" },
-      { "name": "Pieza en forma de habanera", "duration": "4:28" },
-      { "name": "El choclo", "duration": "2:48" },
-      { "name": "Canción húngara", "duration": "1:28" },
-      { "name": "Una flauta en la noche", "duration": "5:35" },
-      { "name": "Alfonsina y el mar", "duration": "4:52" }
+      {
+        "name": "Se equivocó la paloma",
+        "duration": "1:46"
+      },
+      {
+        "name": "Dos palomitas",
+        "duration": "4:41"
+      },
+      {
+        "name": "Sarabanda",
+        "duration": "3:35"
+      },
+      {
+        "name": "Triste Nº 5 en Do menor",
+        "duration": "2:45"
+      },
+      {
+        "name": "Zamba de Vargas",
+        "duration": "4:48"
+      },
+      {
+        "name": "La rosa y el sauce",
+        "duration": "3:04"
+      },
+      {
+        "name": "Aire criollo Nº 1",
+        "duration": "1:31"
+      },
+      {
+        "name": "Pieza en forma de habanera",
+        "duration": "4:28"
+      },
+      {
+        "name": "El choclo",
+        "duration": "2:48"
+      },
+      {
+        "name": "Canción húngara",
+        "duration": "1:28"
+      },
+      {
+        "name": "Una flauta en la noche",
+        "duration": "5:35"
+      },
+      {
+        "name": "Alfonsina y el mar",
+        "duration": "4:52"
+      }
     ],
-    "details": "",
+    "details": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/719bda9e-250f-4ce3-8ccf-331eced5619c_CD424%20Un%CC%83a%20Ramos%20y%20sus%20Amigos.jpg",
     "cdNumber": "CD 424, 7797417042428",
-    "photo": "",
+    "photo": "https://trova-app.s3.sa-east-1.amazonaws.com/albums/b8427c61-4df4-43f3-9e35-e4d15dfcaae5_CD424%20Un%CC%83a%20Ramos%20y%20sus%20Amigos.webp",
     "year": 1985,
-    "genres": []
+    "genres": [],
+    "appleMusicLink": "https://music.apple.com/us/album/u%C3%B1a-ramos-y-sus-amigos-feat-miguel-%C3%A1ngel-estrella-jos%C3%A9/925803388",
+    "amazonMusicLink": "https://music.amazon.es/albums/B00O6E9LGA",
+    "spotifyLink": "https://open.spotify.com/intl-es/album/4w8ITYewMR8wSHIm9NMlMb"
   }
 ]

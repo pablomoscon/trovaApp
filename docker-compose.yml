@@ -10,28 +10,6 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - ./postgres_data:/var/lib/postgresql/data
     networks:
       - trova-network
-
-  springboot-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: springboot-app
-    depends_on:
-      - postgres
-    ports:
-      - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
-      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
-      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
-    networks:
-      - trova-network
-
-volumes:
-  postgres_data:
-
-networks:
-  trova-network:

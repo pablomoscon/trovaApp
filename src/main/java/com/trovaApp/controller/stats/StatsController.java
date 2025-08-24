@@ -5,6 +5,8 @@ import com.trovaApp.service.album.AlbumService;
 import com.trovaApp.service.artist.ArtistService;
 import com.trovaApp.service.user.UserService;
 import com.trovaApp.service.visit.VisitService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,15 +16,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Tag(name = "stats", description = "Operations related to statistics and visit data")
 @RestController
 @RequestMapping("/stats")
-
 public class StatsController {
 
     private final UserService userService;
     private final AlbumService albumService;
     private final ArtistService artistService;
-    private VisitService visitService;
+    private final VisitService visitService;
 
     @Autowired
     public StatsController(
@@ -31,13 +33,13 @@ public class StatsController {
             ArtistService artistService,
             VisitService visitService
     ) {
-
         this.userService = userService;
         this.albumService = albumService;
         this.artistService = artistService;
         this.visitService = visitService;
     }
 
+    @Operation(summary = "Get summary statistics about users, albums, and artists")
     @GetMapping("/summary")
     public Map<String, Long> getStats() {
         Map<String, Long> stats = new HashMap<>();
@@ -58,6 +60,7 @@ public class StatsController {
         return stats;
     }
 
+    @Operation(summary = "Get list of most visited albums")
     @GetMapping("/most-visited-albums")
     public List<VisitStatDto> getMostVisitedAlbums() {
         return visitService.getMostVisitedAlbums().stream().map(map -> {
@@ -69,6 +72,7 @@ public class StatsController {
         }).toList();
     }
 
+    @Operation(summary = "Get list of most visited artists")
     @GetMapping("/most-visited-artists")
     public List<VisitStatDto> getMostVisitedArtists() {
         return visitService.getMostVisitedArtists().stream().map(map -> {

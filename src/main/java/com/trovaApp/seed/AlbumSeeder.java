@@ -62,6 +62,9 @@ public class AlbumSeeder {
                 album.setCdNumber(dto.getCdNumber());
                 album.setPhoto(dto.getPhoto());
                 album.setYear(dto.getYear());
+                album.setAppleMusicLink(dto.getAppleMusicLink());
+                album.setAmazonMusicLink(dto.getAmazonMusicLink());
+                album.setSpotifyLink(dto.getSpotifyLink());
 
                 Set<Genre> genreSet = dto.getGenres() != null
                         ? dto.getGenres().stream()
@@ -73,6 +76,10 @@ public class AlbumSeeder {
 
                 album.setArtist(artist);
                 album.setDisplayArtistName(dto.getArtistName());
+
+                album.setAppleMusicLink(dto.getAppleMusicLink());
+                album.setAmazonMusicLink(dto.getAmazonMusicLink());
+                album.setSpotifyLink(dto.getSpotifyLink());
 
                 album = albumService.saveRaw(album);
 

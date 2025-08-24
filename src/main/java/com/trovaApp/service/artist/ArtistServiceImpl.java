@@ -2,6 +2,7 @@ package com.trovaApp.service.artist;
 
 import com.trovaApp.dto.artist.ArtistCreateDTO;
 import com.trovaApp.dto.artist.ArtistPatchDTO;
+import com.trovaApp.dto.artist.ArtistWithAlbumCountDTO;
 import com.trovaApp.enums.Status;
 import com.trovaApp.exception.ArtistNotFoundException;
 import com.trovaApp.helper.S3Helper;
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ArtistServiceImpl implements ArtistService {
@@ -57,10 +60,23 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Transactional(readOnly = true)
     @Override
-    public Page<Artist> findAll(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        return artistRepository.findAll(pageable);
+    public Page<Artist> findAll(int page, int size, Status status) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "name"));
+
+        if (status != null) {
+            return artistRepository.findByStatus(status, pageable);
+        } else {
+            return artistRepository.findAll(pageable);
+        }
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Page<ArtistWithAlbumCountDTO> finArtistWithAlbumCount(int page, int size, Status status) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "name"));
+        return artistRepository.findAllWithAlbumCount(status, pageable);
+    }
+
 
     @Transactional(readOnly = true)
     @Override
@@ -81,11 +97,10 @@ public class ArtistServiceImpl implements ArtistService {
         if (dto.getNationality() != null) artist.setNationality(dto.getNationality());
         if (dto.getStatus() != null) artist.setStatus(dto.getStatus());
 
-        if (photo != null && !photo.isEmpty()) {
-            String url = s3Helper.uploadPhoto(photo);
-            artist.setPhoto(url);
-        } else if (dto.getPhotoUrl() != null) {
-            artist.setPhoto(dto.getPhotoUrl());
+        MultipartFile photoFile = dto.getPhoto();
+        if (photoFile != null && !photoFile.isEmpty()) {
+            String photoUrl = s3Helper.uploadPhoto(photoFile);
+            artist.setPhoto(photoUrl);
         }
 
         userHelper.logActivity("Updated artist: " + artist.getName());
@@ -115,14 +130,20 @@ public class ArtistServiceImpl implements ArtistService {
 
     @Transactional(readOnly = true)
     @Override
-    public Page<Artist> search(String term, int page, int size) {
-        if (term == null || term.trim().isEmpty()) {
-            // Empty term → return first page of all artists
-            return findAll(page, size);
-        }
+    public Page<Artist> search(String term, int page, int size, Status status) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
+
+        if (term == null || term.trim().isEmpty()) {
+            return findAll(page, size, status);
+        }
+
+        if (status != null) {
+            return artistRepository.searchByTermAndStatus(term.trim(), status, pageable);
+        }
+
         return artistRepository.searchByTerm(term.trim(), pageable);
     }
+
 
     @Transactional(readOnly = true)
     @Override

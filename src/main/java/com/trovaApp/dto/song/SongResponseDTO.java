@@ -4,13 +4,15 @@ import com.trovaApp.model.Song;
 
 public class SongResponseDTO {
     private Long id;
-    private String title;
+    private String name;
     private String duration;
+    private String artistName;
 
-    public SongResponseDTO(Long id, String title, String duration) {
+    public SongResponseDTO(Long id, String name, String duration, String artistName) {
         this.id = id;
-        this.title = title;
+        this.name = name;
         this.duration = duration;
+        this.artistName = artistName;
     }
 
     // Getters
@@ -18,19 +20,25 @@ public class SongResponseDTO {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
     public String getDuration() {
+
         return duration;
+    }
+
+    public String getArtistName() {
+        return artistName;
     }
 
     public static SongResponseDTO fromModel(Song song) {
         return new SongResponseDTO(
                 song.getId(),
                 song.getName(),
-                song.getDuration()
+                song.getDuration(),
+                song.getArtist().getName()
         );
     }
 }

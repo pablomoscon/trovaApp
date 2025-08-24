@@ -41,15 +41,15 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     // Filter albums by optional artist names, years and genres
     @Query("""
-                SELECT a.id FROM Album a
-                JOIN a.artist ar
-                WHERE (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
-                AND (:years IS NULL OR a.year IN :years)
-                AND (:genres IS NULL OR EXISTS (
-                    SELECT g FROM a.genres g WHERE g IN :genres
-                ))
-                ORDER BY ar.name ASC, a.year DESC
-            """)
+    SELECT a.id FROM Album a
+    JOIN a.artist ar
+    WHERE a.status = 'ACTIVE'
+    AND (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
+    AND (:years IS NULL OR a.year IN :years)
+    AND (:genres IS NULL OR EXISTS (
+        SELECT g FROM a.genres g WHERE g IN :genres
+    ))
+""")
     Page<Long> findFilteredAlbumIds(
             @Param("artistNames") List<String> artistNames,
             @Param("years") List<Integer> years,
@@ -57,16 +57,26 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
             Pageable pageable
     );
 
+
     @Query("""
-        SELECT a.id
-        FROM Album a
-        JOIN a.artist ar
-        WHERE LOWER(a.title)  LIKE LOWER(CONCAT('%', :query, '%'))
-           OR LOWER(ar.name)  LIKE LOWER(CONCAT('%', :query, '%'))
-        ORDER BY ar.name ASC, a.year DESC
-       """)
-    Page<Long> searchAlbumIds(@Param("query") String query, Pageable pageable);
+    SELECT a.id
+    FROM Album a
+    JOIN a.artist ar
+    WHERE (:status IS NULL OR a.status = :status)
+      AND (LOWER(a.title) LIKE LOWER(CONCAT('%', :query, '%'))
+           OR LOWER(ar.name) LIKE LOWER(CONCAT('%', :query, '%')))
+    ORDER BY ar.name ASC, a.year DESC
+""")
+    Page<Long> searchAlbumIds(
+            @Param("query") String query,
+            @Param("status") Status status,
+            Pageable pageable
+    );
 
     // Count albums by their status
     long countByStatus(Status status);
+
+    // Count albums by artist
+    @Query("SELECT COUNT(a) FROM Album a WHERE a.artist.id = :artistId")
+    Long countByArtistId(@Param("artistId") Long artistId);
 }

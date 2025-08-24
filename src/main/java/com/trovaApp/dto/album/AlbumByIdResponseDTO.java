@@ -1,6 +1,6 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongCreateDTO;
+import com.trovaApp.dto.song.SongResponseDTO;
 import com.trovaApp.enums.Genre;
 import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
@@ -15,12 +15,15 @@ public class AlbumByIdResponseDTO {
     private String cdNumber;
     private String photo;
     private Integer year;
-    private List<SongCreateDTO> listOfSongs;
+    private List<SongResponseDTO> listOfSongs;
     private Set<Genre> genres;
     private String artistName;
     private String displayArtistName;
     private Status status;
     private Date createdAt;
+    private String appleMusicLink;
+    private String amazonMusicLink;
+    private String spotifyLink;
 
     // Getters y setters
     public Long getId() {
@@ -71,11 +74,11 @@ public class AlbumByIdResponseDTO {
         this.year = year;
     }
 
-    public List<SongCreateDTO> getListOfSongs() {
+    public List<SongResponseDTO> getListOfSongs() {
         return listOfSongs;
     }
 
-    public void setListOfSongs(List<SongCreateDTO> listOfSongs) {
+    public void setListOfSongs(List<SongResponseDTO> listOfSongs) {
         this.listOfSongs = listOfSongs;
     }
 
@@ -99,16 +102,48 @@ public class AlbumByIdResponseDTO {
         return displayArtistName;
     }
 
-    public Status getStatus() { return status; }
-
-    public void setStatus(Status status) { this.status = status; }
-
-    public Date getCreatedAt() { return createdAt; }
-
-    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
-
     public void setDisplayArtistName(String displayArtistName) {
         this.displayArtistName = displayArtistName;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getAppleMusicLink() {
+        return appleMusicLink;
+    }
+
+    public void setAppleMusicLink(String appleMusicLink) {
+        this.appleMusicLink = appleMusicLink;
+    }
+
+    public String getAmazonMusicLink() {
+        return amazonMusicLink;
+    }
+
+    public void setAmazonMusicLink(String amazonMusicLink) {
+        this.amazonMusicLink = amazonMusicLink;
+    }
+
+    public String getSpotifyLink() {
+        return spotifyLink;
+    }
+
+    public void setSpotifyLink(String spotifyLink) {
+        this.spotifyLink = spotifyLink;
     }
 
     public static AlbumByIdResponseDTO fromModel(Album album) {
@@ -122,7 +157,11 @@ public class AlbumByIdResponseDTO {
         dto.setStatus(album.getStatus());
         dto.setCreatedAt(album.getCreatedAt());
 
-        List<SongCreateDTO> songDTOs = new ArrayList<>();
+        dto.setAppleMusicLink(album.getAppleMusicLink());
+        dto.setAmazonMusicLink(album.getAmazonMusicLink());
+        dto.setSpotifyLink(album.getSpotifyLink());
+
+        List<SongResponseDTO> songDTOs = new ArrayList<>();
         Set<Long> songIds = new HashSet<>();
 
         Long albumArtistId = album.getArtist() != null ? album.getArtist().getId() : null;
@@ -132,15 +171,15 @@ public class AlbumByIdResponseDTO {
                     song.getArtist().getId().equals(albumArtistId) &&
                     song.getId() != null &&
                     songIds.add(song.getId())) {
-                songDTOs.add(SongCreateDTO.fromSong(song));
+                songDTOs.add(SongResponseDTO.fromModel(song));
             }
         }
 
         dto.setListOfSongs(songDTOs);
-
         dto.setGenres(album.getGenres());
         dto.setDisplayArtistName(album.getDisplayArtistName());
         dto.setArtistName(album.getArtist() != null ? album.getArtist().getName() : null);
+
         return dto;
     }
 }
