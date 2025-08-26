@@ -300,13 +300,23 @@ public class AlbumServiceImpl implements AlbumService {
     @Transactional(readOnly = true)
     @Override
     public Map<String, Object> getAvailableFilters() {
-        List<String> artists = albumRepository.findAllArtists();
-        List<String> genres = albumRepository.findAllGenres();
-        List<Integer> decadesInt = albumRepository.findAllDecades();
 
-        List<String> decades = decadesInt.stream()
-                .map(y -> y + "s")
-                .collect(Collectors.toList());
+        List<String> artists = albumRepository.findAllArtistsEntity()
+                .stream()
+                .map(Artist::getName)
+                .filter(Objects::nonNull)
+                .sorted()
+                .toList();
+        List<String> genres = albumRepository.findAllGenres()
+                .stream()
+                .map(Enum::name)
+                .toList();
+        List<String> decades = albumRepository.findAllYears()
+                .stream()
+                .map(y -> (y / 10) * 10 + "s")
+                .distinct()
+                .sorted((a, b) -> b.compareTo(a)) // descendente
+                .toList();
 
         Map<String, Object> result = new HashMap<>();
         result.put("artists", artists);
