@@ -79,4 +79,13 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
     // Count albums by artist
     @Query("SELECT COUNT(a) FROM Album a WHERE a.artist.id = :artistId")
     Long countByArtistId(@Param("artistId") Long artistId);
+
+    @Query("SELECT DISTINCT a.artist.name FROM Album a WHERE a.artist IS NOT NULL ORDER BY a.artist.name ASC")
+    List<String> findAllArtists();
+
+    @Query("SELECT DISTINCT g FROM Album a JOIN a.genres g ORDER BY g ASC")
+    List<String> findAllGenres();
+
+    @Query("SELECT DISTINCT (a.year / 10) * 10 FROM Album a WHERE a.year IS NOT NULL ORDER BY a.year DESC")
+    List<Integer> findAllDecades();
 }
