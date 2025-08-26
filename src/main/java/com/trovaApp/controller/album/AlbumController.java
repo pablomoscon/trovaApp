@@ -201,4 +201,11 @@ public class AlbumController {
         albumService.deleteById(id);
         return ResponseEntity.ok().build();
     }
+
+    @Operation(summary = "Get available filters for albums")
+    @GetMapping("/filters")
+    public ResponseEntity<Map<String, Object>> getAvailableFilters() {
+        Map<String, Object> filters = albumService.getAvailableFilters();
+        return ResponseEntity.ok(filters);
+    }
 }
