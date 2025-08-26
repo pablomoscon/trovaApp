@@ -69,6 +69,9 @@ public interface AlbumService {
     @Transactional(readOnly = true)
     Page<Album> search(int page, int size, String query, @Nullable Status status);
 
+    @Transactional(readOnly = true)
+    Map<String, Object> getAvailableFilters();
+
     long getTotalAlbums();
 
     long getActiveAlbums();

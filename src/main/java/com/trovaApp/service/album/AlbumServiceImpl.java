@@ -297,6 +297,38 @@ public class AlbumServiceImpl implements AlbumService {
         return new PageImpl<>(ordered, pageable, albumIdsPage.getTotalElements());
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public Map<String, Object> getAvailableFilters() {
+        List<Album> albums = albumRepository.findAll();
+
+        // Artists
+        Set<String> artists = albums.stream()
+                .map(a -> a.getArtist().getName())
+                .filter(Objects::nonNull)
+                .collect(Collectors.toCollection(TreeSet::new)); // ordenados alfabéticamente
+
+        // Genres
+        Set<String> genres = albums.stream()
+                .flatMap(a -> a.getGenres().stream())
+                .map(Enum::name)
+                .collect(Collectors.toCollection(TreeSet::new));
+
+        // Years
+        Set<String> decades = albums.stream()
+                .map(Album::getYear)
+                .filter(Objects::nonNull)
+                .map(y -> (y / 10) * 10 + "s") // ej: 1995 → "1990s"
+                .collect(Collectors.toCollection(TreeSet::new));
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("artists", artists);
+        result.put("genres", genres);
+        result.put("decades", decades);
+
+        return result;
+    }
+
     // Stats
     @Override
     public long getTotalAlbums() {
