@@ -22,7 +22,7 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     // Fetch albums by artist ID with details eagerly loaded, paginated
     @EntityGraph(attributePaths = {"listOfSongs", "genres", "artist"})
-    Page<Album> findByArtistId(Long artistId, Pageable pageable);
+    Page<Album> findByArtistIdAndStatus(Long artistId, Status status, Pageable pageable);
 
     // Fetch all albums by list of IDs with details eagerly loaded
     @EntityGraph(attributePaths = {"listOfSongs", "genres", "artist"})

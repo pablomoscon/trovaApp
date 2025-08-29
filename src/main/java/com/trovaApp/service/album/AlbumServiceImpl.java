@@ -223,7 +223,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public Page<Album> findByArtistId(Long artistId, int page, int size, String sortOrder) {
         Pageable pageable = AlbumUtils.buildPageRequest(page, size, sortOrder);
-        return albumRepository.findByArtistId(artistId, pageable);
+        return albumRepository.findByArtistIdAndStatus(artistId, Status.ACTIVE, pageable);
     }
 
     // Get the total number of albums for a given artist by ID
@@ -245,32 +245,17 @@ public class AlbumServiceImpl implements AlbumService {
             String sortOrder
     ) {
         Pageable pageable = AlbumUtils.buildPageRequest(page, size, sortOrder);
-        List<String> normalizedArtists = AlbumUtils.normalizeArtistNames(artistNames);
 
-        if (normalizedArtists != null && normalizedArtists.isEmpty()) {
-            normalizedArtists = null;
-        }
-        if (years != null && years.isEmpty()) {
-            years = null;
-        }
-        if (genres != null && genres.isEmpty()) {
-            genres = null;
-        }
-        
+        List<String> normalizedArtists = AlbumUtils.normalizeArtistNames(artistNames);
+        if (normalizedArtists != null && normalizedArtists.isEmpty()) normalizedArtists = null;
+        if (years != null && years.isEmpty()) years = null;
+        if (genres != null && genres.isEmpty()) genres = null;
+
         Page<Long> albumIdsPage = albumRepository.findFilteredAlbumIds(normalizedArtists, years, genres, pageable);
-        if (albumIdsPage.isEmpty()) {
-            return Page.empty(pageable);
-        }
+        if (albumIdsPage.isEmpty()) return Page.empty(pageable);
 
         List<Album> albums = albumRepository.findAllWithDetailsByIds(albumIdsPage.getContent());
         List<Album> ordered = AlbumUtils.orderByIds(albumIdsPage.getContent(), albums, Album::getId);
-
-        ordered = ordered.stream()
-                .sorted(Comparator
-                        .comparing((Album a) -> a.getArtist().getName(), String.CASE_INSENSITIVE_ORDER)
-                        .thenComparing(Album::getTitle, String.CASE_INSENSITIVE_ORDER)
-                )
-                .toList();
 
         return new PageImpl<>(ordered, pageable, albumIdsPage.getTotalElements());
     }

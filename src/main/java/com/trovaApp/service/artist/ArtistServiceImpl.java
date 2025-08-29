@@ -16,9 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ArtistServiceImpl implements ArtistService {
@@ -143,7 +141,6 @@ public class ArtistServiceImpl implements ArtistService {
 
         return artistRepository.searchByTerm(term.trim(), pageable);
     }
-
 
     @Transactional(readOnly = true)
     @Override
