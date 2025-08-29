@@ -89,6 +89,7 @@ public class AlbumController {
         return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
     }
 
+    @Operation(summary = "Get all albums filtered and paginated")
     @GetMapping("/filter")
     public ResponseEntity<Map<String, Object>> getAlbums(
             @RequestParam(defaultValue = "0") int page,
@@ -167,7 +168,6 @@ public class AlbumController {
         List<SongResponseDTO> response = albumService.addSongsToAlbum(albumId, dtos);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
 
     @Operation(summary = "Get album details by ID, including songs")
     @GetMapping("/{id}")

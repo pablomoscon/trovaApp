@@ -14,12 +14,20 @@ public class AlbumUtils {
 
     // Build pageable based on sort order
     public static Pageable buildPageRequest(int page, int size, String sortOrder) {
-        if (sortOrder == null || sortOrder.isEmpty()) {
+        if ("artist".equalsIgnoreCase(sortOrder)) {
+            return PageRequest.of(page, size, Sort.by(
+                    Sort.Order.asc("artist.name"),
+                    Sort.Order.asc("title")
+            ));
+        } else if ("title".equalsIgnoreCase(sortOrder)) {
+            return PageRequest.of(page, size, Sort.by("title").ascending());
+        } else if ("asc".equalsIgnoreCase(sortOrder)) {
+            return PageRequest.of(page, size, Sort.by("year").ascending());
+        } else if ("desc".equalsIgnoreCase(sortOrder)) {
+            return PageRequest.of(page, size, Sort.by("year").descending());
+        } else {
             return PageRequest.of(page, size, Sort.by(Sort.Order.asc("artist.name")));
         }
-
-        Sort.Direction direction = "asc".equalsIgnoreCase(sortOrder) ? Sort.Direction.ASC : Sort.Direction.DESC;
-        return PageRequest.of(page, size, Sort.by(direction, "year"));
     }
 
     // Normalize artist names to lowercase
