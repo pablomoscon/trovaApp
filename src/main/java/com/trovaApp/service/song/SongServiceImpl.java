@@ -9,6 +9,7 @@ import com.trovaApp.repository.SongRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -28,6 +29,12 @@ public class SongServiceImpl implements SongService {
     public Optional<Song> findById(Long id) {
 
         return songRepository.findById(id);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Song> findByAlbumId(Long albumId) {
+        return songRepository.findByAlbumId(albumId);
     }
 
     @Override
@@ -64,16 +71,29 @@ public class SongServiceImpl implements SongService {
         return songRepository.save(song);
     }
 
+    @Transactional
+    @Override
+    public void deleteByAlbumId(Long albumId) {
+        songRepository.deleteByAlbumId(albumId);
+    }
+
+    @Transactional
     @Override
     public void deleteByIds(List<Long> ids) {
-        List<Long> notFoundIds = ids.stream()
-                .filter(id -> !songRepository.existsById(id))
-                .toList();
+        List<Song> foundSongs = songRepository.findAllById(ids);
 
-        if (!notFoundIds.isEmpty()) {
+        if (foundSongs.size() != ids.size()) {
+            Set<Long> foundIds = foundSongs.stream()
+                    .map(Song::getId)
+                    .collect(Collectors.toSet());
+
+            List<Long> notFoundIds = ids.stream()
+                    .filter(id -> !foundIds.contains(id))
+                    .toList();
+
             throw new EntityNotFoundException("Songs with ids " + notFoundIds + " not found");
         }
 
-        songRepository.deleteAllById(ids);
+        songRepository.deleteAll(foundSongs);
     }
 }

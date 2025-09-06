@@ -63,6 +63,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET,
                                         "/albums/**",
                                         "/artist/**",
+                                        "/songs/**",
                                         "/swagger-ui/**",
                                         "/v3/api-docs/**")
                                 .permitAll()

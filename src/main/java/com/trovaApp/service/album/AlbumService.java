@@ -25,11 +25,14 @@ public interface AlbumService {
 
     // Read / Get
 
-    Optional<Album> findById(Long id);
+   Album findById(Long id);
 
-    Album getAlbumWithSongs(Long albumId);
 
-    Page<Album> findAll(int page, int size);
+ // Get album with Details by ID
+ @Transactional(readOnly = true)
+ Album findWithDetailsById(Long id);
+
+ Page<Album> findAll(int page, int size);
 
     // Filtering and Search
 

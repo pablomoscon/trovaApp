@@ -1,10 +1,8 @@
 package com.trovaApp.dto.album;
 
-import com.trovaApp.dto.song.SongResponseDTO;
 import com.trovaApp.enums.Genre;
 import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
-import com.trovaApp.model.Song;
 
 import java.util.*;
 
@@ -15,7 +13,6 @@ public class AlbumByIdResponseDTO {
     private String cdNumber;
     private String photo;
     private Integer year;
-    private List<SongResponseDTO> listOfSongs;
     private Set<Genre> genres;
     private String artistName;
     private String displayArtistName;
@@ -72,14 +69,6 @@ public class AlbumByIdResponseDTO {
 
     public void setYear(Integer year) {
         this.year = year;
-    }
-
-    public List<SongResponseDTO> getListOfSongs() {
-        return listOfSongs;
-    }
-
-    public void setListOfSongs(List<SongResponseDTO> listOfSongs) {
-        this.listOfSongs = listOfSongs;
     }
 
     public Set<Genre> getGenres() {
@@ -161,21 +150,8 @@ public class AlbumByIdResponseDTO {
         dto.setAmazonMusicLink(album.getAmazonMusicLink());
         dto.setSpotifyLink(album.getSpotifyLink());
 
-        List<SongResponseDTO> songDTOs = new ArrayList<>();
-        Set<Long> songIds = new HashSet<>();
-
         Long albumArtistId = album.getArtist() != null ? album.getArtist().getId() : null;
 
-        for (Song song : album.getListOfSongs()) {
-            if (song.getArtist() != null &&
-                    song.getArtist().getId().equals(albumArtistId) &&
-                    song.getId() != null &&
-                    songIds.add(song.getId())) {
-                songDTOs.add(SongResponseDTO.fromModel(song));
-            }
-        }
-
-        dto.setListOfSongs(songDTOs);
         dto.setGenres(album.getGenres());
         dto.setDisplayArtistName(album.getDisplayArtistName());
         dto.setArtistName(album.getArtist() != null ? album.getArtist().getName() : null);

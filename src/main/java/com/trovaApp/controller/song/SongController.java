@@ -33,6 +33,21 @@ public class SongController {
         return ResponseEntity.ok(song);
     }
 
+    @Operation(
+            summary = "Get all songs of an album",
+            description = "Returns a list of songs associated with the given album ID"
+    )
+    @GetMapping("/albums/{albumId}")
+    public ResponseEntity<List<SongResponseDTO>> getSongsByAlbumId(@PathVariable Long albumId) {
+        List<Song> songs = songService.findByAlbumId(albumId);
+
+        List<SongResponseDTO> response = songs.stream()
+                .map(SongResponseDTO::fromModel)
+                .toList();
+
+        return ResponseEntity.ok(response);
+    }
+
     @Operation(summary = "Update partial fields of a song")
     @PatchMapping("/{id}")
     public ResponseEntity<?> patchSong(@PathVariable Long id, @RequestBody SongPatchDTO patchDTO) {

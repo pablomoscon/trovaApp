@@ -130,8 +130,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Transactional
     @Override
     public List<SongResponseDTO>  addSongsToAlbum(Long albumId, List<SongCreateDTO> dtos) {
-        Album album = this.findById(albumId)
-                .orElseThrow(() -> new EntityNotFoundException("Album not found with id: " + albumId));
+        Album album = this.findById(albumId);
 
         if (album.getArtist() == null) {
             throw new IllegalStateException("Album has no associated artist");
@@ -157,10 +156,11 @@ public class AlbumServiceImpl implements AlbumService {
     @Transactional
     @Override
     public void deleteById(Long id) {
-        Album album = getAlbumWithSongs(id);
-        if (album == null) {
-            throw new AlbumNotFoundException("Album not found");
-        }
+        Album album = albumRepository.findById(id)
+                .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
+
+        // Delete songs associated with this album
+        songService.deleteByAlbumId(id);
 
         User user = userHelper.getAuthenticatedUser();
         activityService.logActivity(
@@ -193,16 +193,17 @@ public class AlbumServiceImpl implements AlbumService {
     // Get album by ID
     @Transactional(readOnly = true)
     @Override
-    public Optional<Album> findById(Long id) {
-        return albumRepository.findById(id);
+    public Album findById(Long id) {
+        return albumRepository.findById(id)
+                .orElseThrow(() -> new AlbumNotFoundException("Album with id " + id + " not found"));
     }
 
-    // Get album with full details
+    // Get album with Details by ID
     @Transactional(readOnly = true)
     @Override
-    public Album getAlbumWithSongs(Long albumId) {
-        return albumRepository.findWithDetailsById(albumId)
-                .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
+    public Album findWithDetailsById(Long id) {
+        return albumRepository.findWithDetailsById(id)
+                .orElseThrow(() -> new AlbumNotFoundException("Album with id " + id + " not found"));
     }
 
     // Get all albums paginated
@@ -269,7 +270,6 @@ public class AlbumServiceImpl implements AlbumService {
         }
 
         Pageable pageable = PageRequest.of(page, size);
-
         Page<Long> albumIdsPage = albumRepository.searchAlbumIds(query.trim(), status, pageable);
 
         if (albumIdsPage.isEmpty()) {
@@ -282,10 +282,10 @@ public class AlbumServiceImpl implements AlbumService {
         return new PageImpl<>(ordered, pageable, albumIdsPage.getTotalElements());
     }
 
+    // Get available filters: artists, genres, decades
     @Transactional(readOnly = true)
     @Override
     public Map<String, Object> getAvailableFilters() {
-
         List<String> artists = albumRepository.findAllArtistsEntity()
                 .stream()
                 .map(Artist::getName)
@@ -300,7 +300,7 @@ public class AlbumServiceImpl implements AlbumService {
                 .stream()
                 .map(y -> (y / 10) * 10 + "s")
                 .distinct()
-                .sorted((a, b) -> b.compareTo(a)) // descendente
+                .sorted((a, b) -> b.compareTo(a)) // descending
                 .toList();
 
         Map<String, Object> result = new HashMap<>();
