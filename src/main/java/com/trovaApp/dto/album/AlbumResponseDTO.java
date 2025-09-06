@@ -59,9 +59,6 @@ public class AlbumResponseDTO {
     public Date getCreatedAt() { return createdAt; }
     public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
 
-    public List<SongResponseDTO> getListOfSongs() { return listOfSongs; }
-    public void setListOfSongs(List<SongResponseDTO> listOfSongs) { this.listOfSongs = listOfSongs; }
-
     public String getAppleMusicLink() { return appleMusicLink; }
     public void setAppleMusicLink(String appleMusicLink) { this.appleMusicLink = appleMusicLink; }
 
@@ -91,14 +88,6 @@ public class AlbumResponseDTO {
         dto.setAppleMusicLink(album.getAppleMusicLink());
         dto.setAmazonMusicLink(album.getAmazonMusicLink());
         dto.setSpotifyLink(album.getSpotifyLink());
-
-        if (album.getListOfSongs() != null && !album.getListOfSongs().isEmpty()) {
-            dto.setListOfSongs(album.getListOfSongs().stream()
-                    .map(SongResponseDTO::fromModel)
-                    .collect(Collectors.toList()));
-        } else {
-            dto.setListOfSongs(null);
-        }
 
         return dto;
     }

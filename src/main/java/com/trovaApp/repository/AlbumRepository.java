@@ -16,41 +16,41 @@ import java.util.Optional;
 
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
-    // Fetch an album with songs, genres and artist eagerly loaded by ID
-    @EntityGraph(attributePaths = {"listOfSongs", "genres", "artist"})
+    // Fetch an album with genres and artist eagerly loaded by ID (NO songs)
+    @EntityGraph(attributePaths = {"genres", "artist"})
     Optional<Album> findWithDetailsById(Long id);
 
-    // Fetch albums by artist ID with details eagerly loaded, paginated
-    @EntityGraph(attributePaths = {"listOfSongs", "genres", "artist"})
+    // Fetch albums by artist ID with genres and artist eagerly loaded, paginated (NO songs)
+    @EntityGraph(attributePaths = {"genres", "artist"})
     Page<Album> findByArtistIdAndStatus(Long artistId, Status status, Pageable pageable);
 
-    // Fetch all albums by list of IDs with details eagerly loaded
-    @EntityGraph(attributePaths = {"listOfSongs", "genres", "artist"})
+    // Fetch all albums by list of IDs with genres and artist eagerly loaded (NO songs)
+    @EntityGraph(attributePaths = {"genres", "artist"})
     @Query("""
-                SELECT a FROM Album a
-                WHERE a.id IN :ids
-            """)
+            SELECT a FROM Album a
+            WHERE a.id IN :ids
+           """)
     List<Album> findAllWithDetailsByIds(@Param("ids") List<Long> ids);
 
     // Fetch album IDs ordered by artist name ascending and album year descending, for pagination
     @Query("""
-                SELECT a.id FROM Album a
-                JOIN a.artist ar
-                ORDER BY ar.name ASC, a.year DESC
-            """)
+            SELECT a.id FROM Album a
+            JOIN a.artist ar
+            ORDER BY ar.name ASC, a.year DESC
+           """)
     Page<Long> findAllAlbumIds(Pageable pageable);
 
     // Filter albums by optional artist names, years and genres
     @Query("""
-    SELECT a.id FROM Album a
-    JOIN a.artist ar
-    WHERE a.status = 'ACTIVE'
-    AND (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
-    AND (:years IS NULL OR a.year IN :years)
-    AND (:genres IS NULL OR EXISTS (
-        SELECT g FROM a.genres g WHERE g IN :genres
-    ))
-""")
+            SELECT a.id FROM Album a
+            JOIN a.artist ar
+            WHERE a.status = 'ACTIVE'
+              AND (:artistNames IS NULL OR LOWER(ar.name) IN :artistNames)
+              AND (:years IS NULL OR a.year IN :years)
+              AND (:genres IS NULL OR EXISTS (
+                    SELECT g FROM a.genres g WHERE g IN :genres
+              ))
+           """)
     Page<Long> findFilteredAlbumIds(
             @Param("artistNames") List<String> artistNames,
             @Param("years") List<Integer> years,
@@ -58,16 +58,16 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
             Pageable pageable
     );
 
-
+    // Search albums by title or artist name
     @Query("""
-    SELECT a.id
-    FROM Album a
-    JOIN a.artist ar
-    WHERE (:status IS NULL OR a.status = :status)
-      AND (LOWER(a.title) LIKE LOWER(CONCAT('%', :query, '%'))
-           OR LOWER(ar.name) LIKE LOWER(CONCAT('%', :query, '%')))
-    ORDER BY ar.name ASC, a.year DESC
-""")
+            SELECT a.id
+            FROM Album a
+            JOIN a.artist ar
+            WHERE (:status IS NULL OR a.status = :status)
+              AND (LOWER(a.title) LIKE LOWER(CONCAT('%', :query, '%'))
+                   OR LOWER(ar.name) LIKE LOWER(CONCAT('%', :query, '%')))
+            ORDER BY ar.name ASC, a.year DESC
+           """)
     Page<Long> searchAlbumIds(
             @Param("query") String query,
             @Param("status") Status status,
@@ -81,14 +81,15 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
     @Query("SELECT COUNT(a) FROM Album a WHERE a.artist.id = :artistId")
     Long countByArtistId(@Param("artistId") Long artistId);
 
+    // List all distinct artists linked to albums
     @Query("SELECT DISTINCT a.artist FROM Album a WHERE a.artist IS NOT NULL ORDER BY a.artist.name ASC")
     List<Artist> findAllArtistsEntity();
 
-    // Traer géneros distintos (ElementCollection)
+    // List all distinct genres
     @Query("SELECT DISTINCT g FROM Album a JOIN a.genres g ORDER BY g ASC")
     List<Genre> findAllGenres();
 
-    // Traer años distintos
+    // List all distinct years
     @Query("SELECT DISTINCT a.year FROM Album a WHERE a.year IS NOT NULL ORDER BY a.year DESC")
     List<Integer> findAllYears();
 }

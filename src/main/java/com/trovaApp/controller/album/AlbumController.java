@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -169,10 +168,10 @@ public class AlbumController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @Operation(summary = "Get album details by ID, including songs")
+    @Operation(summary = "Get album by ID")
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id, HttpServletRequest request) {
-        Album album = albumService.getAlbumWithSongs(id);
+        Album album = albumService.findWithDetailsById(id);
 
         if (album == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Album not found");
