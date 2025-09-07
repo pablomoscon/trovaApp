@@ -9,6 +9,7 @@ import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
 import com.trovaApp.model.Song;
 import jakarta.annotation.Nullable;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,34 +20,25 @@ import java.util.Optional;
 
 public interface AlbumService {
 
-    // Create
-
+    // Create a new album with optional photo
     Album create(AlbumCreateDTO dto, MultipartFile photo);
 
-    // Read / Get
+    // Get album by ID (basic info)
+    Album findById(Long id);
 
-   Album findById(Long id);
+    // Get album with artist and genres (optionally register a visit)
+    Album findWithDetailsById(Long id, boolean registerVisit, HttpSession session);
 
+    // Get all albums, paginated and sorted
+    Page<Album> findAll(int page, int size);
 
- // Get album with Details by ID
- @Transactional(readOnly = true)
- Album findWithDetailsById(Long id);
-
- Page<Album> findAll(int page, int size);
-
-    // Filtering and Search
-
-    // Get albums by artist
-
-
-    // Get albums by artist
-    @Transactional(readOnly = true)
+    // Get albums by artist ID, with pagination and sorting
     Page<Album> findByArtistId(Long artistId, int page, int size, String sortOrder);
 
-    // Get the total number of albums for a given artist by ID
-    @Transactional(readOnly = true)
+    // Count how many albums belong to a given artist
     Long countAlbumsByArtist(Long artistId);
 
+    // Filter albums by artists, years and genres
     Page<Album> findFiltered(
             int page,
             int size,
@@ -56,31 +48,28 @@ public interface AlbumService {
             String sortOrder
     );
 
-    // Update / Patch
-
-    Album patchAlbum(Long id, AlbumPatchDTO dto);
-
-    Album saveRaw(Album album);
-
-    //  Delete
-
-    void deleteById(Long id);
-
-    // Stats / Utilities
-
-    // Search albums
-    @Transactional(readOnly = true)
+    // Search albums by title or artist name
     Page<Album> search(int page, int size, String query, @Nullable Status status);
 
-    @Transactional(readOnly = true)
+    // Update album information partially
+    Album patchAlbum(Long id, AlbumPatchDTO dto);
+
+    // Save raw album object (used internally)
+    Album saveRaw(Album album);
+
+    // Delete album by ID
+    void deleteById(Long id);
+
+    // Get available filters (artists, years, genres)
     Map<String, Object> getAvailableFilters();
 
+    // Get album counts (total / by status)
     long getTotalAlbums();
 
     long getActiveAlbums();
 
     long getSuspendedAlbums();
 
-    @Transactional
+    // Add new songs to an album
     List<SongResponseDTO> addSongsToAlbum(Long albumId, List<SongCreateDTO> dtos);
 }
