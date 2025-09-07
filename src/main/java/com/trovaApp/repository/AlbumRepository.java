@@ -34,10 +34,10 @@ public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     // Fetch album IDs ordered by artist name ascending and album year descending, for pagination
     @Query("""
-            SELECT a.id FROM Album a
-            JOIN a.artist ar
-            ORDER BY ar.name ASC, a.year DESC
-           """)
+        SELECT a.id FROM Album a
+        JOIN a.artist ar
+        ORDER BY ar.name ASC, a.title ASC
+       """)
     Page<Long> findAllAlbumIds(Pageable pageable);
 
     // Filter albums by optional artist names, years and genres

@@ -36,18 +36,15 @@ import java.util.Map;
 public class AlbumController {
 
     private final AlbumService albumService;
-    private final VisitService visitService;
     private final ObjectMapper objectMapper;
 
     @Autowired
     public AlbumController(
             AlbumService albumService,
-            VisitService visitService,
             ObjectMapper objectMapper
     ) {
         this.albumService = albumService;
         this.objectMapper = objectMapper;
-        this.visitService = visitService;
     }
 
     @Operation(summary = "Create a new album with photo")
@@ -170,17 +167,14 @@ public class AlbumController {
 
     @Operation(summary = "Get album by ID")
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id, HttpServletRequest request) {
-        Album album = albumService.findWithDetailsById(id);
+    public ResponseEntity<?> findById(
+            @PathVariable Long id,
+            @RequestParam(name = "registerVisit", required = false, defaultValue = "false") boolean registerVisit,
+            HttpServletRequest request
+    ) {
+        HttpSession session = request.getSession(true);
 
-        if (album == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Album not found");
-        }
-
-        HttpSession session = request.getSession(false);
-        if (session != null) {
-            visitService.registerAlbumVisit(id, session.getId());
-        }
+        Album album = albumService.findWithDetailsById(id, registerVisit, session);
 
         return ResponseEntity.ok(AlbumByIdResponseDTO.fromModel(album));
     }

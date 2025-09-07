@@ -1,32 +1,43 @@
 package com.trovaApp.util;
 
+import com.trovaApp.model.Album;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class AlbumUtils {
 
     // Build pageable based on sort order
     public static Pageable buildPageRequest(int page, int size, String sortOrder) {
-        if ("artist".equalsIgnoreCase(sortOrder)) {
-            return PageRequest.of(page, size, Sort.by(
-                    Sort.Order.asc("artist.name"),
-                    Sort.Order.asc("title")
-            ));
-        } else if ("title".equalsIgnoreCase(sortOrder)) {
-            return PageRequest.of(page, size, Sort.by("title").ascending());
-        } else if ("asc".equalsIgnoreCase(sortOrder)) {
-            return PageRequest.of(page, size, Sort.by("year").ascending());
-        } else if ("desc".equalsIgnoreCase(sortOrder)) {
-            return PageRequest.of(page, size, Sort.by("year").descending());
-        } else {
-            return PageRequest.of(page, size, Sort.by(Sort.Order.asc("artist.name")));
+        if (sortOrder == null || sortOrder.isBlank()) {
+            return PageRequest.of(page, size,
+                    Sort.by(Sort.Order.asc("artist.name"))
+                            .and(Sort.by(Sort.Order.asc("title"))));
+        }
+
+        switch (sortOrder.trim().toLowerCase()) {
+            case "artist":
+                return PageRequest.of(page, size,
+                        Sort.by(Sort.Order.asc("artist.name"))
+                                .and(Sort.by(Sort.Order.asc("title"))));
+            case "title":
+                return PageRequest.of(page, size, Sort.by("title").ascending());
+            case "asc":
+                return PageRequest.of(page, size, Sort.by("year").ascending());
+            case "desc":
+                return PageRequest.of(page, size, Sort.by("year").descending());
+            default:
+                return PageRequest.of(page, size,
+                        Sort.by(Sort.Order.asc("artist.name"))
+                                .and(Sort.by(Sort.Order.asc("title"))));
         }
     }
 
@@ -42,13 +53,24 @@ public class AlbumUtils {
     }
 
     // Order albums based on list of IDs
-    public static <T> List<T> orderByIds(List<Long> ids, List<T> items, java.util.function.Function<T, Long> idExtractor) {
+    public static <T> List<T> orderByIds(
+            List<Long> ids,
+            List<T> items,
+            Function<T, Long> idExtractor
+    ) {
         Map<Long, T> itemMap = items.stream()
-                .collect(Collectors.toMap(idExtractor, i -> i));
+                .collect(Collectors.toMap(idExtractor, Function.identity()));
 
         return ids.stream()
                 .map(itemMap::get)
                 .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+    }
+
+    // Order albums by title
+    public static List<Album> orderByTitle(List<Album> items) {
+        return items.stream()
+                .sorted(Comparator.comparing(Album::getTitle, String.CASE_INSENSITIVE_ORDER))
                 .collect(Collectors.toList());
     }
 
