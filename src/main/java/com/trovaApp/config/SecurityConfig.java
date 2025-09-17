@@ -68,6 +68,11 @@ public class SecurityConfig {
                                         "/v3/api-docs/**")
                                 .permitAll()
 
+                                .requestMatchers(HttpMethod.POST,
+                                        "/email/**"
+                                )
+                                .permitAll()
+
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManagement ->
