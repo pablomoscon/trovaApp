@@ -34,7 +34,7 @@ public class AuthController {
 
     @Operation(summary = "Register a new user")
     @PostMapping("sign-up")
-    public ResponseEntity<?> signUp(@RequestBody @Valid UserSignupDTO signupUserDto) {
+    public ResponseEntity<Object> signUp(@RequestBody @Valid UserSignupDTO signupUserDto) {
         try {
             // Attempt to create the user and save credentials
             User savedUser = userService.save(signupUserDto);
@@ -47,9 +47,8 @@ public class AuthController {
 
     @Operation(summary = "Authenticate user and return JWT token")
     @PostMapping("sign-in")
-    public ResponseEntity<?> signIn(@RequestBody UserSigninDTO signinUserDto, HttpServletRequest request) {
+    public ResponseEntity<UserResponseDTO> signIn(@RequestBody UserSigninDTO signinUserDto, HttpServletRequest request) {
         User user = authService.signInAndReturnJwt(signinUserDto, request);
         return ResponseEntity.ok(new UserResponseDTO(user));
     }
-
 }

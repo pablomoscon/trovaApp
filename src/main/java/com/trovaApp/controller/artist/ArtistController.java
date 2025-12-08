@@ -43,7 +43,7 @@ public class ArtistController {
 
     @Operation(summary = "Create a new artist with photo")
     @PostMapping
-    public ResponseEntity<?> createArtist(@RequestParam("artist") String artistJson,
+    public ResponseEntity<ArtistBasicResponseDTO> createArtist(@RequestParam("artist") String artistJson,
                                           @RequestPart("photo") MultipartFile photo
     ) throws JsonProcessingException {
         FileUtils.validateImageFile(photo);
@@ -129,8 +129,8 @@ public class ArtistController {
 
     @Operation(summary = "Delete artist by ID")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         artistService.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }
