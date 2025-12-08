@@ -27,7 +27,7 @@ public class SongController {
 
     @Operation(summary = "Get a song by its ID")
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<Song> findById(@PathVariable Long id) {
         Song song = songService.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Song not found"));
         return ResponseEntity.ok(song);
@@ -50,7 +50,7 @@ public class SongController {
 
     @Operation(summary = "Update partial fields of a song")
     @PatchMapping("/{id}")
-    public ResponseEntity<?> patchSong(@PathVariable Long id, @RequestBody SongPatchDTO patchDTO) {
+    public ResponseEntity<SongResponseDTO> patchSong(@PathVariable Long id, @RequestBody SongPatchDTO patchDTO) {
         Song updatedSong = songService.patchSong(id, patchDTO);
         return ResponseEntity.ok(SongResponseDTO.fromModel(updatedSong));
     }
