@@ -174,6 +174,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
+    @Transactional
     @Override
     public void delete(UUID userId) {
         User user = this.findById(userId);
@@ -182,6 +183,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    @Transactional
     @Override
     public void suspendUser(UUID userId) {
         User user = this.findById(userId);
