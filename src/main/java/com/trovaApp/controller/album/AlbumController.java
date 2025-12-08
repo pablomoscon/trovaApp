@@ -12,7 +12,6 @@ import com.trovaApp.enums.Genre;
 import com.trovaApp.enums.Status;
 import com.trovaApp.model.Album;
 import com.trovaApp.service.album.AlbumService;
-import com.trovaApp.service.visit.VisitService;
 import com.trovaApp.util.AlbumUtils;
 import com.trovaApp.util.FileUtils;
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,9 +46,12 @@ public class AlbumController {
         this.objectMapper = objectMapper;
     }
 
+
+    private static final String ALBUMS_KEY = "albums";
+
     @Operation(summary = "Create a new album with photo")
     @PostMapping
-    public ResponseEntity<?> createAlbum(
+    public ResponseEntity<AlbumResponseDTO> createAlbum(
             @RequestParam("album") String albumJson,
             @RequestPart("photo") MultipartFile photo
     ) throws JsonProcessingException {
@@ -82,7 +84,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse(ALBUMS_KEY, albumPage, dtoList));
     }
 
     @Operation(summary = "Get all albums filtered and paginated")
@@ -117,7 +119,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse(ALBUMS_KEY, albumPage, dtoList));
     }
 
     @Operation(summary = "Search albums by query text")
@@ -134,7 +136,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse(ALBUMS_KEY, albumPage, dtoList));
     }
 
 
@@ -152,7 +154,7 @@ public class AlbumController {
                 .map(AlbumResponseDTO::fromModel)
                 .toList();
 
-        return ResponseEntity.ok(AlbumUtils.buildPagedResponse("albums", albumPage, dtoList));
+        return ResponseEntity.ok(AlbumUtils.buildPagedResponse(ALBUMS_KEY, albumPage, dtoList));
     }
 
     @Operation(summary = "Add one or more songs to an album")
@@ -167,7 +169,7 @@ public class AlbumController {
 
     @Operation(summary = "Get album by ID")
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(
+    public ResponseEntity<AlbumByIdResponseDTO> findById(
             @PathVariable Long id,
             @RequestParam(name = "registerVisit", required = false, defaultValue = "false") boolean registerVisit,
             HttpServletRequest request
