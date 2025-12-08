@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package -Dmaven.test.skip=true
 
 # Etapa de ejecución (runtime)
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
