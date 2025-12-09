@@ -38,6 +38,8 @@ public class UserServiceImpl implements UserService {
         this.activityService = activityService;
     }
 
+    private static final String NOT_FOUND = " not found";
+
     @Override
     public User save(UserSignupDTO signupUserDto) {
         // Check if the username is already in use
@@ -109,14 +111,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByIdWithActivities(UUID userId) {
         return userRepository.findWithActivitiesById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + NOT_FOUND));
     }
 
     @Transactional
     @Override
     public User findById(UUID userId) {
         return userRepository.findWithActivitiesById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + " not found"));
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + NOT_FOUND));
     }
 
     @Override
@@ -135,40 +137,11 @@ public class UserServiceImpl implements UserService {
     public User patchUser(UUID userId, UserPatchDTO userPatchDTO) {
         User user = this.findById(userId);
 
-        String username = userPatchDTO.getUsername();
-        String email = userPatchDTO.getEmail();
-        String name = userPatchDTO.getName();
-        Role role = userPatchDTO.getRole();
-        Status status = userPatchDTO.getStatus();
-
-        if (username != null && !username.equals(user.getUsername())) {
-            if (username.length() < 7) {
-                throw new IllegalArgumentException("Username must be at least 7 characters long");
-            }
-            if (userRepository.findByUsername(username).isPresent()) {
-                throw new UsernameAlreadyExistsException("Username is already in use");
-            }
-            user.setUsername(username);
-        }
-
-        if (email != null && !email.equals(user.getEmail())) {
-            if (userRepository.findByEmail(email).isPresent()) {
-                throw new EmailAlreadyExistsException("Email is already in use");
-            }
-            user.setEmail(email);
-        }
-
-        if (name != null && !name.equals(user.getName())) {
-            user.setName(name);
-        }
-
-        if (role != null && !role.equals(user.getRole())) {
-            user.setRole(role);
-        }
-
-        if (status != null && !status.equals(user.getStatus())) {
-            user.setStatus(status);
-        }
+        updateUsername(user, userPatchDTO.getUsername());
+        updateEmail(user, userPatchDTO.getEmail());
+        updateName(user, userPatchDTO.getName());
+        updateRole(user, userPatchDTO.getRole());
+        updateStatus(user, userPatchDTO.getStatus());
 
         activityService.logActivity(user, "Edit user: " + user.getUsername());
         return userRepository.save(user);
@@ -208,7 +181,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void incrementFailedLoginAttempts(String username) {
         User user = this.findByUsername(username)
-                .orElseThrow(() -> new UserNotFoundException("User with username " + username + " not found"));
+                .orElseThrow(() -> new UserNotFoundException("User with username " + username + NOT_FOUND));
 
         user.setFailedLoginAttempts(user.getFailedLoginAttempts() + 1);
         userRepository.save(user);
@@ -245,5 +218,52 @@ public class UserServiceImpl implements UserService {
     public long getDeletedUsers() {
         return userRepository.countByStatus(Status.DELETED);
     }
+
+
+    // === MÉTODOS PRIVADOS ===
+
+    private void updateUsername(User user, String newUsername) {
+        if (newUsername == null || newUsername.equals(user.getUsername())) return;
+
+        if (newUsername.length() < 7) {
+            throw new IllegalArgumentException("Username must be at least 7 characters long");
+        }
+
+        if (userRepository.findByUsername(newUsername).isPresent()) {
+            throw new UsernameAlreadyExistsException("Username is already in use");
+        }
+
+        user.setUsername(newUsername);
+    }
+
+    private void updateEmail(User user, String newEmail) {
+        if (newEmail == null || newEmail.equals(user.getEmail())) return;
+
+        if (userRepository.findByEmail(newEmail).isPresent()) {
+            throw new EmailAlreadyExistsException("Email is already in use");
+        }
+
+        user.setEmail(newEmail);
+    }
+
+    private void updateName(User user, String newName) {
+        if (newName != null && !newName.equals(user.getName())) {
+            user.setName(newName);
+        }
+    }
+
+    private void updateRole(User user, Role newRole) {
+        if (newRole != null && !newRole.equals(user.getRole())) {
+            user.setRole(newRole);
+        }
+    }
+
+    private void updateStatus(User user, Status newStatus) {
+        if (newStatus != null && !newStatus.equals(user.getStatus())) {
+            user.setStatus(newStatus);
+        }
+    }
 }
+
+
 

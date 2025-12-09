@@ -64,6 +64,8 @@ public class AlbumServiceImpl implements AlbumService {
         this.visitService = visitService;
     }
 
+    private static final String ALBUM_NOT_FOUND_MESSAGE = "Album not found";
+
     // Create new album
     @Transactional
     @Override
@@ -102,7 +104,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public Album patchAlbum(Long id, AlbumPatchDTO dto) {
         Album album = albumRepository.findWithDetailsById(id)
-                .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
+                .orElseThrow(() -> new AlbumNotFoundException("ALBUM_NOT_FOUND_MESSAGE"));
 
         Optional.ofNullable(dto.getTitle()).ifPresent(album::setTitle);
         Optional.ofNullable(dto.getDetails()).ifPresent(album::setDetails);
@@ -133,7 +135,6 @@ public class AlbumServiceImpl implements AlbumService {
 
 // Add one or more songs to an album
 
-    @Transactional
     @Override
     public List<SongResponseDTO> addSongsToAlbum(Long albumId, List<SongCreateDTO> dtos) {
         Album album = this.findById(albumId);
@@ -163,7 +164,7 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public void deleteById(Long id) {
         Album album = albumRepository.findById(id)
-                .orElseThrow(() -> new AlbumNotFoundException("Album not found"));
+                .orElseThrow(() -> new AlbumNotFoundException("ALBUM_NOT_FOUND_MESSAGE"));
 
         // Delete songs associated with this album
         songService.deleteByAlbumId(id);
@@ -186,7 +187,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     public void removeSongsFromAlbum(Long albumId, List<Long> songIdsToRemove) {
         Album album = albumRepository.findById(albumId)
-                .orElseThrow(() -> new EntityNotFoundException("Album not found"));
+                .orElseThrow(() -> new EntityNotFoundException("ALBUM_NOT_FOUND_MESSAGE"));
 
         List<Song> updatedSongs = album.getListOfSongs().stream()
                 .filter(song -> !songIdsToRemove.contains(song.getId()))
@@ -217,7 +218,6 @@ public class AlbumServiceImpl implements AlbumService {
 
         return album;
     }
-
 
     // Get all albums paginated
     @Transactional(readOnly = true)

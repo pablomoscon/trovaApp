@@ -142,7 +142,6 @@ public class ArtistServiceImpl implements ArtistService {
         return artistRepository.searchByTerm(term.trim(), pageable);
     }
 
-    @Transactional(readOnly = true)
     @Override
     public Page<Artist> findAllWithAlbums(Pageable pageable) {
         return artistRepository.findAll(pageable);
