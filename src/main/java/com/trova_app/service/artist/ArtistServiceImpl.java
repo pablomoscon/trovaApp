@@ -75,7 +75,6 @@ public class ArtistServiceImpl implements ArtistService {
         return artistRepository.findAllWithAlbumCount(status, pageable);
     }
 
-
     @Transactional(readOnly = true)
     @Override
     public Optional<Artist> findById(Long id) {
@@ -132,7 +131,7 @@ public class ArtistServiceImpl implements ArtistService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("name").ascending());
 
         if (term == null || term.trim().isEmpty()) {
-            return findAll(page, size, status);
+            return doFindAll(page, size, status);
         }
 
         if (status != null) {
@@ -161,4 +160,18 @@ public class ArtistServiceImpl implements ArtistService {
     public long getSuspendedArtists() {
         return artistRepository.countByStatus(Status.SUSPENDED);
     }
+
+    /* MÉTODOS PRIVADOS */
+
+    private Page<Artist> doFindAll(int page, int size, Status status) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "name"));
+
+        if (status != null) {
+            return artistRepository.findByStatus(status, pageable);
+        } else {
+            return artistRepository.findAll(pageable);
+        }
+    }
 }
+
+
