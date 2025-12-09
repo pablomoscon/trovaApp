@@ -1,4 +1,4 @@
-package com.trovaDisc.trovaApp;
+package com.trovaDisc.trova_app;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

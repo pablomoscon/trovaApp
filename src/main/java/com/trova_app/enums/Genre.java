@@ -1,0 +1,16 @@
+package com.trova_app.enums;
+
+public enum Genre {
+    ROCK_ARGENTINO,
+    TANGO,
+    JAZZ,
+    MÚSICA_POPULAR_ARGENTINA,
+    MÚSICA_POPULAR_BRASILENA,
+    MÚSICA_INSTRUMENTAL,
+    HUMOR_MUSICAL,
+    CHANSON_FRANCESA,
+    TEATRO_MUSICAL,
+    FOLCLORE,
+    CONTEMPORÁNEA,
+    CLÄSICA
+}

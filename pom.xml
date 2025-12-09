@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.trovaDisc</groupId>
-    <artifactId>trovaApp</artifactId>
+    <artifactId>trova_app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>trovaDisc</name>
     <description>New project for Spring Boot</description>
