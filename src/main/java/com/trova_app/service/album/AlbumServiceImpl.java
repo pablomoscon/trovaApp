@@ -135,6 +135,7 @@ public class AlbumServiceImpl implements AlbumService {
 
 // Add one or more songs to an album
 
+    @Transactional
     @Override
     public List<SongResponseDTO> addSongsToAlbum(Long albumId, List<SongCreateDTO> dtos) {
         Album album = this.findById(albumId);
@@ -198,7 +199,6 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     // Get album by ID
-    @Transactional(readOnly = true)
     @Override
     public Album findById(Long id) {
         return albumRepository.findById(id)
