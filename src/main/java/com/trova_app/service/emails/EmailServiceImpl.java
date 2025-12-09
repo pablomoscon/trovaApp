@@ -2,7 +2,6 @@ package com.trova_app.service.emails;
 
 import com.trova_app.dto.email.EmailDTO;
 import jakarta.mail.internet.MimeMessage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -11,11 +10,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
+    private final JavaMailSender mailSender;
+    private final String appEmail;
 
-    @Value("${spring.mail.username}")
-    private String appEmail;
+    public EmailServiceImpl(
+            JavaMailSender mailSender,
+            @Value("${spring.mail.username}") String appEmail
+    ) {
+        this.mailSender = mailSender;
+        this.appEmail = appEmail;
+    }
 
     @Override
     public void sendMessage(EmailDTO emailDTO) {
@@ -38,8 +42,6 @@ public class EmailServiceImpl implements EmailService {
             sb.append("\nMessage:\n").append(emailDTO.getMessage());
 
             helper.setText(sb.toString(), false);
-
-            // helper.setReplyTo(emailDTO.getEmail());
 
             mailSender.send(mimeMessage);
 
