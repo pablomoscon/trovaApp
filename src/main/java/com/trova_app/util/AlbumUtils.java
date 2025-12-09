@@ -15,29 +15,33 @@ import java.util.stream.Collectors;
 
 public class AlbumUtils {
 
+    private static final String ARTIST_NAME = "artist.name";
+    private static final String TITLE = "title";
+    private static final String YEAR = "year";
+
     // Build pageable based on sort order
     public static Pageable buildPageRequest(int page, int size, String sortOrder) {
         if (sortOrder == null || sortOrder.isBlank()) {
             return PageRequest.of(page, size,
-                    Sort.by(Sort.Order.asc("artist.name"))
-                            .and(Sort.by(Sort.Order.asc("title"))));
+                    Sort.by(Sort.Order.asc(ARTIST_NAME))
+                            .and(Sort.by(Sort.Order.asc(TITLE))));
         }
 
         switch (sortOrder.trim().toLowerCase()) {
             case "artist":
                 return PageRequest.of(page, size,
-                        Sort.by(Sort.Order.asc("artist.name"))
-                                .and(Sort.by(Sort.Order.asc("title"))));
+                        Sort.by(Sort.Order.asc(ARTIST_NAME))
+                                .and(Sort.by(Sort.Order.asc(TITLE))));
             case "title":
-                return PageRequest.of(page, size, Sort.by("title").ascending());
+                return PageRequest.of(page, size, Sort.by(TITLE).ascending());
             case "asc":
-                return PageRequest.of(page, size, Sort.by("year").ascending());
+                return PageRequest.of(page, size, Sort.by(YEAR).ascending());
             case "desc":
-                return PageRequest.of(page, size, Sort.by("year").descending());
+                return PageRequest.of(page, size, Sort.by(YEAR).descending());
             default:
                 return PageRequest.of(page, size,
-                        Sort.by(Sort.Order.asc("artist.name"))
-                                .and(Sort.by(Sort.Order.asc("title"))));
+                        Sort.by(Sort.Order.asc(ARTIST_NAME))
+                                .and(Sort.by(Sort.Order.asc(TITLE))));
         }
     }
 
