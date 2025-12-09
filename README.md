@@ -40,7 +40,7 @@ El proyecto está desarrollado con **Spring Boot** y expone una **API REST** seg
 ## Estructura del proyecto
 
 ```bash
-trovaApp/
+trova_app/
 ├── src/main/java/com/trovaDisc/
 │   ├── controller/     # Controladores REST
 │   ├── service/        # Lógica de negocio

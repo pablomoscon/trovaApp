@@ -1,0 +1,52 @@
+package com.trova_app.service.user;
+
+import com.trova_app.dto.user.UserPatchDTO;
+import com.trova_app.dto.user.UserSignupDTO;
+import com.trova_app.enums.Role;
+import com.trova_app.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface UserService {
+    User save(UserSignupDTO userDto);
+
+    @Transactional
+    Page<User> findAll(Pageable pageable);
+
+    @Transactional(readOnly = true)
+    User findByIdWithActivities(UUID userId);
+
+    User findById(UUID id);
+
+    Optional<User> findByUsername(String username);
+
+    void changeRole (Role newRole, String username);
+
+    @Transactional
+    User patchUser(UUID userId, UserPatchDTO userPatchDTO);
+
+    void delete(UUID id);
+
+    void suspendUser(UUID id);
+
+    void updateLastLogin(UUID userId);
+
+    @Transactional
+    void incrementFailedLoginAttempts(String username);
+
+    long getTotalUsers();
+
+    long getSuspendedUsers();
+
+    long getActiveUsers();
+
+    long getDeletedUsers();
+
+    @Transactional(readOnly = true)
+    Page<User> search(String term, int page, int size);
+}
