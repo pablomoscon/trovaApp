@@ -117,8 +117,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public User findById(UUID userId) {
-        return userRepository.findWithActivitiesById(userId)
-                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + NOT_FOUND));
+        return doFindById(userId);
     }
 
     @Override
@@ -135,7 +134,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public User patchUser(UUID userId, UserPatchDTO userPatchDTO) {
-        User user = this.findById(userId);
+        User user = doFindById(userId);
 
         updateUsername(user, userPatchDTO.getUsername());
         updateEmail(user, userPatchDTO.getEmail());
@@ -150,7 +149,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void delete(UUID userId) {
-        User user = this.findById(userId);
+        User user = doFindById(userId);
 
         user.setStatus(Status.DELETED);
         userRepository.save(user);
@@ -159,7 +158,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void suspendUser(UUID userId) {
-        User user = this.findById(userId);
+        User user = doFindById(userId);
 
         user.setStatus(Status.SUSPENDED);
         userRepository.save(user);
@@ -173,7 +172,7 @@ public class UserServiceImpl implements UserService {
             user.setLastLogin(LocalDateTime.now());
             userRepository.save(user);
         } else {
-            throw new RuntimeException("User with ID " + userId + " not found");
+            throw new RuntimeException("User with ID " + userId + NOT_FOUND);
         }
     }
 
@@ -221,6 +220,11 @@ public class UserServiceImpl implements UserService {
 
 
     // === MÉTODOS PRIVADOS ===
+
+    private User doFindById(UUID userId) {
+        return userRepository.findWithActivitiesById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with ID " + userId + NOT_FOUND));
+    }
 
     private void updateUsername(User user, String newUsername) {
         if (newUsername == null || newUsername.equals(user.getUsername())) return;
