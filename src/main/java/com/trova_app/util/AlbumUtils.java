@@ -32,7 +32,7 @@ public class AlbumUtils {
                 return PageRequest.of(page, size,
                         Sort.by(Sort.Order.asc(ARTIST_NAME))
                                 .and(Sort.by(Sort.Order.asc(TITLE))));
-            case "title":
+            case TITLE:
                 return PageRequest.of(page, size, Sort.by(TITLE).ascending());
             case "asc":
                 return PageRequest.of(page, size, Sort.by(YEAR).ascending());

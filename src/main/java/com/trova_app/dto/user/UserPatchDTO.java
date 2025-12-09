@@ -34,7 +34,7 @@ public class UserPatchDTO {
                         Status status) {
 
         this.userId = userId;
-        this.username= username;
+        this.username = username;
         this.email = email;
         this.name = name;
         this.role = role;
@@ -55,7 +55,7 @@ public class UserPatchDTO {
     }
 
     public void setUsername(String newUsername) {
-        this.username = username;
+        this.username = newUsername;
     }
 
     public String getEmail() {
